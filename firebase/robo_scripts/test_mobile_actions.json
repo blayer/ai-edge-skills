@@ -1,0 +1,124 @@
+[
+  {
+    "eventType": "WAIT",
+    "delayTime": 5000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "01_home_screen_before_scroll"
+  },
+  {
+    "eventType": "VIEW_SWIPED",
+    "swipeDirection": "Up",
+    "elementDescriptors": [
+      {
+        "className": "android.widget.ScrollView",
+        "groupViewChildPosition": 0
+      }
+    ]
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 2000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "02_home_screen_after_scroll"
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "visionText": "Mobile Actions"
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 3000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "03_mobile_actions_page"
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "visionText": "Download",
+    "optional": true
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 3000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "04_terms_dialog"
+  },
+  {
+    "eventType": "POINT_TAP",
+    "pointTapXCoordinate": 670,
+    "pointTapYCoordinate": 1488,
+    "optional": true
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 3000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "05_after_terms_accept"
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 240000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "06_after_download_wait"
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "visionText": "Try it",
+    "optional": true
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 3000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "07_chat_page"
+  },
+  {
+    "eventType": "POINT_TAP",
+    "pointTapXCoordinate": 97,
+    "pointTapYCoordinate": 2304,
+    "optional": true
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 2000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "08_after_keyboard_switch"
+  },
+  {
+    "eventType": "VIEW_TEXT_CHANGED",
+    "replacementText": "create a calendar event at 2pm tomorrow",
+    "elementDescriptors": [
+      {
+        "className": "android.widget.EditText"
+      }
+    ],
+    "optional": true
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 10000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "09_after_text_entered"
+  },
+  {
+    "eventType": "ADB_SHELL_COMMAND",
+    "adbCommand": "input keyevent 66"
+  }
+]

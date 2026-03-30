@@ -1,0 +1,28 @@
+[
+  {
+    "name": "full_game_multiple_hits",
+    "rounds": [
+      {"input": {"action": "deal"}, "expected_contains": ["webview"]},
+      {"input": {"action": "hit"}, "expected_contains": ["webview"]},
+      {"input": {"action": "hit"}, "expected_contains": ["webview"]},
+      {"input": {"action": "stand"}, "expected_contains": ["webview"]}
+    ]
+  },
+  {
+    "name": "deal_and_check",
+    "rounds": [
+      {"input": {"action": "deal"}, "expected_contains": ["webview"]},
+      {"input": {"action": "stand"}, "expected_contains": ["webview"]}
+    ]
+  },
+  {
+    "name": "deal_new_game_after_finished",
+    "rounds": [
+      {"input": {"action": "deal"}, "expected_contains": ["webview"]},
+      {"input": {"action": "stand"}, "expected_contains": ["webview"]},
+      {"input": {"action": "deal"}, "expected_contains": ["webview"]},
+      {"input": {"action": "hit"}, "expected_contains": ["webview"]},
+      {"input": {"action": "stand"}, "expected_contains": ["webview"]}
+    ]
+  }
+]

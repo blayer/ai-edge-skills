@@ -1,0 +1,30 @@
+Skill:    voice-actor
+Prompt 1: "Read this text as a dramatic narrator"
+Prompt 2: "Format my story for a child's voice"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: voice-actor
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'voice-actor'
+Enabled 'voice-actor'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 13737)
+
+[4/5] Example 1: "Read this text as a dramatic narrator"... PASS
+
+[5/5] Example 2: "Format my story for a child's voice"... PASS
+
+Video saved: recording/voice-actor/recording.mp4
+
+==========================================
+SUMMARY: voice-actor
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/voice-actor/recording.mp4
+
+RECORDING COMPLETE

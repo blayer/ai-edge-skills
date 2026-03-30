@@ -1,0 +1,29 @@
+Skill:    astrology-finder
+Prompt 1: "What's my zodiac sign if I was born on July 15?"
+Prompt 2: "Calculate my full birth chart for 1990-03-22 at 14:30 in New York"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: astrology-finder
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'astrology-finder'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 29248)
+
+[4/5] Example 1: "What's my zodiac sign if I was born on July 15?"... FAIL (timeout)
+
+[5/5] Example 2: "Calculate my full birth chart for 1990-03-22 at 14:30 in New York"... FAIL (timeout)
+
+Video saved: recording/astrology-finder/recording.mp4
+
+==========================================
+SUMMARY: astrology-finder
+==========================================
+Example 1: FAIL
+Example 2: FAIL
+Video:     recording/astrology-finder/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

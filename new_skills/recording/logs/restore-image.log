@@ -1,0 +1,30 @@
+Skill:    restore-image
+Prompt 1: "How do I sharpen an old blurry photo?"
+Prompt 2: "Show me filters to brighten a dark image"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: restore-image
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'restore-image'
+Enabled 'restore-image'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 50331)
+
+[4/5] Example 1: "How do I sharpen an old blurry photo?"... PASS
+
+[5/5] Example 2: "Show me filters to brighten a dark image"... FAIL (timeout)
+
+Video saved: recording/restore-image/recording.mp4
+
+==========================================
+SUMMARY: restore-image
+==========================================
+Example 1: PASS
+Example 2: FAIL
+Video:     recording/restore-image/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

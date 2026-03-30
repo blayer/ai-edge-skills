@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:firebase.google.com)",
+      "WebFetch(domain:docs.cloud.google.com)",
+      "Bash(gcloud config:*)"
+    ]
+  }
+}

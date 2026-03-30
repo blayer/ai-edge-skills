@@ -1,0 +1,27 @@
+[
+  {
+    "name": "win_in_3_guesses",
+    "rounds": [
+      {"input": {"action": "start", "colors": 4, "seed_code": ["red","blue","green","yellow"]}, "expected_contains": ["webview"]},
+      {"input": {"action": "guess", "guess": ["red","red","red","red"]}, "expected_contains": ["webview"]},
+      {"input": {"action": "guess", "guess": ["red","blue","yellow","green"]}, "expected_contains": ["webview"]},
+      {"input": {"action": "guess", "guess": ["red","blue","green","yellow"]}, "expected_contains": ["won"]}
+    ]
+  },
+  {
+    "name": "start_and_guess",
+    "rounds": [
+      {"input": {"action": "start"}, "expected_contains": ["webview"]},
+      {"input": {"action": "guess", "guess": ["red","blue","green","yellow"]}, "expected_contains": ["webview"]},
+      {"input": {"action": "guess", "guess": ["orange","purple","red","blue"]}, "expected_contains": ["webview"]}
+    ]
+  },
+  {
+    "name": "restart_after_win",
+    "rounds": [
+      {"input": {"action": "start", "seed_code": ["red","red","red","red"]}, "expected_contains": ["webview"]},
+      {"input": {"action": "guess", "guess": ["red","red","red","red"]}, "expected_contains": ["won"]},
+      {"input": {"action": "start"}, "expected_contains": ["webview"]}
+    ]
+  }
+]

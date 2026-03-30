@@ -1,0 +1,7 @@
+[
+  {"name": "sunset_mood", "input": {"mood": "sunset"}, "expected_contains": ["webview"]},
+  {"name": "ocean_mood_7_colors", "input": {"mood": "ocean", "count": 7}, "expected_contains": ["webview"]},
+  {"name": "base_color_harmony", "input": {"base_color": "#FF5733", "count": 5}, "expected_contains": ["webview"]},
+  {"name": "unknown_mood_fallback", "input": {"mood": "nonexistent"}, "expected_contains": ["webview"]},
+  {"name": "pastel_minimal", "input": {"mood": "pastel", "count": 2}, "expected_contains": ["webview"]}
+]

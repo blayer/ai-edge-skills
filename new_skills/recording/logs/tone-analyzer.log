@@ -1,0 +1,30 @@
+Skill:    tone-analyzer
+Prompt 1: "Check this email for passive-aggressive language"
+Prompt 2: "Analyze this feedback for condescending tone"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: tone-analyzer
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'tone-analyzer'
+Enabled 'tone-analyzer'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 62795)
+
+[4/5] Example 1: "Check this email for passive-aggressive language"... FAIL (timeout)
+
+[5/5] Example 2: "Analyze this feedback for condescending tone"... PASS
+
+Video saved: recording/tone-analyzer/recording.mp4
+
+==========================================
+SUMMARY: tone-analyzer
+==========================================
+Example 1: FAIL
+Example 2: PASS
+Video:     recording/tone-analyzer/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

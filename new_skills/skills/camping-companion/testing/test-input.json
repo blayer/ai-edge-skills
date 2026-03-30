@@ -1,0 +1,18 @@
+[
+  {"name": "tent_no_subtopic", "input": {"topic": "tent"}, "expected_not_empty": true},
+  {"name": "tent_dome", "input": {"topic": "tent", "subtopic": "dome"}, "expected_not_empty": true},
+  {"name": "tent_hammock_advanced", "input": {"topic": "tent", "subtopic": "hammock", "skill_level": "advanced"}, "expected_not_empty": true},
+  {"name": "fire_teepee", "input": {"topic": "fire", "subtopic": "teepee"}, "expected_not_empty": true},
+  {"name": "fire_bow_drill_beginner", "input": {"topic": "fire", "subtopic": "bow drill", "skill_level": "beginner"}, "expected_not_empty": true},
+  {"name": "knots_bowline", "input": {"topic": "knots", "subtopic": "bowline"}, "expected_not_empty": true},
+  {"name": "knots_list", "input": {"topic": "knots"}, "expected_not_empty": true},
+  {"name": "cooking_foil", "input": {"topic": "cooking", "subtopic": "foil packets"}, "expected_not_empty": true},
+  {"name": "wildlife_bear", "input": {"topic": "wildlife", "subtopic": "bear"}, "expected_not_empty": true},
+  {"name": "wildlife_list", "input": {"topic": "wildlife"}, "expected_not_empty": true},
+  {"name": "gear_beginner", "input": {"topic": "gear_checklist", "skill_level": "beginner"}, "expected_not_empty": true},
+  {"name": "gear_advanced", "input": {"topic": "gear_checklist", "subtopic": "advanced"}, "expected_not_empty": true},
+  {"name": "water_boiling", "input": {"topic": "water", "subtopic": "boiling"}, "expected_not_empty": true},
+  {"name": "water_list", "input": {"topic": "water"}, "expected_not_empty": true},
+  {"name": "navigation_compass", "input": {"topic": "navigation", "subtopic": "compass"}, "expected_not_empty": true},
+  {"name": "missing_topic", "input": {}, "expected_error": true}
+]

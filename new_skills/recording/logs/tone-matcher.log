@@ -1,0 +1,30 @@
+Skill:    tone-matcher
+Prompt 1: "Make this email sound more professional"
+Prompt 2: "Rewrite this message in a casual tone"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: tone-matcher
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'tone-matcher'
+Enabled 'tone-matcher'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 63518)
+
+[4/5] Example 1: "Make this email sound more professional"... FAIL (timeout)
+
+[5/5] Example 2: "Rewrite this message in a casual tone"... FAIL (timeout)
+
+Video saved: recording/tone-matcher/recording.mp4
+
+==========================================
+SUMMARY: tone-matcher
+==========================================
+Example 1: FAIL
+Example 2: FAIL
+Video:     recording/tone-matcher/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

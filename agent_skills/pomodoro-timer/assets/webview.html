@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pomodoro Timer</title>
+<style>
+  body { margin: 0; font-family: -apple-system, sans-serif; background: #1a1a2e; color: #eee; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+  .task { color: #a8b2d1; font-size: 14px; margin-bottom: 8px; }
+  .timer-container { position: relative; width: 250px; height: 250px; margin-bottom: 24px; }
+  svg { transform: rotate(-90deg); }
+  .time-display { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 48px; font-weight: bold; color: #64ffda; font-variant-numeric: tabular-nums; }
+  .phase { font-size: 14px; color: #a8b2d1; opacity: 0.7; }
+  .controls { display: flex; gap: 12px; margin-bottom: 16px; }
+  button { background: #16213e; border: 2px solid #64ffda; color: #64ffda; padding: 10px 24px; border-radius: 8px; font-size: 14px; cursor: pointer; font-weight: bold; }
+  button:hover { background: #64ffda; color: #1a1a2e; }
+  button.reset { border-color: #e94560; color: #e94560; }
+  button.reset:hover { background: #e94560; color: #fff; }
+  .sessions { display: flex; gap: 6px; margin-top: 8px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; background: #16213e; border: 2px solid #0f3460; }
+  .dot.done { background: #64ffda; border-color: #64ffda; }
+  .dot.active { border-color: #ffd700; box-shadow: 0 0 8px #ffd700; }
+  .callback-info { background: #16213e; border: 2px solid #ffd700; border-radius: 8px; padding: 12px 20px; margin-top: 16px; text-align: center; display: none; }
+  .callback-info .label { color: #ffd700; font-size: 12px; margin-bottom: 4px; }
+  .callback-info .skill-name { color: #64ffda; font-size: 16px; font-weight: bold; }
+  .callback-info .detail { color: #a8b2d1; font-size: 12px; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="task" id="task"></div>
+<div class="timer-container">
+  <svg width="250" height="250"><circle cx="125" cy="125" r="110" fill="none" stroke="#16213e" stroke-width="12"/><circle id="ring" cx="125" cy="125" r="110" fill="none" stroke="#64ffda" stroke-width="12" stroke-linecap="round" stroke-dasharray="691.15" stroke-dashoffset="0"/></svg>
+  <div class="time-display"><span id="time">25:00</span><div class="phase" id="phase">Focus</div></div>
+</div>
+<div class="controls"><button id="btn" onclick="toggle()">Start</button><button class="reset" onclick="resetTimer()">Reset</button></div>
+<div class="sessions" id="sessions"></div>
+<div class="callback-info" id="callback"><div class="label">When timer completes, trigger:</div><div class="skill-name" id="callbackSkill"></div><div class="detail" id="callbackDetail"></div></div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const input = JSON.parse(decodeURIComponent(params.get('data')));
+const workMin = input.work_minutes || 25;
+const breakMin = input.break_minutes || 5;
+const longBreakMin = input.long_break_minutes || 15;
+const taskName = input.task || '';
+const callbackSkill = input.callback_skill || '';
+const callbackData = input.callback_data || null;
+document.getElementById('task').textContent = taskName;
+
+if (callbackSkill) {
+  const cbEl = document.getElementById('callback');
+  cbEl.style.display = 'block';
+  document.getElementById('callbackSkill').textContent = callbackSkill;
+  if (callbackData) {
+    const summary = typeof callbackData === 'object' ? Object.entries(callbackData).map(([k,v]) => `${k}: ${v}`).join(', ') : String(callbackData);
+    document.getElementById('callbackDetail').textContent = summary;
+  }
+}
+
+const circumference = 2 * Math.PI * 110;
+let totalSeconds = workMin * 60, remaining = totalSeconds, running = false, interval = null;
+let sessionCount = 0, isBreak = false;
+
+function updateDots() {
+  document.getElementById('sessions').innerHTML = Array.from({length:4}, (_, i) =>
+    `<div class="dot ${i<sessionCount?'done':''} ${i===sessionCount%4?'active':''}"></div>`
+  ).join('');
+}
+updateDots();
+
+function updateDisplay() {
+  const m = Math.floor(remaining / 60), s = remaining % 60;
+  document.getElementById('time').textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  const progress = 1 - remaining / totalSeconds;
+  document.getElementById('ring').style.strokeDashoffset = circumference * (1 - progress);
+  document.getElementById('ring').style.stroke = isBreak ? '#ffd700' : '#64ffda';
+}
+
+function toggle() {
+  running = !running;
+  document.getElementById('btn').textContent = running ? 'Pause' : 'Resume';
+  if (running) {
+    interval = setInterval(() => {
+      remaining--;
+      if (remaining < 0) {
+        clearInterval(interval); running = false;
+        if (!isBreak) {
+          sessionCount++; updateDots();
+          if (callbackSkill) {
+            document.getElementById('callback').style.borderColor = '#64ffda';
+            document.getElementById('callback').querySelector('.label').textContent = 'Timer done! Trigger:';
+          }
+        }
+        isBreak = !isBreak;
+        totalSeconds = isBreak ? (sessionCount % 4 === 0 ? longBreakMin : breakMin) * 60 : workMin * 60;
+        remaining = totalSeconds;
+        document.getElementById('phase').textContent = isBreak ? (sessionCount%4===0?'Long Break':'Break') : 'Focus';
+        document.getElementById('btn').textContent = 'Start';
+      }
+      updateDisplay();
+    }, 1000);
+  } else { clearInterval(interval); }
+}
+
+function resetTimer() {
+  clearInterval(interval); running = false; isBreak = false;
+  totalSeconds = workMin * 60; remaining = totalSeconds;
+  document.getElementById('btn').textContent = 'Start';
+  document.getElementById('phase').textContent = 'Focus';
+  updateDisplay();
+}
+updateDisplay();
+</script>
+</body>
+</html>

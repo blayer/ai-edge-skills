@@ -1,0 +1,30 @@
+Skill:    smart-scanner
+Prompt 1: "Parse this document and show its structure"
+Prompt 2: "Convert this text into structured markdown"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: smart-scanner
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'smart-scanner'
+Enabled 'smart-scanner'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 55477)
+
+[4/5] Example 1: "Parse this document and show its structure"... PASS
+
+[5/5] Example 2: "Convert this text into structured markdown"... PASS
+
+Video saved: recording/smart-scanner/recording.mp4
+
+==========================================
+SUMMARY: smart-scanner
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/smart-scanner/recording.mp4
+
+RECORDING COMPLETE

@@ -1,0 +1,29 @@
+Skill:    camping-companion
+Prompt 1: "How do I pitch a dome tent?"
+Prompt 2: "Teach me the bowline knot"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: camping-companion
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'camping-companion'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 30740)
+
+[4/5] Example 1: "How do I pitch a dome tent?"... PASS
+
+[5/5] Example 2: "Teach me the bowline knot"... PASS
+
+Video saved: recording/camping-companion/recording.mp4
+
+==========================================
+SUMMARY: camping-companion
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/camping-companion/recording.mp4
+
+RECORDING COMPLETE

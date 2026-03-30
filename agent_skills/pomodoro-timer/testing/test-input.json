@@ -1,0 +1,7 @@
+[
+  {"name": "default_timer", "input": {}, "expected_contains": ["webview"]},
+  {"name": "custom_duration", "input": {"work_minutes": 15, "break_minutes": 3}, "expected_contains": ["webview"]},
+  {"name": "with_task", "input": {"task": "Write report", "work_minutes": 25}, "expected_contains": ["webview"]},
+  {"name": "short_timer", "input": {"work_minutes": 1, "break_minutes": 1}, "expected_contains": ["webview"]},
+  {"name": "with_callback", "input": {"work_minutes": 2, "callback_skill": "send-sms", "callback_data": {"to": "8143214896", "message": "call me back at 5pm"}}, "expected_contains": ["webview"]}
+]

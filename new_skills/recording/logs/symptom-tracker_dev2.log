@@ -1,0 +1,10 @@
+Skill:    symptom-tracker
+Prompt 1: "Log a headache with severity 6"
+Prompt 2: "View my symptom history"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: symptom-tracker
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... ERROR: Not on chat screen.

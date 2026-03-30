@@ -1,0 +1,30 @@
+Skill:    person-locator
+Prompt 1: "How far am I from Times Square?"
+Prompt 2: "Generate a share code for my location"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: person-locator
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'person-locator'
+Enabled 'person-locator'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 42326)
+
+[4/5] Example 1: "How far am I from Times Square?"... PASS
+
+[5/5] Example 2: "Generate a share code for my location"... PASS
+
+Video saved: recording/person-locator/recording.mp4
+
+==========================================
+SUMMARY: person-locator
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/person-locator/recording.mp4
+
+RECORDING COMPLETE

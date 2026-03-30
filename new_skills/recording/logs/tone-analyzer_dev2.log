@@ -1,0 +1,9 @@
+Skill:    tone-analyzer
+Prompt 1: "Check this email for passive-aggressive language"
+Prompt 2: "Analyze this feedback for condescending tone"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: tone-analyzer
+==========================================
+[1/5] Checking device... FAIL - No device

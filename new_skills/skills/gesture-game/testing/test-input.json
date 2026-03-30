@@ -1,0 +1,22 @@
+[
+  {
+    "name": "start_mixed",
+    "input": {},
+    "expected_contains": ["webview"]
+  },
+  {
+    "name": "start_movies",
+    "input": {"category": "movies"},
+    "expected_contains": ["webview", "movies"]
+  },
+  {
+    "name": "start_animals",
+    "input": {"category": "animals"},
+    "expected_contains": ["webview", "animals"]
+  },
+  {
+    "name": "invalid_category_fallback",
+    "input": {"category": "xyz"},
+    "expected_contains": ["webview"]
+  }
+]

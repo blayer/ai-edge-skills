@@ -1,0 +1,27 @@
+[
+  {
+    "name": "guess_42",
+    "rounds": [
+      {"input": {"action": "start", "min": 1, "max": 100, "seed_number": 42}, "expected_contains": ["webview"]},
+      {"input": {"action": "guess", "guess": 50}, "expected_contains": ["webview", "lower"]},
+      {"input": {"action": "guess", "guess": 48}, "expected_contains": ["webview", "lower"]},
+      {"input": {"action": "guess", "guess": 42}, "expected_contains": ["webview", "won"]}
+    ]
+  },
+  {
+    "name": "first_try",
+    "rounds": [
+      {"input": {"action": "start", "min": 1, "max": 10, "seed_number": 7}, "expected_contains": ["webview"]},
+      {"input": {"action": "guess", "guess": 7}, "expected_contains": ["webview", "won"]}
+    ]
+  },
+  {
+    "name": "higher_then_lower_then_win",
+    "rounds": [
+      {"input": {"action": "start", "min": 1, "max": 100, "seed_number": 75}, "expected_contains": ["webview"]},
+      {"input": {"action": "guess", "guess": 50}, "expected_contains": ["webview", "higher"]},
+      {"input": {"action": "guess", "guess": 90}, "expected_contains": ["webview", "lower"]},
+      {"input": {"action": "guess", "guess": 75}, "expected_contains": ["webview", "won"]}
+    ]
+  }
+]

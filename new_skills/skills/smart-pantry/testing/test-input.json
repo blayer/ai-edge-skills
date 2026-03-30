@@ -1,0 +1,32 @@
+[
+  {
+    "name": "add_items_then_list",
+    "rounds": [
+      {"input": {"action": "add", "items": [{"name": "chicken", "quantity": 2, "unit": "lbs"}, {"name": "rice", "quantity": 1, "unit": "bag"}, {"name": "egg", "quantity": 12, "unit": "ct"}, {"name": "soy sauce", "quantity": 1, "unit": ""}, {"name": "garlic", "quantity": 3, "unit": "ct"}]}, "expected_contains": ["webview", "Added"]},
+      {"input": {"action": "list"}, "expected_contains": ["webview", "5"]}
+    ]
+  },
+  {
+    "name": "receipt_parse_and_recipes",
+    "rounds": [
+      {"input": {"action": "add", "receipt_text": "2 lbs chicken $8.99\n1 bag rice $3.49\n12 ct egg $4.29\n1 soy sauce $2.99\n3 garlic $1.50\n1 green onion $0.79\n1 oil $5.99"}, "expected_contains": ["webview", "Added"]},
+      {"input": {"action": "recipes"}, "expected_contains": ["webview", "recipe"]}
+    ]
+  },
+  {
+    "name": "remove_items",
+    "rounds": [
+      {"input": {"action": "add", "items": [{"name": "bread", "quantity": 1, "unit": ""}, {"name": "cheese", "quantity": 1, "unit": ""}, {"name": "butter", "quantity": 1, "unit": ""}]}, "expected_contains": ["webview"]},
+      {"input": {"action": "remove", "remove_items": ["bread"]}, "expected_contains": ["webview", "Removed"]},
+      {"input": {"action": "list"}, "expected_contains": ["webview", "2"]}
+    ]
+  },
+  {
+    "name": "clear_pantry",
+    "rounds": [
+      {"input": {"action": "add", "items": [{"name": "milk", "quantity": 1, "unit": ""}]}, "expected_contains": ["webview"]},
+      {"input": {"action": "clear"}, "expected_contains": ["webview", "cleared"]},
+      {"input": {"action": "list"}, "expected_contains": ["webview", "0"]}
+    ]
+  }
+]

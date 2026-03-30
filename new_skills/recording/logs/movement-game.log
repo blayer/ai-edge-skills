@@ -1,0 +1,10 @@
+Skill:    movement-game
+Prompt 1: "Start a movement trivia game"
+Prompt 2: "I walked 25 steps"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: movement-game
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... ERROR: Could not find skill toggle for 'movement-game'

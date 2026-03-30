@@ -1,0 +1,29 @@
+Skill:    matrix-calculator
+Prompt 1: "Multiply matrix 1 2 3 4 by 5 6 7 8"
+Prompt 2: "Calculate the determinant of matrix 1 2 3 4"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: matrix-calculator
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'matrix-calculator'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 66923)
+
+[4/5] Example 1: "Multiply matrix 1 2 3 4 by 5 6 7 8"... PASS
+
+[5/5] Example 2: "Calculate the determinant of matrix 1 2 3 4"... PASS
+
+Video saved: recording/matrix-calculator/recording.mp4
+
+==========================================
+SUMMARY: matrix-calculator
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/matrix-calculator/recording.mp4
+
+RECORDING COMPLETE

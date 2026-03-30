@@ -1,0 +1,15 @@
+[
+  {"name": "default_circle", "input": {}, "expected_contains": ["webview"]},
+  {"name": "red_star", "input": {"shape": "star", "color": "#FF0000"}, "expected_contains": ["webview"]},
+  {"name": "blue_heart_large", "input": {"shape": "heart", "color": "#0000FF", "size": 128}, "expected_contains": ["webview"]},
+  {"name": "gear_with_background", "input": {"shape": "gear", "color": "#333333", "background": "#FFD700"}, "expected_contains": ["webview"]},
+  {
+    "name": "all_shapes",
+    "input_batch": [
+      {"shape": "circle"}, {"shape": "square"}, {"shape": "star"}, {"shape": "heart"},
+      {"shape": "arrow"}, {"shape": "check"}, {"shape": "cross"}, {"shape": "home"},
+      {"shape": "user"}, {"shape": "gear"}
+    ],
+    "all_expected_starts_with": "{\"url\":"
+  }
+]

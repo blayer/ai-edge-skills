@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blackjack</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a2e; color: #eee; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+  h2 { color: #64ffda; font-size: 18px; margin-bottom: 16px; }
+  .hand-label { color: #a8b2d1; font-size: 13px; margin: 12px 0 6px; }
+  .hand-label strong { color: #64ffda; }
+  .cards { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 8px; }
+  .card { width: 56px; height: 80px; background: #fff; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 16px; font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .card.red { color: #e94560; }
+  .card.black { color: #1a1a2e; }
+  .card.hidden { background: #0f3460; color: #64ffda; font-size: 24px; }
+  .card .rank { font-size: 18px; }
+  .card .suit { font-size: 20px; }
+  .score { color: #ffd700; font-size: 16px; font-weight: bold; margin: 4px 0; }
+  .status-banner { font-size: 18px; font-weight: bold; padding: 12px 24px; border-radius: 8px; margin: 16px 0; text-align: center; }
+  .status-banner.win { background: #064e3b; color: #64ffda; }
+  .status-banner.lose { background: #3b1423; color: #e94560; }
+  .status-banner.push { background: #16213e; color: #ffd700; border: 2px solid #ffd700; }
+  .status-banner.playing { background: #16213e; color: #a8b2d1; }
+  .hint { color: #888; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<h2>Blackjack</h2>
+<div id="content"></div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const state = JSON.parse(decodeURIComponent(params.get('data')));
+const suits = { Hearts: '\u2665', Diamonds: '\u2666', Clubs: '\u2663', Spades: '\u2660' };
+
+function cardHtml(card) {
+  const isRed = card.suit === 'Hearts' || card.suit === 'Diamonds';
+  return `<div class="card ${isRed ? 'red' : 'black'}"><span class="rank">${card.rank}</span><span class="suit">${suits[card.suit]}</span></div>`;
+}
+
+const el = document.getElementById('content');
+let html = '';
+
+// Dealer hand
+html += '<div class="hand-label">Dealer</div><div class="cards">';
+if (state.status === 'playing') {
+  html += cardHtml(state.dealer[0]);
+  html += '<div class="card hidden">?</div>';
+} else {
+  state.dealer.forEach(c => html += cardHtml(c));
+}
+html += '</div>';
+if (state.dealerValue !== null) {
+  html += `<div class="score">${state.dealerValue}</div>`;
+}
+
+// Player hand
+html += '<div class="hand-label">Player</div><div class="cards">';
+state.player.forEach(c => html += cardHtml(c));
+html += '</div>';
+html += `<div class="score">${state.playerValue}</div>`;
+
+// Status
+if (state.status === 'done') {
+  const outcome = state.outcome || '';
+  const cls = outcome.includes('win') || outcome.includes('Win') || outcome.includes('Blackjack') ? 'win' :
+    outcome.includes('Push') ? 'push' : 'lose';
+  html += `<div class="status-banner ${cls}">${outcome}</div>`;
+  html += '<div class="hint">Say "deal" to play again.</div>';
+} else {
+  html += `<div class="status-banner playing">${state.message}</div>`;
+  html += '<div class="hint">Say "hit" or "stand".</div>';
+}
+
+el.innerHTML = html;
+</script>
+</body>
+</html>

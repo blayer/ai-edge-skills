@@ -1,0 +1,108 @@
+[
+  {
+    "eventType": "WAIT",
+    "delayTime": 5000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "01_home_screen_before_scroll"
+  },
+  {
+    "eventType": "VIEW_SWIPED",
+    "swipeDirection": "Up",
+    "elementDescriptors": [
+      {
+        "className": "android.widget.ScrollView",
+        "groupViewChildPosition": 0
+      }
+    ]
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 2000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "02_home_screen_after_scroll"
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "visionText": "Mobile Actions"
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 3000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "03_mobile_actions_page"
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "visionText": "Download",
+    "optional": true
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 120000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "04_after_download_wait"
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "visionText": "Try it"
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 3000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "05_chat_page"
+  },
+  {
+    "eventType": "ENTER_TEXT",
+    "replacementText": "create a calendar event at 2pm tomorrow",
+    "elementDescriptors": [
+      {
+        "className": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 3000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "06_after_text_entered"
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "elementDescriptors": [
+      {
+        "contentDescription": "Send",
+        "className": "android.widget.Button"
+      }
+    ],
+    "optional": true
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 60000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "07_model_response"
+  },
+  {
+    "eventType": "WAIT",
+    "delayTime": 15000
+  },
+  {
+    "eventType": "TAKE_SCREENSHOT",
+    "screenshotName": "08_calendar_or_final"
+  }
+]

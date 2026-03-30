@@ -1,0 +1,30 @@
+Skill:    walkie-talkie
+Prompt 1: "Create a new walkie-talkie channel"
+Prompt 2: "Join channel ABC123 as Alice"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: walkie-talkie
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'walkie-talkie'
+Enabled 'walkie-talkie'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 16371)
+
+[4/5] Example 1: "Create a new walkie-talkie channel"... FAIL (timeout)
+
+[5/5] Example 2: "Join channel ABC123 as Alice"... FAIL (timeout)
+
+Video saved: recording/walkie-talkie/recording.mp4
+
+==========================================
+SUMMARY: walkie-talkie
+==========================================
+Example 1: FAIL
+Example 2: FAIL
+Video:     recording/walkie-talkie/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

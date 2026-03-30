@@ -1,0 +1,30 @@
+Skill:    smart-pantry
+Prompt 1: "Add eggs, milk, and butter to my pantry"
+Prompt 2: "What recipes can I make?"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: smart-pantry
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'smart-pantry'
+Enabled 'smart-pantry'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 52647)
+
+[4/5] Example 1: "Add eggs, milk, and butter to my pantry"... PASS
+
+[5/5] Example 2: "What recipes can I make?"... PASS
+
+Video saved: recording/smart-pantry/recording.mp4
+
+==========================================
+SUMMARY: smart-pantry
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/smart-pantry/recording.mp4
+
+RECORDING COMPLETE

@@ -1,0 +1,8 @@
+[
+  {"name": "new_york_spring_dry_curly", "input": {"location": "New York", "season": "spring", "skin_type": "dry", "hair_type": "curly", "allergies": ["pollen", "dust"]}},
+  {"name": "miami_summer_oily_straight", "input": {"location": "Miami", "season": "summer", "skin_type": "oily", "hair_type": "straight", "allergies": []}},
+  {"name": "phoenix_winter_sensitive_coily", "input": {"location": "Phoenix", "season": "winter", "skin_type": "sensitive", "hair_type": "coily", "allergies": ["juniper", "mold"]}},
+  {"name": "unknown_city_fall", "input": {"location": "Timbuktu", "season": "fall", "skin_type": "combination", "hair_type": "wavy", "allergies": ["ragweed"]}},
+  {"name": "los_angeles_summer_sensitive", "input": {"location": "Los Angeles", "season": "summer", "skin_type": "sensitive", "hair_type": "curly", "allergies": ["smog", "grass"]}},
+  {"name": "seattle_spring_dry_wavy", "input": {"location": "Seattle", "season": "spring", "skin_type": "dry", "hair_type": "wavy", "allergies": ["birch"]}}
+]

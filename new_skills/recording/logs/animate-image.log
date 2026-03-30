@@ -1,0 +1,29 @@
+Skill:    animate-image
+Prompt 1: "Create a bouncing red circle animation"
+Prompt 2: "Make a spinning star with a blue background"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: animate-image
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'animate-image'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 24791)
+
+[4/5] Example 1: "Create a bouncing red circle animation"... FAIL (timeout)
+
+[5/5] Example 2: "Make a spinning star with a blue background"... FAIL (timeout)
+
+Video saved: recording/animate-image/recording.mp4
+
+==========================================
+SUMMARY: animate-image
+==========================================
+Example 1: FAIL
+Example 2: FAIL
+Video:     recording/animate-image/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

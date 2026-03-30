@@ -1,0 +1,30 @@
+Skill:    symptom-tracker
+Prompt 1: "Log a headache with severity 6"
+Prompt 2: "View my symptom history"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: symptom-tracker
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'symptom-tracker'
+Enabled 'symptom-tracker'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 59764)
+
+[4/5] Example 1: "Log a headache with severity 6"... PASS
+
+[5/5] Example 2: "View my symptom history"... PASS
+
+Video saved: recording/symptom-tracker/recording.mp4
+
+==========================================
+SUMMARY: symptom-tracker
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/symptom-tracker/recording.mp4
+
+RECORDING COMPLETE

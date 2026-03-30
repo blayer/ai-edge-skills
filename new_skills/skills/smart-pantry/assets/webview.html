@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Pantry</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a2e; color: #eee; font-family: -apple-system, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto; }
+  h2 { color: #64ffda; font-size: 20px; margin-bottom: 4px; }
+  .subtitle { color: #a8b2d1; font-size: 13px; margin-bottom: 16px; }
+  .message { background: #16213e; color: #a8b2d1; padding: 10px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; }
+  .section-title { color: #64ffda; font-size: 15px; margin: 16px 0 8px; border-bottom: 1px solid #233554; padding-bottom: 4px; }
+  .pantry-list { list-style: none; }
+  .pantry-list li { background: #16213e; padding: 8px 12px; border-radius: 6px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+  .pantry-list li .item-name { color: #ccd6f6; }
+  .pantry-list li .item-qty { color: #64ffda; font-size: 12px; }
+  .pantry-list li .item-date { color: #555; font-size: 11px; }
+  .empty { color: #555; font-style: italic; font-size: 13px; padding: 12px; }
+  .recipe-card { background: #16213e; border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+  .recipe-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .recipe-name { color: #ccd6f6; font-size: 15px; font-weight: bold; }
+  .recipe-pct { font-size: 13px; font-weight: bold; padding: 2px 8px; border-radius: 12px; }
+  .recipe-pct.full { background: #064e3b; color: #64ffda; }
+  .recipe-pct.partial { background: #1e3a5f; color: #88c0d0; }
+  .recipe-star { color: #ffd700; font-size: 16px; margin-left: 6px; }
+  .recipe-meta { color: #a8b2d1; font-size: 12px; margin-bottom: 6px; }
+  .recipe-missing { color: #e94560; font-size: 12px; }
+  .recipe-missing span { background: #3b1423; padding: 1px 6px; border-radius: 4px; margin-right: 4px; display: inline-block; margin-bottom: 2px; }
+  .recipe-instructions { color: #8892b0; font-size: 12px; margin-top: 6px; line-height: 1.4; }
+  .recipe-ingredients-list { color: #a8b2d1; font-size: 12px; margin-top: 4px; }
+  .recipe-ingredients-list .have { color: #64ffda; }
+  .recipe-ingredients-list .need { color: #e94560; }
+  .count-badge { background: #0f3460; color: #64ffda; padding: 2px 10px; border-radius: 12px; font-size: 12px; margin-left: 8px; }
+</style>
+</head>
+<body>
+<h2>Smart Pantry <span id="count" class="count-badge"></span></h2>
+<div class="subtitle">Your kitchen inventory</div>
+<div id="msg" class="message"></div>
+<div id="content"></div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const state = JSON.parse(decodeURIComponent(params.get('data')));
+
+document.getElementById('count').textContent = state.itemCount + ' items';
+document.getElementById('msg').textContent = state.message;
+
+const el = document.getElementById('content');
+let html = '';
+
+// Pantry list
+html += '<div class="section-title">Pantry Items</div>';
+if (state.pantry.length === 0) {
+  html += '<div class="empty">Your pantry is empty. Add some items to get started.</div>';
+} else {
+  html += '<ul class="pantry-list">';
+  for (const item of state.pantry) {
+    const qtyStr = item.quantity + (item.unit ? ' ' + item.unit : '');
+    html += '<li>';
+    html += '<span class="item-name">' + item.name + '</span>';
+    html += '<span>';
+    html += '<span class="item-qty">' + qtyStr + '</span>';
+    if (item.addedDate) {
+      html += ' <span class="item-date">added ' + item.addedDate + '</span>';
+    }
+    html += '</span>';
+    html += '</li>';
+  }
+  html += '</ul>';
+}
+
+// Recipes
+if (state.recipes && state.recipes.length > 0) {
+  html += '<div class="section-title">Recipe Suggestions</div>';
+  for (const r of state.recipes) {
+    html += '<div class="recipe-card">';
+    html += '<div class="recipe-header">';
+    html += '<span class="recipe-name">' + r.name;
+    if (r.matchPct === 100) {
+      html += '<span class="recipe-star">*</span>';
+    }
+    html += '</span>';
+    html += '<span class="recipe-pct ' + (r.matchPct === 100 ? 'full' : 'partial') + '">' + r.matchPct + '%</span>';
+    html += '</div>';
+    html += '<div class="recipe-meta">Serves ' + r.servings + ' | ' + r.time + ' | ' + r.matched + '/' + r.total + ' ingredients</div>';
+
+    // Ingredients with have/need indicators
+    html += '<div class="recipe-ingredients-list">';
+    for (const ing of r.ingredients) {
+      const have = !r.missing.includes(ing);
+      html += '<span class="' + (have ? 'have' : 'need') + '">' + (have ? '+ ' : '- ') + ing + '</span> ';
+    }
+    html += '</div>';
+
+    if (r.missing.length > 0) {
+      html += '<div class="recipe-missing">Missing: ';
+      for (const m of r.missing) {
+        html += '<span>' + m + '</span>';
+      }
+      html += '</div>';
+    }
+    html += '<div class="recipe-instructions">' + r.instructions + '</div>';
+    html += '</div>';
+  }
+}
+
+el.innerHTML = html;
+</script>
+</body>
+</html>

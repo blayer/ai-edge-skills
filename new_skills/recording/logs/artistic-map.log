@@ -1,0 +1,30 @@
+Skill:    artistic-map
+Prompt 1: "Paint a sunset over the ocean in watercolor style"
+Prompt 2: "Create a sketch of a mountain village"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: artistic-map
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'artistic-map'
+Enabled 'artistic-map'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 27088)
+
+[4/5] Example 1: "Paint a sunset over the ocean in watercolor style"... PASS
+
+[5/5] Example 2: "Create a sketch of a mountain village"... PASS
+
+Video saved: recording/artistic-map/recording.mp4
+
+==========================================
+SUMMARY: artistic-map
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/artistic-map/recording.mp4
+
+RECORDING COMPLETE

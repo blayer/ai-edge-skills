@@ -1,0 +1,30 @@
+Skill:    photo-recipes
+Prompt 1: "List all available photo presets"
+Prompt 2: "Apply the Vintage preset to my photo"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: photo-recipes
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'photo-recipes'
+Enabled 'photo-recipes'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 48957)
+
+[4/5] Example 1: "List all available photo presets"... FAIL (timeout)
+
+[5/5] Example 2: "Apply the Vintage preset to my photo"... PASS
+
+Video saved: recording/photo-recipes/recording.mp4
+
+==========================================
+SUMMARY: photo-recipes
+==========================================
+Example 1: FAIL
+Example 2: PASS
+Video:     recording/photo-recipes/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

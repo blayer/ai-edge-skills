@@ -1,0 +1,30 @@
+Skill:    ar-measure
+Prompt 1: "Convert 12 feet and 10 feet to metric and calculate the area"
+Prompt 2: "Convert 5 miles to kilometers"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: ar-measure
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'ar-measure'
+Enabled 'ar-measure'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 26412)
+
+[4/5] Example 1: "Convert 12 feet and 10 feet to metric and calculate the area"... PASS
+
+[5/5] Example 2: "Convert 5 miles to kilometers"... PASS
+
+Video saved: recording/ar-measure/recording.mp4
+
+==========================================
+SUMMARY: ar-measure
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/ar-measure/recording.mp4
+
+RECORDING COMPLETE

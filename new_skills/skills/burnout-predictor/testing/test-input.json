@@ -1,0 +1,8 @@
+[
+  {"name": "analyze_high_stress", "input": {"action": "analyze", "text": "I'm exhausted and overwhelmed. Can't sleep, the deadline is urgent and I'm so frustrated with everything."}, "expected_not_empty": true},
+  {"name": "analyze_low_stress", "input": {"action": "analyze", "text": "Had a great day! Feeling accomplished and motivated. Really excited about the new project."}, "expected_not_empty": true},
+  {"name": "track_entry", "input": {"action": "track", "text": "Feeling tired and stressed about the deadline.", "date": "2026-03-22"}, "expected_not_empty": true},
+  {"name": "report_with_data", "input": {"action": "report", "game_state": {"entries": [{"date": "2026-03-20", "score": 4, "level": "Moderate", "negPct": 50}, {"date": "2026-03-21", "score": 6, "level": "Moderate", "negPct": 60}, {"date": "2026-03-22", "score": 8, "level": "High", "negPct": 75}]}}, "expected_not_empty": true},
+  {"name": "report_empty", "input": {"action": "report"}, "expected_not_empty": true},
+  {"name": "analyze_no_text", "input": {"action": "analyze"}, "expected_not_empty": true}
+]

@@ -1,0 +1,1680 @@
+{
+  "events": [{
+    "sourceScreenId": "0",
+    "destinationScreenId": "1",
+    "startTimeSeconds": 5.082,
+    "endTimeSeconds": 5.734,
+    "executionResult": "SUCCESS",
+    "launch": {
+    }
+  }, {
+    "sequence": 1,
+    "sourceScreenId": "1",
+    "destinationScreenId": "2",
+    "startTimeSeconds": 6.032,
+    "endTimeSeconds": 8.303,
+    "executionResult": "SUCCESS",
+    "wait": {
+      "durationSeconds": 2.0
+    }
+  }, {
+    "sequence": 2,
+    "sourceScreenId": "2",
+    "destinationScreenId": "3",
+    "startTimeSeconds": 9.373,
+    "endTimeSeconds": 10.909,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.2",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 3,
+    "sourceScreenId": "3",
+    "destinationScreenId": "4",
+    "startTimeSeconds": 11.78,
+    "endTimeSeconds": 14.761,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.widget.ScrollView",
+        "androidClassName": "android.widget.ScrollView"
+      }
+    }
+  }, {
+    "sequence": 4,
+    "sourceScreenId": "4",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 15.276,
+    "endTimeSeconds": 16.876,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.1.0.3",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 5,
+    "sourceScreenId": "5",
+    "destinationScreenId": "6",
+    "startTimeSeconds": 17.515,
+    "endTimeSeconds": 20.184,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 6,
+    "sourceScreenId": "6",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 20.789,
+    "endTimeSeconds": 23.37,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 7,
+    "sourceScreenId": "5",
+    "destinationScreenId": "7",
+    "startTimeSeconds": 23.916,
+    "endTimeSeconds": 25.461,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 8,
+    "sourceScreenId": "7",
+    "destinationScreenId": "8",
+    "startTimeSeconds": 25.812,
+    "endTimeSeconds": 28.49,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "BACK"
+    }
+  }, {
+    "sequence": 9,
+    "sourceScreenId": "8",
+    "destinationScreenId": "9",
+    "startTimeSeconds": 33.3,
+    "endTimeSeconds": 34.689,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "HOME"
+    }
+  }, {
+    "sequence": 10,
+    "sourceScreenId": "9",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 35.379,
+    "endTimeSeconds": 36.135,
+    "executionResult": "SUCCESS",
+    "launch": {
+    }
+  }, {
+    "sequence": 11,
+    "sourceScreenId": "5",
+    "destinationScreenId": "10",
+    "startTimeSeconds": 36.504,
+    "endTimeSeconds": 37.829,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8.2.0",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button"
+      }
+    }
+  }, {
+    "sequence": 12,
+    "sourceScreenId": "10",
+    "destinationScreenId": "11",
+    "startTimeSeconds": 38.786,
+    "endTimeSeconds": 39.956,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.3",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 13,
+    "sourceScreenId": "11",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 40.273,
+    "endTimeSeconds": 41.857,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.3",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 14,
+    "sourceScreenId": "5",
+    "destinationScreenId": "12",
+    "startTimeSeconds": 42.27,
+    "endTimeSeconds": 43.838,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7.2.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 15,
+    "sourceScreenId": "12",
+    "destinationScreenId": "13",
+    "startTimeSeconds": 44.224,
+    "endTimeSeconds": 46.821,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 16,
+    "sourceScreenId": "13",
+    "destinationScreenId": "14",
+    "startTimeSeconds": 47.223,
+    "endTimeSeconds": 48.604,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 17,
+    "sourceScreenId": "14",
+    "destinationScreenId": "15",
+    "startTimeSeconds": 49.099,
+    "endTimeSeconds": 50.674,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.1",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 18,
+    "sourceScreenId": "15",
+    "destinationScreenId": "16",
+    "startTimeSeconds": 51.154,
+    "endTimeSeconds": 53.79,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 19,
+    "sourceScreenId": "16",
+    "destinationScreenId": "17",
+    "startTimeSeconds": 54.22,
+    "endTimeSeconds": 56.846,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 20,
+    "sourceScreenId": "17",
+    "destinationScreenId": "17",
+    "startTimeSeconds": 57.243,
+    "endTimeSeconds": 58.536,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 21,
+    "sourceScreenId": "17",
+    "destinationScreenId": "11",
+    "startTimeSeconds": 58.915,
+    "endTimeSeconds": 60.25,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.1.2.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 22,
+    "sourceScreenId": "11",
+    "destinationScreenId": "18",
+    "startTimeSeconds": 61.213,
+    "endTimeSeconds": 62.79,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.2",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 23,
+    "sourceScreenId": "18",
+    "destinationScreenId": "17",
+    "startTimeSeconds": 63.278,
+    "endTimeSeconds": 64.607,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.1.2.0.2",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button",
+        "contentDescription": "Stop"
+      }
+    }
+  }, {
+    "sequence": 24,
+    "sourceScreenId": "17",
+    "destinationScreenId": "19",
+    "startTimeSeconds": 65.102,
+    "endTimeSeconds": 66.426,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.3",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 25,
+    "sourceScreenId": "19",
+    "destinationScreenId": "20",
+    "startTimeSeconds": 66.909,
+    "endTimeSeconds": 68.937,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.4.2.0",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button"
+      }
+    }
+  }, {
+    "sequence": 26,
+    "sourceScreenId": "20",
+    "destinationScreenId": "11",
+    "startTimeSeconds": 69.98,
+    "endTimeSeconds": 71.329,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.2.2.0",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button"
+      }
+    }
+  }, {
+    "sequence": 27,
+    "sourceScreenId": "11",
+    "destinationScreenId": "20",
+    "startTimeSeconds": 72.262,
+    "endTimeSeconds": 73.824,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.3",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 28,
+    "sourceScreenId": "20",
+    "destinationScreenId": "20",
+    "startTimeSeconds": 74.278,
+    "endTimeSeconds": 75.572,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 29,
+    "sourceScreenId": "20",
+    "destinationScreenId": "4",
+    "startTimeSeconds": 76.039,
+    "endTimeSeconds": 77.609,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.1.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 30,
+    "sourceScreenId": "4",
+    "destinationScreenId": "21",
+    "startTimeSeconds": 78.047,
+    "endTimeSeconds": 79.382,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.1.0.4",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 31,
+    "sourceScreenId": "21",
+    "destinationScreenId": "21",
+    "startTimeSeconds": 79.793,
+    "endTimeSeconds": 82.456,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 32,
+    "sourceScreenId": "21",
+    "destinationScreenId": "21",
+    "startTimeSeconds": 82.851,
+    "endTimeSeconds": 85.528,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 33,
+    "sourceScreenId": "21",
+    "destinationScreenId": "22",
+    "startTimeSeconds": 85.931,
+    "endTimeSeconds": 87.266,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8.2.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 34,
+    "sourceScreenId": "22",
+    "destinationScreenId": "22",
+    "startTimeSeconds": 87.751,
+    "endTimeSeconds": 90.38,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 35,
+    "sourceScreenId": "22",
+    "destinationScreenId": "22",
+    "startTimeSeconds": 90.76,
+    "endTimeSeconds": 93.403,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 36,
+    "sourceScreenId": "22",
+    "destinationScreenId": "21",
+    "startTimeSeconds": 93.867,
+    "endTimeSeconds": 95.217,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8.2.0.2",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button",
+        "contentDescription": "Stop"
+      }
+    }
+  }, {
+    "sequence": 37,
+    "sourceScreenId": "21",
+    "destinationScreenId": "23",
+    "startTimeSeconds": 95.614,
+    "endTimeSeconds": 96.919,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 38,
+    "sourceScreenId": "23",
+    "destinationScreenId": "4",
+    "startTimeSeconds": 97.331,
+    "endTimeSeconds": 98.723,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.1.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 39,
+    "sourceScreenId": "4",
+    "destinationScreenId": "24",
+    "startTimeSeconds": 99.17,
+    "endTimeSeconds": 100.482,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.1.0.2",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 40,
+    "sourceScreenId": "24",
+    "destinationScreenId": "8",
+    "startTimeSeconds": 100.83,
+    "endTimeSeconds": 104.685,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 41,
+    "sourceScreenId": "8",
+    "destinationScreenId": "24",
+    "startTimeSeconds": 109.514,
+    "endTimeSeconds": 110.459,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "BACK"
+    }
+  }, {
+    "sequence": 42,
+    "sourceScreenId": "24",
+    "destinationScreenId": "25",
+    "startTimeSeconds": 110.862,
+    "endTimeSeconds": 113.468,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 43,
+    "sourceScreenId": "25",
+    "destinationScreenId": "24",
+    "startTimeSeconds": 113.901,
+    "endTimeSeconds": 116.474,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 44,
+    "sourceScreenId": "24",
+    "destinationScreenId": "26",
+    "startTimeSeconds": 116.902,
+    "endTimeSeconds": 118.204,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7.2.0.2",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button",
+        "contentDescription": "Stop"
+      }
+    }
+  }, {
+    "sequence": 45,
+    "sourceScreenId": "26",
+    "destinationScreenId": "27",
+    "startTimeSeconds": 118.623,
+    "endTimeSeconds": 121.233,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 46,
+    "sourceScreenId": "27",
+    "destinationScreenId": "26",
+    "startTimeSeconds": 121.63,
+    "endTimeSeconds": 124.259,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 47,
+    "sourceScreenId": "26",
+    "destinationScreenId": "8",
+    "startTimeSeconds": 124.637,
+    "endTimeSeconds": 128.257,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 48,
+    "sourceScreenId": "8",
+    "destinationScreenId": "26",
+    "startTimeSeconds": 132.103,
+    "endTimeSeconds": 132.924,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "BACK"
+    }
+  }, {
+    "sequence": 49,
+    "sourceScreenId": "26",
+    "destinationScreenId": "4",
+    "startTimeSeconds": 133.34,
+    "endTimeSeconds": 134.94,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.1.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 50,
+    "sourceScreenId": "4",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 135.327,
+    "endTimeSeconds": 136.657,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.1.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 51,
+    "sourceScreenId": "5",
+    "destinationScreenId": "4",
+    "startTimeSeconds": 137.126,
+    "endTimeSeconds": 138.545,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.1.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 52,
+    "sourceScreenId": "4",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 138.938,
+    "endTimeSeconds": 140.275,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.1.0.1",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 53,
+    "sourceScreenId": "5",
+    "destinationScreenId": "28",
+    "startTimeSeconds": 140.636,
+    "endTimeSeconds": 141.977,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 54,
+    "sourceScreenId": "28",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 142.513,
+    "endTimeSeconds": 143.837,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 55,
+    "sourceScreenId": "5",
+    "destinationScreenId": "11",
+    "startTimeSeconds": 144.286,
+    "endTimeSeconds": 145.64,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7.2.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 56,
+    "sourceScreenId": "11",
+    "destinationScreenId": "12",
+    "startTimeSeconds": 146.54,
+    "endTimeSeconds": 148.14,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.2",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 57,
+    "sourceScreenId": "12",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 148.611,
+    "endTimeSeconds": 149.952,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7.2.0.2",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button",
+        "contentDescription": "Stop"
+      }
+    }
+  }, {
+    "sequence": 58,
+    "sourceScreenId": "5",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 150.45,
+    "endTimeSeconds": 153.074,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 59,
+    "sourceScreenId": "5",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 153.483,
+    "endTimeSeconds": 156.121,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 60,
+    "sourceScreenId": "5",
+    "destinationScreenId": "11",
+    "startTimeSeconds": 156.54,
+    "endTimeSeconds": 157.893,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8.2.0",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button"
+      }
+    }
+  }, {
+    "sequence": 61,
+    "sourceScreenId": "11",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 158.801,
+    "endTimeSeconds": 160.412,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.3",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 62,
+    "sourceScreenId": "5",
+    "destinationScreenId": "4",
+    "startTimeSeconds": 160.834,
+    "endTimeSeconds": 162.421,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.1.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 63,
+    "sourceScreenId": "4",
+    "destinationScreenId": "29",
+    "startTimeSeconds": 162.748,
+    "endTimeSeconds": 164.143,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.1.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 64,
+    "sourceScreenId": "29",
+    "destinationScreenId": "30",
+    "startTimeSeconds": 164.484,
+    "endTimeSeconds": 165.799,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.1.0.0.1",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 65,
+    "sourceScreenId": "30",
+    "destinationScreenId": "31",
+    "startTimeSeconds": 166.205,
+    "endTimeSeconds": 167.664,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.3",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button",
+        "contentDescription": "Import model"
+      }
+    }
+  }, {
+    "sequence": 66,
+    "sourceScreenId": "31",
+    "destinationScreenId": "30",
+    "startTimeSeconds": 168.588,
+    "endTimeSeconds": 170.168,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.1.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 67,
+    "sourceScreenId": "30",
+    "destinationScreenId": "4",
+    "startTimeSeconds": 170.653,
+    "endTimeSeconds": 172.015,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.2.0.1",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 68,
+    "sourceScreenId": "4",
+    "destinationScreenId": "3",
+    "startTimeSeconds": 172.499,
+    "endTimeSeconds": 175.157,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.widget.ScrollView",
+        "androidClassName": "android.widget.ScrollView"
+      }
+    }
+  }, {
+    "sequence": 69,
+    "sourceScreenId": "3",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 175.48,
+    "endTimeSeconds": 176.808,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.1.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 70,
+    "sourceScreenId": "5",
+    "destinationScreenId": "28",
+    "startTimeSeconds": 177.205,
+    "endTimeSeconds": 178.562,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 71,
+    "sourceScreenId": "28",
+    "destinationScreenId": "32",
+    "startTimeSeconds": 178.962,
+    "endTimeSeconds": 181.582,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 72,
+    "sourceScreenId": "32",
+    "destinationScreenId": "11",
+    "startTimeSeconds": 182.037,
+    "endTimeSeconds": 183.425,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8.2.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 73,
+    "sourceScreenId": "11",
+    "destinationScreenId": "33",
+    "startTimeSeconds": 184.343,
+    "endTimeSeconds": 185.946,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.2",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 74,
+    "sourceScreenId": "33",
+    "destinationScreenId": "34",
+    "startTimeSeconds": 186.39,
+    "endTimeSeconds": 192.842,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 75,
+    "sourceScreenId": "34",
+    "destinationScreenId": "33",
+    "startTimeSeconds": 194.731,
+    "endTimeSeconds": 196.096,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "BACK"
+    }
+  }, {
+    "sequence": 76,
+    "sourceScreenId": "33",
+    "destinationScreenId": "11",
+    "startTimeSeconds": 196.515,
+    "endTimeSeconds": 197.862,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7.2.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 77,
+    "sourceScreenId": "11",
+    "destinationScreenId": "33",
+    "startTimeSeconds": 198.776,
+    "endTimeSeconds": 200.885,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "BACK"
+    }
+  }, {
+    "sequence": 78,
+    "sourceScreenId": "33",
+    "destinationScreenId": "35",
+    "startTimeSeconds": 201.314,
+    "endTimeSeconds": 202.656,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 79,
+    "sourceScreenId": "35",
+    "destinationScreenId": "36",
+    "startTimeSeconds": 203.146,
+    "endTimeSeconds": 204.484,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8.2.0.2",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button",
+        "contentDescription": "Stop"
+      }
+    }
+  }, {
+    "sequence": 80,
+    "sourceScreenId": "36",
+    "destinationScreenId": "11",
+    "startTimeSeconds": 204.901,
+    "endTimeSeconds": 206.274,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7.2.0",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button"
+      }
+    }
+  }, {
+    "sequence": 81,
+    "sourceScreenId": "11",
+    "destinationScreenId": "16",
+    "startTimeSeconds": 207.18,
+    "endTimeSeconds": 208.785,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.2",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 82,
+    "sourceScreenId": "16",
+    "destinationScreenId": "16",
+    "startTimeSeconds": 209.196,
+    "endTimeSeconds": 211.816,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 83,
+    "sourceScreenId": "16",
+    "destinationScreenId": "11",
+    "startTimeSeconds": 212.238,
+    "endTimeSeconds": 213.611,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8.2.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 84,
+    "sourceScreenId": "11",
+    "destinationScreenId": "16",
+    "startTimeSeconds": 214.535,
+    "endTimeSeconds": 216.653,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "BACK"
+    }
+  }, {
+    "sequence": 85,
+    "sourceScreenId": "16",
+    "destinationScreenId": "3",
+    "startTimeSeconds": 217.024,
+    "endTimeSeconds": 218.398,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.1.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 86,
+    "sourceScreenId": "3",
+    "destinationScreenId": "21",
+    "startTimeSeconds": 218.794,
+    "endTimeSeconds": 220.161,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.1.0.5",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 87,
+    "sourceScreenId": "21",
+    "destinationScreenId": "3",
+    "startTimeSeconds": 220.52,
+    "endTimeSeconds": 221.902,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.1.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 88,
+    "sourceScreenId": "3",
+    "destinationScreenId": "37",
+    "startTimeSeconds": 222.286,
+    "endTimeSeconds": 223.685,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.1.0.3",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 89,
+    "sourceScreenId": "37",
+    "destinationScreenId": "38",
+    "startTimeSeconds": 224.082,
+    "endTimeSeconds": 226.727,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 90,
+    "sourceScreenId": "38",
+    "destinationScreenId": "39",
+    "startTimeSeconds": 227.189,
+    "endTimeSeconds": 228.582,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 91,
+    "sourceScreenId": "39",
+    "destinationScreenId": "40",
+    "startTimeSeconds": 228.978,
+    "endTimeSeconds": 230.348,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 92,
+    "sourceScreenId": "40",
+    "destinationScreenId": "8",
+    "startTimeSeconds": 230.782,
+    "endTimeSeconds": 234.685,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 93,
+    "sourceScreenId": "8",
+    "destinationScreenId": "40",
+    "startTimeSeconds": 239.673,
+    "endTimeSeconds": 240.583,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "BACK"
+    }
+  }, {
+    "sequence": 94,
+    "sourceScreenId": "40",
+    "destinationScreenId": "37",
+    "startTimeSeconds": 240.966,
+    "endTimeSeconds": 243.667,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 95,
+    "sourceScreenId": "37",
+    "destinationScreenId": "8",
+    "startTimeSeconds": 244.022,
+    "endTimeSeconds": 247.654,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 96,
+    "sourceScreenId": "8",
+    "destinationScreenId": "37",
+    "startTimeSeconds": 251.767,
+    "endTimeSeconds": 252.74,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "BACK"
+    }
+  }, {
+    "sequence": 97,
+    "sourceScreenId": "37",
+    "destinationScreenId": "41",
+    "startTimeSeconds": 253.152,
+    "endTimeSeconds": 254.528,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7.2.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 98,
+    "sourceScreenId": "41",
+    "destinationScreenId": "42",
+    "startTimeSeconds": 254.928,
+    "endTimeSeconds": 257.567,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 99,
+    "sourceScreenId": "42",
+    "destinationScreenId": "41",
+    "startTimeSeconds": 258.042,
+    "endTimeSeconds": 260.746,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "SWIPE",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 100,
+    "sourceScreenId": "41",
+    "destinationScreenId": "8",
+    "startTimeSeconds": 261.182,
+    "endTimeSeconds": 264.81,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 101,
+    "sourceScreenId": "8",
+    "destinationScreenId": "41",
+    "startTimeSeconds": 268.786,
+    "endTimeSeconds": 269.779,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "BACK"
+    }
+  }, {
+    "sequence": 102,
+    "sourceScreenId": "41",
+    "destinationScreenId": "12",
+    "startTimeSeconds": 270.18,
+    "endTimeSeconds": 271.555,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8.2.0.1",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button",
+        "contentDescription": "Stop"
+      }
+    }
+  }, {
+    "sequence": 103,
+    "sourceScreenId": "12",
+    "destinationScreenId": "8",
+    "startTimeSeconds": 271.989,
+    "endTimeSeconds": 275.729,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.7",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 104,
+    "sourceScreenId": "8",
+    "destinationScreenId": "12",
+    "startTimeSeconds": 279.514,
+    "endTimeSeconds": 280.358,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "BACK"
+    }
+  }, {
+    "sequence": 105,
+    "sourceScreenId": "12",
+    "destinationScreenId": "11",
+    "startTimeSeconds": 280.713,
+    "endTimeSeconds": 282.112,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.8.2.0",
+      "targetDetails": {
+        "componentType": "BUTTON",
+        "className": "android.widget.Button",
+        "androidClassName": "android.widget.Button"
+      }
+    }
+  }, {
+    "sequence": 106,
+    "sourceScreenId": "11",
+    "destinationScreenId": "12",
+    "startTimeSeconds": 283.047,
+    "endTimeSeconds": 285.202,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "BACK"
+    }
+  }, {
+    "sequence": 107,
+    "sourceScreenId": "12",
+    "destinationScreenId": "3",
+    "startTimeSeconds": 285.596,
+    "endTimeSeconds": 287.015,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.1.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 108,
+    "sourceScreenId": "3",
+    "destinationScreenId": "5",
+    "startTimeSeconds": 287.364,
+    "endTimeSeconds": 288.756,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.0.0.1.0.1",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 109,
+    "sourceScreenId": "5",
+    "destinationScreenId": "3",
+    "startTimeSeconds": 289.129,
+    "endTimeSeconds": 291.291,
+    "executionResult": "SUCCESS",
+    "system": {
+      "type": "BACK"
+    }
+  }, {
+    "sequence": 110,
+    "sourceScreenId": "3",
+    "destinationScreenId": "29",
+    "startTimeSeconds": 291.736,
+    "endTimeSeconds": 293.135,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.0.1.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 111,
+    "sourceScreenId": "29",
+    "destinationScreenId": "43",
+    "startTimeSeconds": 293.444,
+    "endTimeSeconds": 294.881,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.1.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 112,
+    "sourceScreenId": "43",
+    "destinationScreenId": "43",
+    "startTimeSeconds": 295.784,
+    "endTimeSeconds": 297.193,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 113,
+    "sourceScreenId": "43",
+    "destinationScreenId": "43",
+    "startTimeSeconds": 297.544,
+    "endTimeSeconds": 300.846,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TYPE_TEXT",
+      "childSequence": "0.0.0.0.0.0.0.2.1.4",
+      "targetDetails": {
+        "className": "android.widget.EditText",
+        "androidClassName": "android.widget.EditText"
+      }
+    }
+  }, {
+    "sequence": 114,
+    "sourceScreenId": "43",
+    "destinationScreenId": "43",
+    "startTimeSeconds": 301.248,
+    "endTimeSeconds": 302.881,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.2.0.1",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }, {
+    "sequence": 115,
+    "sourceScreenId": "43",
+    "destinationScreenId": "43",
+    "startTimeSeconds": 303.282,
+    "endTimeSeconds": 304.653,
+    "executionResult": "SUCCESS",
+    "target": {
+      "type": "TAP",
+      "childSequence": "0.0.0.0.0.0.0.2.0.3",
+      "targetDetails": {
+        "className": "android.view.View",
+        "androidClassName": "android.view.View"
+      }
+    }
+  }]
+}

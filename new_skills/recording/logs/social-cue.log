@@ -1,0 +1,30 @@
+Skill:    social-cue
+Prompt 1: "Analyze this meeting transcript for tension"
+Prompt 2: "What social cues are in this conversation?"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: social-cue
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'social-cue'
+Enabled 'social-cue'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 56020)
+
+[4/5] Example 1: "Analyze this meeting transcript for tension"... FAIL (timeout)
+
+[5/5] Example 2: "What social cues are in this conversation?"... FAIL (timeout)
+
+Video saved: recording/social-cue/recording.mp4
+
+==========================================
+SUMMARY: social-cue
+==========================================
+Example 1: FAIL
+Example 2: FAIL
+Video:     recording/social-cue/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

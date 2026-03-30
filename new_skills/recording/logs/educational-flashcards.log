@@ -1,0 +1,29 @@
+Skill:    educational-flashcards
+Prompt 1: "Create flashcards for Spanish Vocabulary"
+Prompt 2: "Study my flashcards"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: educational-flashcards
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'educational-flashcards'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 31582)
+
+[4/5] Example 1: "Create flashcards for Spanish Vocabulary"... PASS
+
+[5/5] Example 2: "Study my flashcards"... PASS
+
+Video saved: recording/educational-flashcards/recording.mp4
+
+==========================================
+SUMMARY: educational-flashcards
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/educational-flashcards/recording.mp4
+
+RECORDING COMPLETE

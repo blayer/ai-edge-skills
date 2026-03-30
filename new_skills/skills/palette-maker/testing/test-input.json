@@ -1,0 +1,45 @@
+[
+  {
+    "name": "complementary_default",
+    "input": {
+      "base_color": "#FF5733"
+    },
+    "expected_contains": ["webview"]
+  },
+  {
+    "name": "triadic_7_colors",
+    "input": {
+      "base_color": "#3498DB",
+      "palette_type": "triadic",
+      "count": 7
+    },
+    "expected_contains": ["webview"]
+  },
+  {
+    "name": "monochromatic_3_colors",
+    "input": {
+      "base_color": "#2ECC71",
+      "palette_type": "monochromatic",
+      "count": 3
+    },
+    "expected_contains": ["webview"]
+  },
+  {
+    "name": "split_complementary",
+    "input": {
+      "base_color": "#9B59B6",
+      "palette_type": "split_complementary",
+      "count": 5
+    },
+    "expected_contains": ["webview"]
+  },
+  {
+    "name": "tetradic_palette",
+    "input": {
+      "base_color": "#E74C3C",
+      "palette_type": "tetradic",
+      "count": 5
+    },
+    "expected_contains": ["webview"]
+  }
+]

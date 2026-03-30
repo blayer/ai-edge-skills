@@ -1,0 +1,30 @@
+Skill:    sound-monitor
+Prompt 1: "Set up a baby monitor with high sensitivity"
+Prompt 2: "Configure pet monitoring to detect barking and whining"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: sound-monitor
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'sound-monitor'
+Enabled 'sound-monitor'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 57612)
+
+[4/5] Example 1: "Set up a baby monitor with high sensitivity"... PASS
+
+[5/5] Example 2: "Configure pet monitoring to detect barking and whining"... PASS
+
+Video saved: recording/sound-monitor/recording.mp4
+
+==========================================
+SUMMARY: sound-monitor
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/sound-monitor/recording.mp4
+
+RECORDING COMPLETE

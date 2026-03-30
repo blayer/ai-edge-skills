@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palette Maker</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a2e; color: #eee; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; min-height: 100vh; }
+  .display { background: #16213e; border-radius: 16px; padding: 24px; margin-bottom: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
+  .display svg { max-width: 100%; height: auto; }
+  .info { background: #16213e; border-radius: 12px; padding: 16px 20px; width: 100%; max-width: 400px; }
+  .info-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #2a2a4a; }
+  .info-row:last-child { border-bottom: none; }
+  .info-label { color: #888; font-size: 13px; }
+  .info-value { color: #64ffda; font-size: 13px; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="display" id="display"></div>
+<div class="info" id="info"></div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const data = JSON.parse(decodeURIComponent(params.get('data')));
+document.getElementById('display').innerHTML = data.svg || '';
+// Build info panel from data fields (excluding svg)
+const info = document.getElementById('info');
+Object.entries(data).filter(([k]) => k !== 'svg').forEach(([key, val]) => {
+  info.innerHTML += '<div class="info-row"><span class="info-label">' + key + '</span><span class="info-value">' + val + '</span></div>';
+});
+</script>
+</body>
+</html>

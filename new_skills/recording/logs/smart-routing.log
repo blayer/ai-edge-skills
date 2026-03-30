@@ -1,0 +1,30 @@
+Skill:    smart-routing
+Prompt 1: "Safest route from Central Park to Times Square at night"
+Prompt 2: "Find the best-lit path from Union Station to the Capitol"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: smart-routing
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'smart-routing'
+Enabled 'smart-routing'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 53197)
+
+[4/5] Example 1: "Safest route from Central Park to Times Square at night"... PASS
+
+[5/5] Example 2: "Find the best-lit path from Union Station to the Capitol"... PASS
+
+Video saved: recording/smart-routing/recording.mp4
+
+==========================================
+SUMMARY: smart-routing
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/smart-routing/recording.mp4
+
+RECORDING COMPLETE

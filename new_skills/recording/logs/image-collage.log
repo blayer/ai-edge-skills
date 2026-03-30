@@ -1,0 +1,29 @@
+Skill:    image-collage
+Prompt 1: "Create a 4-image grid collage in polaroid style"
+Prompt 2: "Make a scrapbook collage with 6 images"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: image-collage
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'image-collage'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 35179)
+
+[4/5] Example 1: "Create a 4-image grid collage in polaroid style"... PASS
+
+[5/5] Example 2: "Make a scrapbook collage with 6 images"... PASS
+
+Video saved: recording/image-collage/recording.mp4
+
+==========================================
+SUMMARY: image-collage
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/image-collage/recording.mp4
+
+RECORDING COMPLETE

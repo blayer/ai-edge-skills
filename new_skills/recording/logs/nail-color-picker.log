@@ -1,0 +1,29 @@
+Skill:    nail-color-picker
+Prompt 1: "What nail colors go with my fair skin tone for summer?"
+Prompt 2: "Suggest shimmer nail polishes for olive skin in fall"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: nail-color-picker
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'nail-color-picker'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 40106)
+
+[4/5] Example 1: "What nail colors go with my fair skin tone for summer?"... PASS
+
+[5/5] Example 2: "Suggest shimmer nail polishes for olive skin in fall"... PASS
+
+Video saved: recording/nail-color-picker/recording.mp4
+
+==========================================
+SUMMARY: nail-color-picker
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/nail-color-picker/recording.mp4
+
+RECORDING COMPLETE

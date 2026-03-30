@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Gesture Game</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a2e; color: #eee; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; overflow: hidden; user-select: none; -webkit-user-select: none; }
+
+  .screen { display: none; width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
+  .screen.active { display: flex; }
+
+  /* Instruction */
+  #instruction h1 { color: #64ffda; font-size: 28px; margin-bottom: 16px; }
+  #instruction p { color: #a8b2d1; font-size: 16px; line-height: 1.6; text-align: center; margin-bottom: 8px; }
+  .tilt-hints { color: #ffd700; font-size: 14px; margin: 16px 0; text-align: center; line-height: 2; }
+  .category-badge { background: #16213e; color: #64ffda; padding: 6px 16px; border-radius: 16px; font-size: 14px; margin: 12px 0; }
+  .timer-badge { color: #a8b2d1; font-size: 14px; margin-bottom: 16px; }
+  .start-btn { background: #64ffda; color: #1a1a2e; border: none; padding: 18px 56px; font-size: 22px; font-weight: bold; border-radius: 14px; cursor: pointer; }
+  .start-btn:active { transform: scale(0.95); }
+
+  /* Game */
+  .timer { position: absolute; top: 20px; right: 24px; font-size: 52px; font-weight: bold; color: #ffd700; font-variant-numeric: tabular-nums; }
+  .timer.low { color: #e94560; animation: pulse 0.5s infinite alternate; }
+  @keyframes pulse { from { opacity: 1; } to { opacity: 0.3; } }
+  .score-display { position: absolute; top: 20px; left: 24px; font-size: 18px; color: #a8b2d1; }
+  .score-display strong { color: #64ffda; font-size: 22px; }
+  .word-display { font-size: 56px; font-weight: bold; color: #fff; text-align: center; padding: 0 24px; word-wrap: break-word; }
+
+  .flash { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 10; display: flex; align-items: center; justify-content: center; }
+  .flash.correct { background: #064e3b; }
+  .flash.pass { background: #3b1423; }
+  .flash.show { opacity: 0.7; }
+  .flash-label { font-size: 40px; font-weight: bold; }
+  .flash.correct .flash-label { color: #64ffda; }
+  .flash.pass .flash-label { color: #e94560; }
+
+  .game-buttons { position: absolute; bottom: 40px; display: flex; gap: 20px; }
+  .g-btn { padding: 16px 36px; font-size: 18px; font-weight: bold; border: none; border-radius: 12px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .g-btn:active { transform: scale(0.9); }
+  .g-correct { background: #064e3b; color: #64ffda; border: 2px solid #64ffda; }
+  .g-pass { background: #3b1423; color: #e94560; border: 2px solid #e94560; }
+
+  /* Results */
+  #results h1 { color: #64ffda; font-size: 28px; margin-bottom: 4px; }
+  .score-big { font-size: 80px; font-weight: bold; color: #ffd700; margin: 8px 0; }
+  .score-sub { color: #a8b2d1; font-size: 16px; margin-bottom: 20px; }
+  .result-section { width: 100%; max-width: 340px; margin: 8px 0; text-align: left; }
+  .result-section h3 { font-size: 14px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+  .result-section h3.ok { color: #64ffda; }
+  .result-section h3.skip { color: #e94560; }
+  .result-list { list-style: none; }
+  .result-list li { padding: 4px 0; font-size: 14px; color: #a8b2d1; border-bottom: 1px solid #16213e; }
+  .play-again { background: #64ffda; color: #1a1a2e; border: none; padding: 14px 40px; font-size: 18px; font-weight: bold; border-radius: 10px; cursor: pointer; margin-top: 20px; }
+  .play-again:active { transform: scale(0.95); }
+</style>
+</head>
+<body>
+
+<div class="flash correct" id="flashCorrect"><div class="flash-label">CORRECT</div></div>
+<div class="flash pass" id="flashPass"><div class="flash-label">PASS</div></div>
+
+<div class="screen active" id="instruction">
+  <h1>Gesture Game</h1>
+  <p>Hold your phone to your forehead.<br>Others describe the word — you guess!</p>
+  <div class="tilt-hints">Tilt DOWN = Correct<br>Tilt UP = Pass</div>
+  <div class="category-badge" id="catLabel"></div>
+  <div class="timer-badge">90 seconds</div>
+  <button class="start-btn" id="startBtn">START</button>
+</div>
+
+<div class="screen" id="game">
+  <div class="score-display"><strong id="scoreNum">0</strong> correct</div>
+  <div class="timer" id="timer">90</div>
+  <div class="word-display" id="word"></div>
+  <div class="game-buttons">
+    <button class="g-btn g-pass" id="btnPass">PASS</button>
+    <button class="g-btn g-correct" id="btnCorrect">CORRECT</button>
+  </div>
+</div>
+
+<div class="screen" id="results"></div>
+
+<script>
+const TIMER_SECONDS = 90;
+
+const wordLists = {
+  movies: ['Titanic','The Lion King','Star Wars','Jurassic Park','Finding Nemo','The Matrix','Frozen','Avatar','Jaws','Rocky','Gladiator','Shrek','Inception','Up','Toy Story','Forrest Gump','The Godfather','Batman','Spider-Man','Harry Potter','Back to the Future','E.T.','The Wizard of Oz','Grease','Ghostbusters','Aladdin','Moana','Coco','Ratatouille','WALL-E'],
+  animals: ['Elephant','Penguin','Giraffe','Dolphin','Kangaroo','Flamingo','Octopus','Chameleon','Panda','Cheetah','Sloth','Peacock','Koala','Gorilla','Hummingbird','Seahorse','Butterfly','Crocodile','Parrot','Hedgehog','Platypus','Walrus','Jellyfish','Eagle','Lobster','Raccoon','Armadillo','Toucan','Iguana','Starfish'],
+  celebrities: ['Taylor Swift','Beyonce','Tom Hanks','Oprah','Leonardo DiCaprio','Dwayne Johnson','Adele','Cristiano Ronaldo','Rihanna','Will Smith','Lady Gaga','Brad Pitt','Meryl Streep','Drake','Morgan Freeman','Jennifer Lopez','Keanu Reeves','Shakira','Robert Downey Jr','Emma Watson'],
+  food: ['Pizza','Sushi','Taco','Ice Cream','Hamburger','Pancakes','Spaghetti','Chocolate','Popcorn','Donut','Burrito','Waffles','Nachos','Cheesecake','French Fries','Hot Dog','Ramen','Pretzel','Croissant','Muffin','Lasagna','Guacamole','Fried Rice','Mac and Cheese','Brownie'],
+  actions: ['Swimming','Dancing','Sneezing','Juggling','Surfing','Yawning','Cooking','Sleeping','Laughing','Running','Flying','Painting','Singing','Bowling','Skateboarding','Fishing','Typing','Climbing','Snoring','Whistling','Jumping','Hula Hooping','Arm Wrestling','Moonwalking','Karate'],
+  objects: ['Umbrella','Piano','Telescope','Candle','Scissors','Ladder','Microphone','Toothbrush','Compass','Magnifying Glass','Trampoline','Hammock','Alarm Clock','Binoculars','Wheelbarrow','Flashlight','Parachute','Typewriter','Balloon','Hourglass']
+};
+
+const params = new URLSearchParams(window.location.search);
+const initData = JSON.parse(decodeURIComponent(params.get('data')));
+const category = initData.category || 'mixed';
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function getWords(cat) {
+  if (cat === 'mixed' || !wordLists[cat]) {
+    return shuffle(Object.values(wordLists).flat()).slice(0, 40);
+  }
+  return shuffle(wordLists[cat]);
+}
+
+document.getElementById('catLabel').textContent = category.charAt(0).toUpperCase() + category.slice(1);
+
+let words, idx, timeLeft, correct, passed, active, interval, lastAction;
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function flash(type) {
+  const el = document.getElementById(type === 'correct' ? 'flashCorrect' : 'flashPass');
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 350);
+}
+
+function showWord() {
+  if (idx < words.length) {
+    document.getElementById('word').textContent = words[idx];
+  } else {
+    endGame();
+  }
+}
+
+function markCorrect() {
+  if (!active || Date.now() - lastAction < 500) return;
+  lastAction = Date.now();
+  correct.push(words[idx]);
+  document.getElementById('scoreNum').textContent = correct.length;
+  flash('correct');
+  idx++;
+  setTimeout(showWord, 250);
+}
+
+function markPass() {
+  if (!active || Date.now() - lastAction < 500) return;
+  lastAction = Date.now();
+  passed.push(words[idx]);
+  flash('pass');
+  idx++;
+  setTimeout(showWord, 250);
+}
+
+function endGame() {
+  active = false;
+  if (interval) clearInterval(interval);
+  showResults();
+}
+
+function startGame() {
+  words = getWords(category);
+  idx = 0;
+  timeLeft = TIMER_SECONDS;
+  correct = [];
+  passed = [];
+  active = true;
+  lastAction = 0;
+
+  showScreen('game');
+  document.getElementById('timer').textContent = timeLeft;
+  document.getElementById('timer').classList.remove('low');
+  document.getElementById('scoreNum').textContent = '0';
+  showWord();
+
+  interval = setInterval(() => {
+    timeLeft--;
+    document.getElementById('timer').textContent = timeLeft;
+    if (timeLeft <= 10) document.getElementById('timer').classList.add('low');
+    if (timeLeft <= 0) endGame();
+  }, 1000);
+
+  // Device orientation
+  if (typeof DeviceOrientationEvent !== 'undefined') {
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+      DeviceOrientationEvent.requestPermission().then(r => {
+        if (r === 'granted') listenOrientation();
+      }).catch(() => {});
+    } else {
+      listenOrientation();
+    }
+  }
+}
+
+function listenOrientation() {
+  window.addEventListener('deviceorientation', (e) => {
+    if (!active || e.beta === null) return;
+    if (e.beta > 120) markPass();
+    else if (e.beta < 30 && e.beta > -30) markCorrect();
+  });
+}
+
+function showResults() {
+  showScreen('results');
+  const el = document.getElementById('results');
+  const msg = correct.length >= 15 ? 'Amazing!' : correct.length >= 10 ? 'Great job!' : correct.length >= 5 ? 'Nice!' : 'Keep trying!';
+  let html = `<h1>Time's Up!</h1>`;
+  html += `<div class="category-badge">${category}</div>`;
+  html += `<div class="score-big">${correct.length}</div>`;
+  html += `<div class="score-sub">${correct.length} correct, ${passed.length} passed</div>`;
+
+  if (correct.length > 0) {
+    html += '<div class="result-section"><h3 class="ok">Correct</h3><ul class="result-list">';
+    correct.forEach(w => html += '<li>' + w + '</li>');
+    html += '</ul></div>';
+  }
+  if (passed.length > 0) {
+    html += '<div class="result-section"><h3 class="skip">Passed</h3><ul class="result-list">';
+    passed.forEach(w => html += '<li>' + w + '</li>');
+    html += '</ul></div>';
+  }
+
+  html += '<button class="play-again" id="playAgainBtn">Play Again</button>';
+  el.innerHTML = html;
+  document.getElementById('playAgainBtn').addEventListener('click', startGame);
+}
+
+document.getElementById('startBtn').addEventListener('click', startGame);
+document.getElementById('btnCorrect').addEventListener('click', markCorrect);
+document.getElementById('btnPass').addEventListener('click', markPass);
+</script>
+</body>
+</html>

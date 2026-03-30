@@ -1,0 +1,30 @@
+Skill:    sound-mapper
+Prompt 1: "I heard a clear whistling song in my backyard in the northeast"
+Prompt 2: "What bird makes a hooting sound in European forests?"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: sound-mapper
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'sound-mapper'
+Enabled 'sound-mapper'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 57021)
+
+[4/5] Example 1: "I heard a clear whistling song in my backyard in the northeast"... PASS
+
+[5/5] Example 2: "What bird makes a hooting sound in European forests?"... PASS
+
+Video saved: recording/sound-mapper/recording.mp4
+
+==========================================
+SUMMARY: sound-mapper
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/sound-mapper/recording.mp4
+
+RECORDING COMPLETE

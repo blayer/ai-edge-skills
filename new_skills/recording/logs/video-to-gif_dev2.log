@@ -1,0 +1,9 @@
+Skill:    video-to-gif
+Prompt 1: "Create a geometric animation with a red circle expanding, then a blue square appearing, then both fading"
+Prompt 2: "Make an abstract animation: gradient background shifts, circles pulse, text fades in"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: video-to-gif
+==========================================
+[1/5] Checking device... FAIL - No device

@@ -1,0 +1,9 @@
+Skill:    visual-interpreter
+Prompt 1: "Describe a ceramic coffee mug in detail"
+Prompt 2: "Give me a sensory description of an old hardcover book"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: visual-interpreter
+==========================================
+[1/5] Checking device... FAIL - No device

@@ -1,0 +1,30 @@
+Skill:    number-guessing
+Prompt 1: "Start a number guessing game"
+Prompt 2: "Guess 50"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: number-guessing
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'number-guessing'
+Enabled 'number-guessing'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 62117)
+
+[4/5] Example 1: "Start a number guessing game"... PASS
+
+[5/5] Example 2: "Guess 50"... PASS
+
+Video saved: recording/number-guessing/recording.mp4
+
+==========================================
+SUMMARY: number-guessing
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/number-guessing/recording.mp4
+
+RECORDING COMPLETE

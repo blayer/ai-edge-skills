@@ -1,0 +1,29 @@
+Skill:    hiking-companion
+Prompt 1: "What plant did I just touch? It has three shiny leaves"
+Prompt 2: "What should I do about a blister on my heel?"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: hiking-companion
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'hiking-companion'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 33957)
+
+[4/5] Example 1: "What plant did I just touch? It has three shiny leaves"... PASS
+
+[5/5] Example 2: "What should I do about a blister on my heel?"... PASS
+
+Video saved: recording/hiking-companion/recording.mp4
+
+==========================================
+SUMMARY: hiking-companion
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/hiking-companion/recording.mp4
+
+RECORDING COMPLETE

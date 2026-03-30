@@ -1,0 +1,30 @@
+Skill:    expense-splitter
+Prompt 1: "Alice paid 60 for dinner, Bob paid 30 for drinks, split between Alice Bob and Charlie"
+Prompt 2: "Split $100 restaurant bill: Alice paid, shared with Bob and Charlie"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: expense-splitter
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'expense-splitter'
+Enabled 'expense-splitter'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 66505)
+
+[4/5] Example 1: "Alice paid 60 for dinner, Bob paid 30 for drinks, split between Alice Bob and Charlie"... PASS
+
+[5/5] Example 2: "Split $100 restaurant bill: Alice paid, shared with Bob and Charlie"... PASS
+
+Video saved: recording/expense-splitter/recording.mp4
+
+==========================================
+SUMMARY: expense-splitter
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/expense-splitter/recording.mp4
+
+RECORDING COMPLETE

@@ -1,0 +1,30 @@
+Skill:    trivia-game
+Prompt 1: "Start a trivia game"
+Prompt 2: "Play 15 science trivia questions on hard"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: trivia-game
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'trivia-game'
+Enabled 'trivia-game'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 67822)
+
+[4/5] Example 1: "Start a trivia game"... PASS
+
+[5/5] Example 2: "Play 15 science trivia questions on hard"... PASS
+
+Video saved: recording/trivia-game/recording.mp4
+
+==========================================
+SUMMARY: trivia-game
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/trivia-game/recording.mp4
+
+RECORDING COMPLETE

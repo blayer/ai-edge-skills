@@ -1,0 +1,30 @@
+Skill:    mbti-guesser
+Prompt 1: "Start an MBTI quiz"
+Prompt 2: "What's my personality type?"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: mbti-guesser
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'mbti-guesser'
+Enabled 'mbti-guesser'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 36598)
+
+[4/5] Example 1: "Start an MBTI quiz"... PASS
+
+[5/5] Example 2: "What's my personality type?"... FAIL (timeout)
+
+Video saved: recording/mbti-guesser/recording.mp4
+
+==========================================
+SUMMARY: mbti-guesser
+==========================================
+Example 1: PASS
+Example 2: FAIL
+Video:     recording/mbti-guesser/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

@@ -1,0 +1,7 @@
+[
+  {"name": "basic_growth", "input": {"principal": 10000, "rate": 5, "years": 10}, "expected_contains": ["webview.html"]},
+  {"name": "with_contributions", "input": {"principal": 5000, "rate": 7, "years": 20, "monthly_contribution": 200}, "expected_contains": ["webview.html"]},
+  {"name": "zero_rate", "input": {"principal": 1000, "rate": 0, "years": 5}, "expected_contains": ["webview.html"]},
+  {"name": "high_rate_short_term", "input": {"principal": 100, "rate": 15, "years": 1}, "expected_contains": ["webview.html"]},
+  {"name": "large_principal_quarterly", "input": {"principal": 1000000, "rate": 3, "years": 30, "compound_frequency": 4, "monthly_contribution": 500}, "expected_contains": ["webview.html"]}
+]

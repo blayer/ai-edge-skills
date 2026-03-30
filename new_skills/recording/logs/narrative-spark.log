@@ -1,0 +1,29 @@
+Skill:    narrative-spark
+Prompt 1: "Give me sensory details for medieval Paris"
+Prompt 2: "What are some historical facts about Machu Picchu?"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: narrative-spark
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'narrative-spark'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 40666)
+
+[4/5] Example 1: "Give me sensory details for medieval Paris"... PASS
+
+[5/5] Example 2: "What are some historical facts about Machu Picchu?"... PASS
+
+Video saved: recording/narrative-spark/recording.mp4
+
+==========================================
+SUMMARY: narrative-spark
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/narrative-spark/recording.mp4
+
+RECORDING COMPLETE

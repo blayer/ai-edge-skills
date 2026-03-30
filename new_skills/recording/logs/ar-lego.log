@@ -1,0 +1,30 @@
+Skill:    ar-lego
+Prompt 1: "Show me the Hogwarts Castle LEGO set"
+Prompt 2: "List all available LEGO sets"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: ar-lego
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'ar-lego'
+Enabled 'ar-lego'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 25665)
+
+[4/5] Example 1: "Show me the Hogwarts Castle LEGO set"... PASS
+
+[5/5] Example 2: "List all available LEGO sets"... PASS
+
+Video saved: recording/ar-lego/recording.mp4
+
+==========================================
+SUMMARY: ar-lego
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/ar-lego/recording.mp4
+
+RECORDING COMPLETE

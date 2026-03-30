@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mastermind</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a2e; color: #eee; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+  h2 { color: #64ffda; font-size: 18px; margin-bottom: 8px; }
+  .info { color: #a8b2d1; font-size: 13px; margin-bottom: 16px; }
+  .board { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .row { display: flex; align-items: center; gap: 6px; }
+  .color-circle { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #0f3460; }
+  .pegs { display: flex; gap: 3px; margin-left: 10px; }
+  .peg { width: 12px; height: 12px; border-radius: 50%; }
+  .peg.exact { background: #64ffda; }
+  .peg.misplaced { background: #ffd700; }
+  .peg.empty { background: #16213e; border: 1px solid #0f3460; }
+  .palette { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; justify-content: center; }
+  .palette-color { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #444; }
+  .palette-label { color: #888; font-size: 10px; text-align: center; }
+  .secret-row { display: flex; gap: 6px; margin: 12px 0; }
+  .status-banner { font-size: 18px; font-weight: bold; padding: 12px 24px; border-radius: 8px; margin: 12px 0; }
+  .status-banner.won { background: #064e3b; color: #64ffda; }
+  .status-banner.lost { background: #3b1423; color: #e94560; }
+  .hint { color: #888; font-size: 12px; }
+  .attempt-num { color: #444; font-size: 12px; width: 20px; text-align: right; margin-right: 4px; }
+</style>
+</head>
+<body>
+<h2>Mastermind</h2>
+<div class="info" id="info"></div>
+<div class="board" id="board"></div>
+<div id="secret"></div>
+<div id="banner"></div>
+<div class="palette" id="palette"></div>
+<div class="hint" id="hint"></div>
+<script>
+const COLOR_MAP = {
+  red: '#e94560', blue: '#4A90D9', green: '#2ecc71', yellow: '#f1c40f',
+  orange: '#e67e22', purple: '#9b59b6', pink: '#e84393', cyan: '#00cec9'
+};
+
+const params = new URLSearchParams(window.location.search);
+const state = JSON.parse(decodeURIComponent(params.get('data')));
+
+document.getElementById('info').textContent = `Attempt ${state.attempts}/${state.maxAttempts}`;
+
+// Board
+const board = document.getElementById('board');
+state.history.forEach((h, i) => {
+  const row = document.createElement('div');
+  row.className = 'row';
+  row.innerHTML = `<span class="attempt-num">${i + 1}</span>` +
+    h.guess.map(c => `<div class="color-circle" style="background:${COLOR_MAP[c] || '#666'}"></div>`).join('') +
+    '<div class="pegs">' +
+    Array(h.exact).fill('<div class="peg exact"></div>').join('') +
+    Array(h.misplaced).fill('<div class="peg misplaced"></div>').join('') +
+    Array(4 - h.exact - h.misplaced).fill('<div class="peg empty"></div>').join('') +
+    '</div>';
+  board.appendChild(row);
+});
+
+// Empty remaining rows
+for (let i = state.history.length; i < state.maxAttempts; i++) {
+  const row = document.createElement('div');
+  row.className = 'row';
+  row.innerHTML = `<span class="attempt-num" style="color:#333">${i + 1}</span>` +
+    Array(4).fill('<div class="color-circle" style="background:#16213e"></div>').join('') +
+    '<div class="pegs">' + Array(4).fill('<div class="peg empty"></div>').join('') + '</div>';
+  board.appendChild(row);
+}
+
+// Secret (revealed on game over)
+if (state.secret) {
+  document.getElementById('secret').innerHTML = '<div style="color:#a8b2d1;font-size:12px;margin-bottom:4px">Secret code:</div><div class="secret-row">' +
+    state.secret.map(c => `<div class="color-circle" style="background:${COLOR_MAP[c] || '#666'}"></div>`).join('') + '</div>';
+}
+
+// Status
+if (state.status === 'won') {
+  document.getElementById('banner').innerHTML = `<div class="status-banner won">Cracked in ${state.attempts} attempts!</div>`;
+  document.getElementById('hint').textContent = 'Say "start" to play again.';
+} else if (state.status === 'lost') {
+  document.getElementById('banner').innerHTML = '<div class="status-banner lost">Game Over!</div>';
+  document.getElementById('hint').textContent = 'Say "start" to play again.';
+} else {
+  document.getElementById('hint').textContent = 'Guess 4 colors!';
+}
+
+// Palette
+const pal = document.getElementById('palette');
+state.palette.forEach(c => {
+  const div = document.createElement('div');
+  div.innerHTML = `<div class="palette-color" style="background:${COLOR_MAP[c] || '#666'}"></div><div class="palette-label">${c}</div>`;
+  div.style.textAlign = 'center';
+  pal.appendChild(div);
+});
+</script>
+</body>
+</html>

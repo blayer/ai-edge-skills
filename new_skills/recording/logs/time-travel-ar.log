@@ -1,0 +1,30 @@
+Skill:    time-travel-ar
+Prompt 1: "Show me the Colosseum in ancient Rome"
+Prompt 2: "What did the Eiffel Tower area look like in medieval times?"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: time-travel-ar
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'time-travel-ar'
+Enabled 'time-travel-ar'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 62087)
+
+[4/5] Example 1: "Show me the Colosseum in ancient Rome"... PASS
+
+[5/5] Example 2: "What did the Eiffel Tower area look like in medieval times?"... PASS
+
+Video saved: recording/time-travel-ar/recording.mp4
+
+==========================================
+SUMMARY: time-travel-ar
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/time-travel-ar/recording.mp4
+
+RECORDING COMPLETE

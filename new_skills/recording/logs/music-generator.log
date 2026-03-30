@@ -1,0 +1,29 @@
+Skill:    music-generator
+Prompt 1: "Generate a happy melody in C major"
+Prompt 2: "Create an epic chord progression in D minor"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: music-generator
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'music-generator'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 39277)
+
+[4/5] Example 1: "Generate a happy melody in C major"... PASS
+
+[5/5] Example 2: "Create an epic chord progression in D minor"... FAIL (timeout)
+
+Video saved: recording/music-generator/recording.mp4
+
+==========================================
+SUMMARY: music-generator
+==========================================
+Example 1: PASS
+Example 2: FAIL
+Video:     recording/music-generator/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

@@ -1,0 +1,30 @@
+Skill:    storybook-reader
+Prompt 1: "List all fables"
+Prompt 2: "Read The Tortoise and the Hare"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: storybook-reader
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'storybook-reader'
+Enabled 'storybook-reader'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 59193)
+
+[4/5] Example 1: "List all fables"... PASS
+
+[5/5] Example 2: "Read The Tortoise and the Hare"... PASS
+
+Video saved: recording/storybook-reader/recording.mp4
+
+==========================================
+SUMMARY: storybook-reader
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/storybook-reader/recording.mp4
+
+RECORDING COMPLETE

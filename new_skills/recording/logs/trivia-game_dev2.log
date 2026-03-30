@@ -1,0 +1,9 @@
+Skill:    trivia-game
+Prompt 1: "Start a trivia game"
+Prompt 2: "Play 15 science trivia questions on hard"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: trivia-game
+==========================================
+[1/5] Checking device... FAIL - No device

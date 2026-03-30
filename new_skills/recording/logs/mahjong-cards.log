@@ -1,0 +1,29 @@
+Skill:    mahjong-cards
+Prompt 1: "Show mahjong card"
+Prompt 2: "Show mahjong card for 2024"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: mahjong-cards
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'mahjong-cards'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 35687)
+
+[4/5] Example 1: "Show mahjong card"... FAIL (timeout)
+
+[5/5] Example 2: "Show mahjong card for 2024"... FAIL (timeout)
+
+Video saved: recording/mahjong-cards/recording.mp4
+
+==========================================
+SUMMARY: mahjong-cards
+==========================================
+Example 1: FAIL
+Example 2: FAIL
+Video:     recording/mahjong-cards/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

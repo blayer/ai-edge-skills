@@ -1,0 +1,9 @@
+Skill:    walkie-talkie
+Prompt 1: "Create a new walkie-talkie channel"
+Prompt 2: "Join channel ABC123 as Alice"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: walkie-talkie
+==========================================
+[1/5] Checking device... FAIL - No device

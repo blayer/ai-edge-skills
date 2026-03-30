@@ -1,0 +1,29 @@
+Skill:    allergy-advisor
+Prompt 1: "What allergens should I watch for in New York this spring?"
+Prompt 2: "I have sensitive skin and curly hair, what should I use in Miami during summer?"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: allergy-advisor
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'allergy-advisor'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 24348)
+
+[4/5] Example 1: "What allergens should I watch for in New York this spring?"... PASS
+
+[5/5] Example 2: "I have sensitive skin and curly hair, what should I use in Miami during summer?"... PASS
+
+Video saved: recording/allergy-advisor/recording.mp4
+
+==========================================
+SUMMARY: allergy-advisor
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/allergy-advisor/recording.mp4
+
+RECORDING COMPLETE

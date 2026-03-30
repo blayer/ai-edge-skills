@@ -1,0 +1,29 @@
+Skill:    dialect-dictionary
+Prompt 1: "Translate 'li ho' from Hokkien to English"
+Prompt 2: "Teach me about the Scots Gaelic phrase 'slainte mhath'"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: dialect-dictionary
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'dialect-dictionary'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 31144)
+
+[4/5] Example 1: "Translate 'li ho' from Hokkien to English"... PASS
+
+[5/5] Example 2: "Teach me about the Scots Gaelic phrase 'slainte mhath'"... PASS
+
+Video saved: recording/dialect-dictionary/recording.mp4
+
+==========================================
+SUMMARY: dialect-dictionary
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/dialect-dictionary/recording.mp4
+
+RECORDING COMPLETE

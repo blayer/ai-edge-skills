@@ -1,0 +1,29 @@
+Skill:    package-alert
+Prompt 1: "Parse this delivery notification from Amazon"
+Prompt 2: "Set up alerts to text my partner when a package arrives"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: package-alert
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'package-alert'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 41117)
+
+[4/5] Example 1: "Parse this delivery notification from Amazon"... PASS
+
+[5/5] Example 2: "Set up alerts to text my partner when a package arrives"... PASS
+
+Video saved: recording/package-alert/recording.mp4
+
+==========================================
+SUMMARY: package-alert
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/package-alert/recording.mp4
+
+RECORDING COMPLETE

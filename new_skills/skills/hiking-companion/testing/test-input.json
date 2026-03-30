@@ -1,0 +1,14 @@
+[
+  {"name": "plant_id_poison_ivy", "input": {"query_type": "plant_id", "description": "three shiny leaves on a vine with hairy stems"}, "expected_not_empty": true},
+  {"name": "plant_id_mushroom", "input": {"query_type": "plant_id", "description": "white mushroom with ring on stem and bulbous base in forest"}, "expected_not_empty": true},
+  {"name": "plant_id_no_match", "input": {"query_type": "plant_id", "description": "a blue cactus with square leaves"}, "expected_not_empty": true},
+  {"name": "weather_thunderstorm", "input": {"query_type": "weather", "weather_conditions": "thunderstorm with lightning approaching"}, "expected_not_empty": true},
+  {"name": "weather_heat", "input": {"query_type": "weather", "weather_conditions": "extreme heat and humidity"}, "expected_not_empty": true},
+  {"name": "first_aid_blister", "input": {"query_type": "first_aid", "injury_type": "blister"}, "expected_not_empty": true},
+  {"name": "first_aid_snakebite", "input": {"query_type": "first_aid", "injury_type": "snakebite"}, "expected_not_empty": true},
+  {"name": "trail_safety_mountain", "input": {"query_type": "trail_safety", "trail_type": "mountain"}, "expected_not_empty": true},
+  {"name": "trail_safety_desert", "input": {"query_type": "trail_safety", "trail_type": "desert"}, "expected_not_empty": true},
+  {"name": "trail_safety_no_type", "input": {"query_type": "trail_safety"}, "expected_not_empty": true},
+  {"name": "general_tip", "input": {"query_type": "general_tip"}, "expected_not_empty": true},
+  {"name": "missing_query_type", "input": {}, "expected_error": true}
+]

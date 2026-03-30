@@ -1,0 +1,32 @@
+[
+  {
+    "name": "simple_vertical",
+    "input": {
+      "text": "1. Open the application\n2. Check if user is logged in\n3. Load dashboard\n4. Display results"
+    },
+    "expected_contains": ["webview"]
+  },
+  {
+    "name": "horizontal_layout",
+    "input": {
+      "text": "Start server. Check if database is ready. Load config. Begin processing.",
+      "orientation": "horizontal"
+    },
+    "expected_contains": ["webview"]
+  },
+  {
+    "name": "detailed_style",
+    "input": {
+      "text": "1. Receive request\n2. Validate input\n3. Whether authentication passes?\n4. Process data\n5. Return response",
+      "style": "detailed"
+    },
+    "expected_contains": ["webview"]
+  },
+  {
+    "name": "decision_points",
+    "input": {
+      "text": "Collect user input\nCheck if input is valid\nIf valid, save to database\nOtherwise, show error message\nEnd"
+    },
+    "expected_contains": ["webview"]
+  }
+]

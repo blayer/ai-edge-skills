@@ -1,0 +1,42 @@
+2026-03-28 15:49:35 data_app_native_crash (text, 3034 bytes)
+Process: com.google.ai.edge.gallery
+PID: 30309
+UID: 10257
+Frozen: false
+Flags: 0x30e8be44
+Package: com.google.ai.edge.gallery v19 (1.0.10)
+Foreground: Yes
+Process-Runtime: 348542
+Build: google/oriole/oriole:13/TQ3A.230705.001/10216780:user/release-keys
+Loading-Progress: 1.0
+Dropped-Count: 0
+
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+Build fingerprint: 'google/oriole/oriole:13/TQ3A.230705.001/10216780:user/release-keys'
+Revision: 'MP1.0'
+ABI: 'arm64'
+Timestamp: 2026-03-28 15:49:34.743640685-0700
+Process uptime: 349s
+Cmdline: com.google.ai.edge.gallery
+pid: 30309, tid: 2632, name: Thread-84  >>> com.google.ai.edge.gallery <<<
+uid: 10257
+tagged_addr_ctrl: 0000000000000001 (PR_TAGGED_ADDR_ENABLE)
+signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x6d6f635f6176615a
+    x0  b400006d88308c00  x1  0000006d2e2f10a0  x2  0000006d2e2f0ec0  x3  0000006d2e2f0e00
+    x4  0000006d2e2f081f  x5  73616d706c696e67  x6  676e696c706d6173  x7  676e696c706d6173
+    x8  6d6f635f6176614a  x9  0000006ca0f11a00  x10 65646f6365640067  x11 0000000000000008
+    x12 0000006ff95a8020  x13 000000007fffffff  x14 00000000003b2fb2  x15 0000006eed36d301
+    x16 0000006ca0f8e4b8  x17 0000006ff28d6840  x18 0000006c68f02000  x19 00000000000000aa
+    x20 0000000000000004  x21 0000006ca03840d4  x22 0000000000000001  x23 0000000000000001
+    x24 0000000000000001  x25 0000006c9fe441da  x26 0000006d2e2f0c10  x27 0000006d2e2f1521
+    x28 0000000000000018  x29 0000000000000030
+    lr  0000006ca05aa0a0  sp  0000006d2e2f0860  pc  0000006ca05aa0cc  pst 0000000060001000
+backtrace:
+      #00 pc 00000000007a90cc  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+      #01 pc 00000000007967bc  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+      #02 pc 0000000000793888  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+      #03 pc 0000000000795e00  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+      #04 pc 00000000007b745c  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+      #05 pc 00000000007b7cf8  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+      #06 pc 00000000000c226c  /apex/com.android.runtime/lib64/bionic/libc.so (__pthread_start(void*)+204) (BuildId: dc4001c2ef2dfc23467040797a96840c)
+      #07 pc 0000000000054a30  /apex/com.android.runtime/lib64/bionic/libc.so (__start_thread+64) (BuildId: dc4001c2ef2dfc23467040797a96840c)

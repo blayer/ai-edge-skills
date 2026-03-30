@@ -1,0 +1,7 @@
+[
+  {"name": "basic_url", "input": {"text": "https://example.com"}, "expected_starts_with": "data:image/png;base64,"},
+  {"name": "plain_text", "input": {"text": "Hello World"}, "expected_starts_with": "data:image/png;base64,"},
+  {"name": "custom_size", "input": {"text": "test", "size": 512}, "expected_starts_with": "data:image/png;base64,"},
+  {"name": "long_text", "input": {"text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"}, "expected_starts_with": "data:image/png;base64,"},
+  {"name": "special_characters", "input": {"text": "user@email.com?subject=Hello&body=Test"}, "expected_starts_with": "data:image/png;base64,"}
+]

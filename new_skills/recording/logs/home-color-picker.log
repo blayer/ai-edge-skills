@@ -1,0 +1,29 @@
+Skill:    home-color-picker
+Prompt 1: "Suggest colors for a modern living room with natural lighting"
+Prompt 2: "What colors work for a rustic kitchen with warm lighting?"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: home-color-picker
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'home-color-picker'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 34421)
+
+[4/5] Example 1: "Suggest colors for a modern living room with natural lighting"... FAIL (timeout)
+
+[5/5] Example 2: "What colors work for a rustic kitchen with warm lighting?"... FAIL (timeout)
+
+Video saved: recording/home-color-picker/recording.mp4
+
+==========================================
+SUMMARY: home-color-picker
+==========================================
+Example 1: FAIL
+Example 2: FAIL
+Video:     recording/home-color-picker/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

@@ -1,0 +1,30 @@
+Skill:    gesture-game
+Prompt 1: "Start a gesture game"
+Prompt 2: "Play gesture game with movie category"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: gesture-game
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'gesture-game'
+Enabled 'gesture-game'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 33531)
+
+[4/5] Example 1: "Start a gesture game"... PASS
+
+[5/5] Example 2: "Play gesture game with movie category"... PASS
+
+Video saved: recording/gesture-game/recording.mp4
+
+==========================================
+SUMMARY: gesture-game
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/gesture-game/recording.mp4
+
+RECORDING COMPLETE

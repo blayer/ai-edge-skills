@@ -1,0 +1,30 @@
+Skill:    signal-detector
+Prompt 1: "Register a beacon at my home location"
+Prompt 2: "Scan for nearby beacons within 100 meters"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: signal-detector
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'signal-detector'
+Enabled 'signal-detector'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 51749)
+
+[4/5] Example 1: "Register a beacon at my home location"... PASS
+
+[5/5] Example 2: "Scan for nearby beacons within 100 meters"... PASS
+
+Video saved: recording/signal-detector/recording.mp4
+
+==========================================
+SUMMARY: signal-detector
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/signal-detector/recording.mp4
+
+RECORDING COMPLETE

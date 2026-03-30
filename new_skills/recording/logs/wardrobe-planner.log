@@ -1,0 +1,30 @@
+Skill:    wardrobe-planner
+Prompt 1: "Show my wardrobe"
+Prompt 2: "Add a blue casual top to my wardrobe"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: wardrobe-planner
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'wardrobe-planner'
+Enabled 'wardrobe-planner'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 18012)
+
+[4/5] Example 1: "Show my wardrobe"... PASS
+
+[5/5] Example 2: "Add a blue casual top to my wardrobe"... PASS
+
+Video saved: recording/wardrobe-planner/recording.mp4
+
+==========================================
+SUMMARY: wardrobe-planner
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/wardrobe-planner/recording.mp4
+
+RECORDING COMPLETE

@@ -1,0 +1,10 @@
+Skill:    mermaid-diagram-renderer
+Prompt 1: "Render this mermaid flowchart"
+Prompt 2: "Draw a sequence diagram"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: mermaid-diagram-renderer
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... 

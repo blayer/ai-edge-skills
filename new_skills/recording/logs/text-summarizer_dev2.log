@@ -1,0 +1,32 @@
+Skill:    text-summarizer
+Prompt 1: "Summarize this article"
+Prompt 2: "Give me a 3-sentence summary of this text"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: text-summarizer
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'text-summarizer'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 61579)
+
+[4/5] Example 1: "Summarize this article"... FAIL (timeout)
+
+[5/5] Example 2: "Give me a 3-sentence summary of this text"... adb: device 'R3GL101HFPR' not found
+adb: device 'R3GL101HFPR' not found
+adb: device 'R3GL101HFPR' not found
+FAIL (timeout)
+
+Video saved: recording/text-summarizer/recording.mp4
+
+==========================================
+SUMMARY: text-summarizer
+==========================================
+Example 1: FAIL
+Example 2: FAIL
+Video:     recording/text-summarizer/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

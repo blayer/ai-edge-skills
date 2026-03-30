@@ -1,0 +1,30 @@
+Skill:    security-camera
+Prompt 1: "Set up a high-sensitivity camera for the front door from 10pm to 6am"
+Prompt 2: "Show security monitor status"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: security-camera
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'security-camera'
+Enabled 'security-camera'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 51095)
+
+[4/5] Example 1: "Set up a high-sensitivity camera for the front door from 10pm to 6am"... PASS
+
+[5/5] Example 2: "Show security monitor status"... PASS
+
+Video saved: recording/security-camera/recording.mp4
+
+==========================================
+SUMMARY: security-camera
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/security-camera/recording.mp4
+
+RECORDING COMPLETE

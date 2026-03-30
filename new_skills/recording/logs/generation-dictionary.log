@@ -1,0 +1,30 @@
+Skill:    generation-dictionary
+Prompt 1: "Translate 'that's fire' to all generations"
+Prompt 2: "What does 'groovy' mean?"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: generation-dictionary
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'generation-dictionary'
+Enabled 'generation-dictionary'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 32893)
+
+[4/5] Example 1: "Translate 'that's fire' to all generations"... PASS
+
+[5/5] Example 2: "What does 'groovy' mean?"... PASS
+
+Video saved: recording/generation-dictionary/recording.mp4
+
+==========================================
+SUMMARY: generation-dictionary
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/generation-dictionary/recording.mp4
+
+RECORDING COMPLETE

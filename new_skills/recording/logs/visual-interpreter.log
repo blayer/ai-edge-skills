@@ -1,0 +1,30 @@
+Skill:    visual-interpreter
+Prompt 1: "Describe a ceramic coffee mug in detail"
+Prompt 2: "Give me a sensory description of an old hardcover book"
+Device:   R3GL101HFPR
+
+==========================================
+Recording: visual-interpreter
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'visual-interpreter'
+Enabled 'visual-interpreter'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 13095)
+
+[4/5] Example 1: "Describe a ceramic coffee mug in detail"... PASS
+
+[5/5] Example 2: "Give me a sensory description of an old hardcover book"... PASS
+
+Video saved: recording/visual-interpreter/recording.mp4
+
+==========================================
+SUMMARY: visual-interpreter
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/visual-interpreter/recording.mp4
+
+RECORDING COMPLETE

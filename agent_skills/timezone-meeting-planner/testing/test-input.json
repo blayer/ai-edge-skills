@@ -1,0 +1,6 @@
+[
+  {"name": "ny_london_tokyo", "input": {"timezones": [{"name": "New York", "utc_offset": -5}, {"name": "London", "utc_offset": 0}, {"name": "Tokyo", "utc_offset": 9}]}, "expected_contains": ["webview"]},
+  {"name": "sf_beijing_custom_availability", "input": {"timezones": [{"name": "San Francisco", "utc_offset": -8, "available_start": 19, "available_end": 23}, {"name": "Beijing", "utc_offset": 8, "available_start": 8, "available_end": 20}], "min_duration": 30}, "expected_contains": ["webview"]},
+  {"name": "no_overlap", "input": {"timezones": [{"name": "Tokyo", "utc_offset": 9, "available_start": 9, "available_end": 10}, {"name": "Los Angeles", "utc_offset": -8, "available_start": 9, "available_end": 10}]}, "expected_contains": ["webview"]},
+  {"name": "same_timezone", "input": {"timezones": [{"name": "Team A", "utc_offset": -5}, {"name": "Team B", "utc_offset": -5}]}, "expected_contains": ["webview"]}
+]

@@ -1,0 +1,30 @@
+Skill:    procedure-visualizer
+Prompt 1: "Visualize: 1. Start server 2. Check if database is connected 3. Load configuration 4. Begin processing"
+Prompt 2: "Create a flowchart for: Wake up, Check if it's raining, Take umbrella or wear sunglasses, Go to work"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: procedure-visualizer
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Skill not installed, importing... Imported 'procedure-visualizer'
+Enabled 'procedure-visualizer'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 49756)
+
+[4/5] Example 1: "Visualize: 1. Start server 2. Check if database is connected 3. Load configuration 4. Begin processing"... PASS
+
+[5/5] Example 2: "Create a flowchart for: Wake up, Check if it's raining, Take umbrella or wear sunglasses, Go to work"... PASS
+
+Video saved: recording/procedure-visualizer/recording.mp4
+
+==========================================
+SUMMARY: procedure-visualizer
+==========================================
+Example 1: PASS
+Example 2: PASS
+Video:     recording/procedure-visualizer/recording.mp4
+
+RECORDING COMPLETE

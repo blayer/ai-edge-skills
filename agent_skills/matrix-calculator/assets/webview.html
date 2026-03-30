@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrix Calculator</title>
+<style>
+  body { margin: 0; padding: 16px; font-family: -apple-system, sans-serif; background: #1a1a2e; color: #eee; }
+  h2 { color: #64ffda; margin: 0 0 16px; font-size: 18px; }
+  .matrix-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .matrix { display: inline-block; border-left: 3px solid #64ffda; border-right: 3px solid #64ffda; padding: 4px 8px; border-radius: 2px; }
+  .matrix td { padding: 6px 12px; text-align: right; font-family: monospace; font-size: 14px; color: #ffd700; }
+  .op { font-size: 24px; color: #e94560; font-weight: bold; }
+  .label { color: #a8b2d1; font-size: 12px; margin-bottom: 4px; }
+  .result-val { font-size: 20px; color: #64ffda; font-weight: bold; background: #16213e; padding: 12px; border-radius: 8px; }
+  .error { color: #e94560; }
+</style>
+</head>
+<body>
+<h2>Matrix Calculator</h2><div id="content"></div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const input = JSON.parse(decodeURIComponent(params.get('data')));
+const op = (input.operation || 'transpose').toLowerCase();
+const A = input.matrix_a || [[1,0],[0,1]];
+const B = input.matrix_b;
+const scalar = input.scalar || 2;
+const el = document.getElementById('content');
+
+function renderMatrix(m, label) {
+  if (typeof m === 'number') return `<div><div class="label">${label}</div><div class="result-val">${m}</div></div>`;
+  return `<div><div class="label">${label}</div><table class="matrix">${m.map(r => '<tr>' + r.map(c => `<td>${typeof c==='number'?parseFloat(c.toFixed(4)):c}</td>`).join('') + '</tr>').join('')}</table></div>`;
+}
+
+function transpose(m) { return m[0].map((_, i) => m.map(r => r[i])); }
+function add(a, b) { return a.map((r, i) => r.map((v, j) => v + b[i][j])); }
+function multiply(a, b) { return a.map((r, i) => b[0].map((_, j) => r.reduce((s, v, k) => s + v * b[k][j], 0))); }
+function det(m) {
+  const n = m.length; if (n === 1) return m[0][0]; if (n === 2) return m[0][0]*m[1][1]-m[0][1]*m[1][0];
+  let d = 0; for (let j = 0; j < n; j++) { const sub = m.slice(1).map(r => [...r.slice(0,j),...r.slice(j+1)]); d += (j%2===0?1:-1)*m[0][j]*det(sub); } return d;
+}
+function inverse(m) {
+  const n = m.length, d = det(m); if (d === 0) return null;
+  if (n === 2) return [[m[1][1]/d, -m[0][1]/d], [-m[1][0]/d, m[0][0]/d]];
+  const cofactors = m.map((r, i) => r.map((_, j) => { const sub = m.filter((_,ri)=>ri!==i).map(r=>[...r.slice(0,j),...r.slice(j+1)]); return ((i+j)%2===0?1:-1)*det(sub); }));
+  const adj = transpose(cofactors);
+  return adj.map(r => r.map(v => v / d));
+}
+function scalarMul(m, s) { return m.map(r => r.map(v => v * s)); }
+
+try {
+  let result, opSymbol = op;
+  switch (op) {
+    case 'transpose': result = transpose(A); opSymbol = 'T'; break;
+    case 'add': result = add(A, B); opSymbol = '+'; break;
+    case 'multiply': result = multiply(A, B); opSymbol = 'x'; break;
+    case 'determinant': result = det(A); opSymbol = 'det'; break;
+    case 'inverse': result = inverse(A); if(!result) throw new Error('Matrix is singular'); opSymbol = '~1'; break;
+    case 'scalar_multiply': result = scalarMul(A, scalar); opSymbol = `x${scalar}`; break;
+    default: throw new Error('Unknown operation: ' + op);
+  }
+  let html = '<div class="matrix-row">' + renderMatrix(A, 'Matrix A');
+  if (B && (op==='add'||op==='multiply')) html += `<span class="op">${opSymbol}</span>` + renderMatrix(B, 'Matrix B');
+  html += '</div><div class="matrix-row"><span class="op">=</span>' + renderMatrix(result, 'Result') + '</div>';
+  el.innerHTML = html;
+} catch(e) { el.innerHTML = `<p class="error">${e.message}</p>`; }
+</script>
+</body>
+</html>

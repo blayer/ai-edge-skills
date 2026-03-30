@@ -1,0 +1,29 @@
+Skill:    expert-translator
+Prompt 1: "Translate this medical report to plain English"
+Prompt 2: "Explain this legal contract in simple terms"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: expert-translator
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... Enabled 'expert-translator'
+OK
+
+[3/5] Starting video recording...
+Screen recording started (PID 32048)
+
+[4/5] Example 1: "Translate this medical report to plain English"... FAIL (timeout)
+
+[5/5] Example 2: "Explain this legal contract in simple terms"... FAIL (timeout)
+
+Video saved: recording/expert-translator/recording.mp4
+
+==========================================
+SUMMARY: expert-translator
+==========================================
+Example 1: FAIL
+Example 2: FAIL
+Video:     recording/expert-translator/recording.mp4
+
+RECORDING INCOMPLETE - Some examples failed

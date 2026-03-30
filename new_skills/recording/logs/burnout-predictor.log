@@ -1,0 +1,10 @@
+Skill:    burnout-predictor
+Prompt 1: "Analyze my journal entry for stress levels"
+Prompt 2: "Track my daily mood entry"
+Device:   2A241FDH30069Z
+
+==========================================
+Recording: burnout-predictor
+==========================================
+[1/5] Checking device... OK
+[2/5] Setting up... ERROR: Not on chat screen.

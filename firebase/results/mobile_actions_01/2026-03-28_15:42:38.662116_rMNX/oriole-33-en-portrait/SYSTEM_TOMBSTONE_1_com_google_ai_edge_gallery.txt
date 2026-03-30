@@ -1,0 +1,798 @@
+2026-03-28 15:49:35 SYSTEM_TOMBSTONE (compressed text, 11364 bytes)
+isPrevious: true
+Build: google/oriole/oriole:13/TQ3A.230705.001/10216780:user/release-keys
+Hardware: oriole
+Revision: MP1.0
+Bootloader: slider-1.2-9883526
+Radio: g5123b-116954-230511-B-10112789
+Kernel: Linux version 5.10.157-android13-4-00001-g914e947b041d-ab10144456 (build-user@build-host) (Android (8508608, based on r450784e) clang version 14.0.7 (https://android.googlesource.com/toolchain/llvm-project 4c603efb0cca074e9238af8b4106c30add4418f6), LLD 14.0.7) #1 SMP PREEMPT Tue May 16 08:47:42 UTC 2023
+
+Dropped-Count: 0
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+Build fingerprint: 'google/oriole/oriole:13/TQ3A.230705.001/10216780:user/release-keys'
+Revision: 'MP1.0'
+ABI: 'arm64'
+Timestamp: 2026-03-28 15:49:34.743640685-0700
+Process uptime: 349s
+Cmdline: com.google.ai.edge.gallery
+pid: 30309, tid: 2632, name: Thread-84  >>> com.google.ai.edge.gallery <<<
+uid: 10257
+tagged_addr_ctrl: 0000000000000001 (PR_TAGGED_ADDR_ENABLE)
+signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x6d6f635f6176615a
+    x0  b400006d88308c00  x1  0000006d2e2f10a0  x2  0000006d2e2f0ec0  x3  0000006d2e2f0e00
+    x4  0000006d2e2f081f  x5  73616d706c696e67  x6  676e696c706d6173  x7  676e696c706d6173
+    x8  6d6f635f6176614a  x9  0000006ca0f11a00  x10 65646f6365640067  x11 0000000000000008
+    x12 0000006ff95a8020  x13 000000007fffffff  x14 00000000003b2fb2  x15 0000006eed36d301
+    x16 0000006ca0f8e4b8  x17 0000006ff28d6840  x18 0000006c68f02000  x19 00000000000000aa
+    x20 0000000000000004  x21 0000006ca03840d4  x22 0000000000000001  x23 0000000000000001
+    x24 0000000000000001  x25 0000006c9fe441da  x26 0000006d2e2f0c10  x27 0000006d2e2f1521
+    x28 0000000000000018  x29 0000000000000030
+    lr  0000006ca05aa0a0  sp  0000006d2e2f0860  pc  0000006ca05aa0cc  pst 0000000060001000
+
+backtrace:
+      #00 pc 00000000007a90cc  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+      #01 pc 00000000007967bc  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+      #02 pc 0000000000793888  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+      #03 pc 0000000000795e00  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+      #04 pc 00000000007b745c  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+      #05 pc 00000000007b7cf8  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+      #06 pc 00000000000c226c  /apex/com.android.runtime/lib64/bionic/libc.so (__pthread_start(void*)+204) (BuildId: dc4001c2ef2dfc23467040797a96840c)
+      #07 pc 0000000000054a30  /apex/com.android.runtime/lib64/bionic/libc.so (__start_thread+64) (BuildId: dc4001c2ef2dfc23467040797a96840c)
+
+memory near x0 ([anon:scudo:primary]):
+    0000006d88308be0 b400006d88308bc0 0000000000000000  ..0.m...........
+    0000006d88308bf0 98e6000000038004 0000000000000000  ................
+    0000006d88308c00 0000006d32a110a8 0000000000000008  ...2m...........
+    0000006d88308c10 00000000000007a9 0000006d2e4a6880  .........hJ.m...
+    0000006d88308c20 0000000000000000 0000000000000000  ................
+    0000006d88308c30 0000000000000001 0000000200000000  ................
+    0000006d88308c40 99ae000000040104 0000000000000000  ................
+    0000006d88308c50 0000006fd6ff5300 003c003f00280242  .S..o...B.(.?.<.
+    0000006d88308c60 002d0061005b003d 005a002d0041007a  =.[.a.-.z.A.-.Z.
+    0000006d88308c70 0041005b0029005d 0000005d005a002d  ].).[.A.-.Z.]...
+    0000006d88308c80 0000000000000000 0000000000000000  ................
+    0000006d88308c90 d4a8000000040104 0000000000000000  ................
+    0000006d88308ca0 0000000000000007 0000000000000002  ................
+    0000006d88308cb0 0000000000000008 000000000000000c  ................
+    0000006d88308cc0 0000000000000007 000000000000000a  ................
+    0000006d88308cd0 0000000000000000 0000000000000000  ................
+
+memory near x1 ([anon:stack_and_tls:2632]):
+    0000006d2e2f1080 0000000000000000 0000000000000000  ................
+    0000006d2e2f1090 0000000000000000 0000006d56e57c30  ........0|.Vm...
+    0000006d2e2f10a0 b400006e16eb6550 0000000000000000  Pe..n...........
+    0000006d2e2f10b0 0000006ca0f11a38 b400006d56f17d50  8...l...P}.Vm...
+    0000006d2e2f10c0 0000006ca0ea4844 0000000000000001  DH..l...........
+    0000006d2e2f10d0 0000006d2e2f10b0 0000000000000000  ../.m...........
+    0000006d2e2f10e0 0000006c00000001 b400006d56f17d50  ....l...P}.Vm...
+    0000006d2e2f10f0 b400006dd6f666d0 0000006d2e2f1238  .f..m...8./.m...
+    0000006d2e2f1100 0000006ca0ea4c1c 0000000000000900  .L..l...........
+    0000006d2e2f1110 0000006ca003b130 0000000000000000  0...l...........
+    0000006d2e2f1120 0000006d2e2f2000 0000006d2e2f2000  . /.m.... /.m...
+    0000006d2e2f1130 0000006d2e2f1178 00000000ffffffff  x./.m...........
+    0000006d2e2f1140 0000000700092002 0000006d2e2f1238  . ......8./.m...
+    0000006d2e2f1150 0000000000000000 0000000700092002  ......... ......
+    0000006d2e2f1160 00000000ffffffff 0000006d2e2f1178  ........x./.m...
+    0000006d2e2f1170 0000000000000004 0000000032333632  ........2632....
+
+memory near x2 ([anon:stack_and_tls:2632]):
+    0000006d2e2f0ea0 b400006d67b7dfe0 b400006d67b7dff8  ...gm......gm...
+    0000006d2e2f0eb0 b400006d67b7dff8 0000006d2e2f0f00  ...gm...../.m...
+    0000006d2e2f0ec0 b400006e16ec9b10 0000000000000900  ....n...........
+    0000006d2e2f0ed0 0000006ca0f11a38 b400006d57016690  8...l....f.Wm...
+    0000006d2e2f0ee0 0000006d2e2f2000 0000006d2e2f2000  . /.m.... /.m...
+    0000006d2e2f0ef0 0000006d2e2f0ed0 00000000ffffffff  ../.m...........
+    0000006d2e2f0f00 0000000700000001 b400006d57016690  .........f.Wm...
+    0000006d2e2f0f10 b400006dd6fb2e10 0000000700092002  ....m.... ......
+    0000006d2e2f0f20 0000006cffffff01 0000006d2e2f0f38  ....l...8./.m...
+    0000006d2e2f0f30 0000000000000001 0000000032333632  ........2632....
+    0000006d2e2f0f40 0000000000000000 0000000000000000  ................
+    0000006d2e2f0f50 0000006ca0f11a38 b400006d57016690  8...l....f.Wm...
+    0000006d2e2f0f60 0000006d2e2f2000 2f80b2a92f9b19f3  . /.m....../.../
+    0000006d2e2f0f70 0000006d2e2f0f50 0000000000000005  P./.m...........
+    0000006d2e2f0f80 0000006c00000001 b400006d57016690  ....l....f.Wm...
+    0000006d2e2f0f90 b400006dd6fb2e10 0000006d2e2f0ff8  ....m...../.m...
+
+memory near x3 ([anon:stack_and_tls:2632]):
+    0000006d2e2f0de0 0000000000000000 b400006d57016690  .........f.Wm...
+    0000006d2e2f0df0 b400006dd6fb2e10 0000006d2e2f1400  ....m...../.m...
+    0000006d2e2f0e00 b400006e16ecb710 0000000000000001  ....n...........
+    0000006d2e2f0e10 0000006ca0f11a38 b400006d57016690  8...l....f.Wm...
+    0000006d2e2f0e20 0000006d2e2f0e90 0000006ff28cf108  ../.m.......o...
+    0000006d2e2f0e30 0000006d2e2f0e10 0000006ff28c91d8  ../.m.......o...
+    0000006d2e2f0e40 0000000000000001 b400006d57016690  .........f.Wm...
+    0000006d2e2f0e50 b400006dd6fb2e10 0000000000000001  ....m...........
+    0000006d2e2f0e60 b400006d96e5db00 0000000000000001  ....m...........
+    0000006d2e2f0e70 b400006d67b755b0 b400006d67b755c8  .U.gm....U.gm...
+    0000006d2e2f0e80 b400006d67b755c8 b400006d7700e150  .U.gm...P..wm...
+    0000006d2e2f0e90 b400006d7700e180 b400006d7700e180  ...wm......wm...
+    0000006d2e2f0ea0 b400006d67b7dfe0 b400006d67b7dff8  ...gm......gm...
+    0000006d2e2f0eb0 b400006d67b7dff8 0000006d2e2f0f00  ...gm...../.m...
+    0000006d2e2f0ec0 b400006e16ec9b10 0000000000000900  ....n...........
+    0000006d2e2f0ed0 0000006ca0f11a38 b400006d57016690  8...l....f.Wm...
+
+memory near x4 ([anon:stack_and_tls:2632]):
+    0000006d2e2f07f0 0000000092f29894 0000000069c85afe  .........Z.i....
+    0000006d2e2f0800 0000006d2e2f0c40 0000006d2e2f11f0  @./.m...../.m...
+    0000006d2e2f0810 0000006ca0eaec14 0000006d2e2f0c78  ....l...x./.m...
+    0000006d2e2f0820 0000006ca0b245f8 0000006d2e2f11f0  .E..l...../.m...
+    0000006d2e2f0830 0000006ca05aa09c 0000006ca05aa098  ..Z.l.....Z.l...
+    0000006d2e2f0840 0000000000000001 0000006ca03840d4  .........@8.l...
+    0000006d2e2f0850 0000000000000004 00000000000000aa  ................
+    0000006d2e2f0860 0000000000000000 0000000000000001  ................
+    0000006d2e2f0870 0000000000000001 0000000000000001  ................
+    0000006d2e2f0880 b400006e36efd998 0000006d2e2f2000  ...6n.... /.m...
+    0000006d2e2f0890 0000006d2e2f1840 0000006d2e2f16b0  @./.m...../.m...
+    0000006d2e2f08a0 000004007fffffff 0000000000000001  ................
+    0000006d2e2f08b0 b400006e56fe7370 b400006e36efdaf8  ps.Vn......6n...
+    0000006d2e2f08c0 0000000000000024 0000006d2e2f1730  $.......0./.m...
+    0000006d2e2f08d0 00000007a05ff868 0000006d2e2f09d0  h._......./.m...
+    0000006d2e2f08e0 0000000000000000 000000000000001f  ................
+
+memory near x9 (/data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so):
+    0000006ca0f119e0 0000006ca0595248 0000006ca05952a0  HRY.l....RY.l...
+    0000006ca0f119f0 0000006ca05952f4 0000006ca0595304  .RY.l....SY.l...
+    0000006ca0f11a00 0000006ca0595340 0000006ca059537c  @SY.l...|SY.l...
+    0000006ca0f11a10 0000006ca0f85aa0 0000006c9ff37f14  .Z..l.......l...
+    0000006ca0f11a20 0000006ca0f11950 0000000000000000  P...l...........
+    0000006ca0f11a30 0000006ca0f11a80 0000006ca037d97c  ....l...|.7.l...
+    0000006ca0f11a40 0000006ca037d980 0000006ca0596210  ..7.l....bY.l...
+    0000006ca0f11a50 0000006ca0596268 0000006ca037d97c  hbY.l...|.7.l...
+    0000006ca0f11a60 0000006ca037d980 0000006ca0596280  ..7.l....bY.l...
+    0000006ca0f11a70 0000006ca0596288 0000006ca05962a4  .bY.l....bY.l...
+    0000006ca0f11a80 0000006ca0f85aa0 0000006c9ff37f2f  .Z..l.../...l...
+    0000006ca0f11a90 0000006ca0f11a98 0000006ca0f85a50  ....l...PZ..l...
+    0000006ca0f11aa0 0000006c9ff37fd3 0000006ca0f85a50  ....l...PZ..l...
+    0000006ca0f11ab0 0000006c9ff3800d 0000000000000000  ....l...........
+    0000006ca0f11ac0 0000006ca0f11b10 0000006ca037d97c  ....l...|.7.l...
+    0000006ca0f11ad0 0000006ca037d980 0000006ca059630c  ..7.l....cY.l...
+
+memory near x13 ([anon:dalvik-free list large object space]):
+    000000007fffffd0 0000000000000000 0000000000000000  ................
+    000000007fffffe0 0000000000000000 0000000000000000  ................
+    000000007ffffff0 0000000000000000 0000000000000000  ................
+    0000000080000000 0000000000000000 0000000000000000  ................
+    0000000080000010 0000000000000000 0000000000000000  ................
+    0000000080000020 0000000000000000 0000000000000000  ................
+    0000000080000030 0000000000000000 0000000000000000  ................
+    0000000080000040 0000000000000000 0000000000000000  ................
+    0000000080000050 0000000000000000 0000000000000000  ................
+    0000000080000060 0000000000000000 0000000000000000  ................
+    0000000080000070 0000000000000000 0000000000000000  ................
+    0000000080000080 0000000000000000 0000000000000000  ................
+    0000000080000090 0000000000000000 0000000000000000  ................
+    00000000800000a0 0000000000000000 0000000000000000  ................
+    00000000800000b0 0000000000000000 0000000000000000  ................
+    00000000800000c0 0000000000000000 0000000000000000  ................
+
+memory near x16 (/data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so):
+    0000006ca0f8e490 0000006ff28f0830 0000006ff28f03b0  0...o.......o...
+    0000006ca0f8e4a0 0000006ff29184a0 0000006ff28d9f20  ....o... ...o...
+    0000006ca0f8e4b0 0000006ff2947810 0000006ff28d6840  .x..o...@h..o...
+    0000006ca0f8e4c0 0000006ff28d6740 0000006ff28c91b0  @g..o.......o...
+    0000006ca0f8e4d0 0000006ff28c9050 0000006ff294e120  P...o... ...o...
+    0000006ca0f8e4e0 0000006ff294e0c0 0000006ff0d394c0  ....o.......o...
+    0000006ca0f8e4f0 0000006ff0d26ef0 0000006ff1eb5020  .n..o... P..o...
+    0000006ca0f8e500 0000006ff1eb5040 0000006ff2910c30  @P..o...0...o...
+    0000006ca0f8e510 0000006ff28f0030 0000006ff2937490  0...o....t..o...
+    0000006ca0f8e520 0000006ff28eb270 0000006ff28e2bd0  p...o....+..o...
+    0000006ca0f8e530 0000006ff28d9320 0000006ff2937ab0   ...o....z..o...
+    0000006ca0f8e540 0000006ff28c9470 0000006ff0d3a3b0  p...o.......o...
+    0000006ca0f8e550 0000006ff2945270 0000006ff28c8fa0  pR..o.......o...
+    0000006ca0f8e560 0000006ff2944af0 0000006ff2945ad0  .J..o....Z..o...
+    0000006ca0f8e570 0000006ff2948700 0000006ff29336d0  ....o....6..o...
+    0000006ca0f8e580 0000006ff2945640 0000006ff29456e0  @V..o....V..o...
+
+memory near x17 (/apex/com.android.runtime/lib64/bionic/libc.so):
+    0000006ff28d6820 0000000000000000 0000000000000000  ................
+    0000006ff28d6830 0000000000000000 0000000000000000  ................
+    0000006ff28d6840 f1002042d503245f f840840354000643  _$..B ..C..T..@.
+    0000006ff28d6850 eb05007ff8408425 f1002042540004e1  %.@........TB ..
+    0000006ff28d6860 f86268035400008c 14000022f8626825  ...T.hb.%hb."...
+    0000006ff28d6870 f8408425f8408403 540003c1eb05007f  ..@.%.@........T
+    0000006ff28d6880 54000269f1004042 540000a9f101805f  B@..i..T_......T
+    0000006ff28d6890 8b07004292400c07 cb070021cb070000  ..@.B.......!...
+    0000006ff28d68a0 a8c11825a8c11003 fa458060f1004042  ....%...B@..`.E.
+    0000006ff28d68b0 54ffff60fa460080 540001c1eb05007f  ..F.`..T.......T
+    0000006ff28d68c0 aa0603e5aa0403e3 54000141eb05007f  ............A..T
+    0000006ff28d68d0 8b0200218b020000 a9401825a9401003  ....!.....@.%.@.
+    0000006ff28d68e0 54000081eb05007f aa0603e5aa0403e3  .......T........
+    0000006ff28d68f0 dac00c63eb05007f eb05007fdac00ca5  ....c...........
+    0000006ff28d6900 5a8024001a9f07e0 d503201fd65f03c0  .....$.Z.._.. ..
+    0000006ff28d6910 540000c3b1001042 b8404425b8404403  B......T.D@.%D@.
+
+memory near x18:
+    0000006c68f02000 0000000000000000 0000000000000000  ................
+    0000006c68f02010 0000000000000000 0000000000000000  ................
+    0000006c68f02020 0000000000000000 0000000000000000  ................
+    0000006c68f02030 0000000000000000 0000000000000000  ................
+    0000006c68f02040 0000000000000000 0000000000000000  ................
+    0000006c68f02050 0000000000000000 0000000000000000  ................
+    0000006c68f02060 0000000000000000 0000000000000000  ................
+    0000006c68f02070 0000000000000000 0000000000000000  ................
+    0000006c68f02080 0000000000000000 0000000000000000  ................
+    0000006c68f02090 0000000000000000 0000000000000000  ................
+    0000006c68f020a0 0000000000000000 0000000000000000  ................
+    0000006c68f020b0 0000000000000000 0000000000000000  ................
+    0000006c68f020c0 0000000000000000 0000000000000000  ................
+    0000006c68f020d0 0000000000000000 0000000000000000  ................
+    0000006c68f020e0 0000000000000000 0000000000000000  ................
+    0000006c68f020f0 0000000000000000 0000000000000000  ................
+
+memory near x21 (/data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so):
+    0000006ca03840b0 d65f03c0a8c14ffe aa1303e0b4000073  .O...._.s.......
+    0000006ca03840c0 aa1303e097fff5c4 a8c14ffe52800901  ...........R.O..
+    0000006ca03840d0 d10483ff142d70ff a9114ffef90083fd  .p-..........O..
+    0000006ca03840e0 910003e0aa0003f3 f940027397ffc2cb  ............s.@.
+    0000006ca03840f0 910003e1910203e0 f9400e6894000018  ............h.@.
+    0000006ca0384100 aa1303e0910203e1 910203e0d63f0100  ..........?.....
+    0000006ca0384110 910003e097ffaa71 a9514ffe97ffaa6f  q.......o....OQ.
+    0000006ca0384120 910483fff94083fd 12001c08d65f03c0  ..@......._.....
+    0000006ca0384130 51000508aa0103e0 540000c87100051f  .......Q...q...T
+    0000006ca0384140 f9000048f9400008 f9000448f9400408  ..@.H.....@.H...
+    0000006ca0384150 17ffaf6aa9007c1f aa0103e8a9bf4ffe  .|..j....O......
+    0000006ca0384160 aa0003f3f9400021 540000e1f100043f  !.@.....?......T
+    0000006ca0384170 9100210191002260 528000289400000a  `"...!......(..R
+    0000006ca0384180 14000005f9000268 37000061f9000261  h.......a...a..7
+    0000006ca0384190 942d789f52800020 d65f03c0a8c14ffe   ..R.x-..O...._.
+    0000006ca03841a0 a90157f6f81d0ffe aa0103f5a9024ff4  .....W...O......
+
+memory near x25 (/data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so):
+    0000006c9fe441b0 205d227325225b20 25005d227325225b   ["%s"] ["%s"].%
+    0000006c9fe441c0 64656c6961662073 75716361206f7420  s failed to acqu
+    0000006c9fe441d0 6574756d20657269 616a4c4928000078  ire mutex..(ILja
+    0000006c9fe441e0 2f676e616c2f6176 293b676e69727453  va/lang/String;)
+    0000006c9fe441f0 656e69676e450056 6f6e206570797420  V.Engine type no
+    0000006c9fe44200 3a646e756f662074 696c61766e690020  t found: .invali
+    0000006c9fe44210 676e697274732064 6f72746e6f63203a  d string: contro
+    0000006c9fe44220 636172616863206c 30302b5520726574  l character U+00
+    0000006c9fe44230 2932434428203231 6562207473756d20  12 (DC2) must be
+    0000006c9fe44240 6465706163736520 3030755c206f7420   escaped to \u00
+    0000006c9fe44250 657078651f003231 6765722064657463  12..expected reg
+    0000006c9fe44260 204e4f534a207865 67202c65756c6176  ex JSON value, g
+    0000006c9fe44270 6e551000c020746f 6f66206e776f6e6b  ot ...Unknown fo
+    0000006c9fe44280 00c0203a74616d72 620d005f3a3a03c0  rmat: ....::_..b
+    0000006c9fe44290 746e756f635f7469 202c02c02871655f  it_count_eq(.., 
+    0000006c9fe442a0 6e6f6c43002901c0 6d49657461745365  ..).CloneStateIm
+
+memory near x26 ([anon:stack_and_tls:2632]):
+    0000006d2e2f0bf0 b400006dd6fb2e10 b400006d56f17d50  ....m...P}.Vm...
+    0000006d2e2f0c00 0000006d2e2f0c01 0000006ff28cf108  ../.m.......o...
+    0000006d2e2f0c10 b400006e56fe7370 b400006d67aa2f80  ps.Vn..../.gm...
+    0000006d2e2f0c20 0000000000000001 b400006d88308c00  ..........0.m...
+    0000006d2e2f0c30 0000000000000001 0000000000000000  ................
+    0000006d2e2f0c40 0000006ca0f7d0e8 0000000000000000  ....l...........
+    0000006d2e2f0c50 0000000000000000 0000000000000000  ................
+    0000006d2e2f0c60 b400006d96e646f0 b400006d96e5c350  .F..m...P...m...
+    0000006d2e2f0c70 000000000000000c b400006d96e64030  ........0@..m...
+    0000006d2e2f0c80 b400006d96e64030 0000000000000002  0@..m...........
+    0000006d2e2f0c90 0000000100000002 0000000000000003  ................
+    0000006d2e2f0ca0 b400006d96e63c70 b400006d96e48430  p<..m...0...m...
+    0000006d2e2f0cb0 0000000000000006 b400006d96e62710  .........'..m...
+    0000006d2e2f0cc0 b400006d96e62710 0000000000000002  .'..m...........
+    0000006d2e2f0cd0 b400006d77006a50 b400006d77006a80  Pj.wm....j.wm...
+    0000006d2e2f0ce0 b400006d77006a80 b400006d67b7a2c0  .j.wm......gm...
+
+memory near x27 ([anon:stack_and_tls:2632]):
+    0000006d2e2f1500 0000006d00000001 b400006d57016690  ....m....f.Wm...
+    0000006d2e2f1510 b400006dd6fb2e10 0000006ca0f9ea50  ....m...P...l...
+    0000006d2e2f1520 74006f748196e201 796c6c7566737300  ....to.t.ssfully
+    0000006d2e2f1530 0000000000000000 00000000f17120e0  ......... q.....
+    0000006d2e2f1540 0000006ca0f11a38 b400006d57016690  8...l....f.Wm...
+    0000006d2e2f1550 0000000000000004 0000000100000001  ................
+    0000006d2e2f1560 0000006d2e2f1540 0000000000000000  @./.m...........
+    0000006d2e2f1570 0000000000000001 b400006d57016690  .........f.Wm...
+    0000006d2e2f1580 b400006dd6fb2e10 0000000000000000  ....m...........
+    0000006d2e2f1590 0000006ca0590e68 2f80b2a92f9b19f3  h.Y.l....../.../
+    0000006d2e2f15a0 000000007fffffff 0000006ca05977c0  .........wY.l...
+    0000006d2e2f15b0 b400006e36efdaf8 0000006d2e2f2000  ...6n.... /.m...
+    0000006d2e2f15c0 b400006e56fe7370 b400006d67aa2f80  ps.Vn..../.gm...
+    0000006d2e2f15d0 b400006e36efda80 0000000000000001  ...6n...........
+    0000006d2e2f15e0 b400006d88308c00 b400006e36efd998  ..0.m......6n...
+    0000006d2e2f15f0 0000000000000000 0000006d2e2f1840  ........@./.m...
+
+memory near lr (/data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so):
+    0000006ca05aa080 f9049be0f100041f 94000c2354001661  ........a..T#...
+    0000006ca05aa090 94000c2e540000c1 94000bed94000c06  ...T............
+    0000006ca05aa0a0 54001601f10006df 36007a48394f43e8  .......T.CO9Hz.6
+    0000006ca05aa0b0 36007a08395b03e8 912103e1f941e7e0  ..[9.z.6..A...!.
+    0000006ca05aa0c0 9107c343911983e2 f9400908f9400008  ....C.....@...@.
+    0000006ca05aa0d0 f100041fd63f0100 54001401f9049be0  ..?............T
+    0000006ca05aa0e0 540000c194000c0e 94000bf194000c19  .......T........
+    0000006ca05aa0f0 f10006df94000bd8 395b03e8540013a1  ...........T..[9
+    0000006ca05aa100 911b43e0360077a8 97ffaefb911983e1  .w.6.C..........
+    0000006ca05aa110 94000c01140000a0 94000bf3540000c1  ...........T....
+    0000006ca05aa120 94000c0094000c2c 540008e1f10006df  ,..............T
+    0000006ca05aa130 b4000381f941efe1 f903a3ff911d03e0  ..A.............
+    0000006ca05aa140 f941dbe094014832 911d03e291064341  2H....A.AC......
+    0000006ca05aa150 f9401508f9400008 f100041fd63f0100  ..@...@...?.....
+    0000006ca05aa160 54000300f90423e0 912103e0528024c8  .#.....T.$.R..!.
+    0000006ca05aa170 94000bc4f90503e8 d0ffc86014000047  ........G...`...
+
+memory near sp ([anon:stack_and_tls:2632]):
+    0000006d2e2f0840 0000000000000001 0000006ca03840d4  .........@8.l...
+    0000006d2e2f0850 0000000000000004 00000000000000aa  ................
+    0000006d2e2f0860 0000000000000000 0000000000000001  ................
+    0000006d2e2f0870 0000000000000001 0000000000000001  ................
+    0000006d2e2f0880 b400006e36efd998 0000006d2e2f2000  ...6n.... /.m...
+    0000006d2e2f0890 0000006d2e2f1840 0000006d2e2f16b0  @./.m...../.m...
+    0000006d2e2f08a0 000004007fffffff 0000000000000001  ................
+    0000006d2e2f08b0 b400006e56fe7370 b400006e36efdaf8  ps.Vn......6n...
+    0000006d2e2f08c0 0000000000000024 0000006d2e2f1730  $.......0./.m...
+    0000006d2e2f08d0 00000007a05ff868 0000006d2e2f09d0  h._......./.m...
+    0000006d2e2f08e0 0000000000000000 000000000000001f  ................
+    0000006d2e2f08f0 0000000000000000 0000006ff28cf108  ............o...
+    0000006d2e2f0900 b400006e46fa44a9 000000000000000d  .D.Fn...........
+    0000006d2e2f0910 b400006ec6fd9138 0000000000000000  8...n...........
+    0000006d2e2f0920 b400006e26e885e0 b400006e26e885e0  ...&n......&n...
+    0000006d2e2f0930 b400006e26e88820 0000006ff2963401   ..&n....4..o...
+
+memory near pc (/data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so):
+    0000006ca05aa0a0 54001601f10006df 36007a48394f43e8  .......T.CO9Hz.6
+    0000006ca05aa0b0 36007a08395b03e8 912103e1f941e7e0  ..[9.z.6..A...!.
+    0000006ca05aa0c0 9107c343911983e2 f9400908f9400008  ....C.....@...@.
+    0000006ca05aa0d0 f100041fd63f0100 54001401f9049be0  ..?............T
+    0000006ca05aa0e0 540000c194000c0e 94000bf194000c19  .......T........
+    0000006ca05aa0f0 f10006df94000bd8 395b03e8540013a1  ...........T..[9
+    0000006ca05aa100 911b43e0360077a8 97ffaefb911983e1  .w.6.C..........
+    0000006ca05aa110 94000c01140000a0 94000bf3540000c1  ...........T....
+    0000006ca05aa120 94000c0094000c2c 540008e1f10006df  ,..............T
+    0000006ca05aa130 b4000381f941efe1 f903a3ff911d03e0  ..A.............
+    0000006ca05aa140 f941dbe094014832 911d03e291064341  2H....A.AC......
+    0000006ca05aa150 f9401508f9400008 f100041fd63f0100  ..@...@...?.....
+    0000006ca05aa160 54000300f90423e0 912103e0528024c8  .#.....T.$.R..!.
+    0000006ca05aa170 94000bc4f90503e8 d0ffc86014000047  ........G...`...
+    0000006ca05aa180 5280066191147400 94000bf452801ea2  .t..a..R...R....
+    0000006ca05aa190 f9036be09423d2f7 97f718a1911b43e0  ..#..k...C......
+
+memory map (2576 entries): (fault address prefixed with --->)
+    00000000'12c00000-00000000'32bfffff rw-         0  20000000  [anon:dalvik-main space (region space)]
+    00000000'704fa000-00000000'70787fff rw-         0    28e000  [anon:dalvik-/system/framework/boot.art]
+    00000000'70788000-00000000'707c9fff rw-         0     42000  [anon:dalvik-/system/framework/boot-core-libart.art]
+    00000000'707ca000-00000000'707f2fff rw-         0     29000  [anon:dalvik-/system/framework/boot-okhttp.art]
+    00000000'707f3000-00000000'70834fff rw-         0     42000  [anon:dalvik-/system/framework/boot-bouncycastle.art]
+    00000000'70835000-00000000'70835fff rw-         0      1000  [anon:dalvik-/system/framework/boot-apache-xml.art]
+    00000000'70836000-00000000'708c8fff r--         0     93000  /system/framework/arm64/boot.oat (BuildId: f2624dff261ac721c71496a318ad91b6e6cd0231)
+    00000000'708c9000-00000000'70bacfff r-x     93000    2e4000  /system/framework/arm64/boot.oat (BuildId: f2624dff261ac721c71496a318ad91b6e6cd0231)
+    00000000'70bad000-00000000'70badfff rw-         0      1000  [anon:.bss]
+    00000000'70bae000-00000000'70bc0fff rw-         0     13000  /system/framework/arm64/boot.vdex
+    00000000'70bc1000-00000000'70bc1fff r--    377000      1000  /system/framework/arm64/boot.oat (BuildId: f2624dff261ac721c71496a318ad91b6e6cd0231)
+    00000000'70bc2000-00000000'70bc2fff rw-    378000      1000  /system/framework/arm64/boot.oat (BuildId: f2624dff261ac721c71496a318ad91b6e6cd0231)
+    00000000'70bc3000-00000000'70bd0fff r--         0      e000  /system/framework/arm64/boot-core-libart.oat (BuildId: 5c2b2cca6c86baf33129cc256ea7b8fe07946532)
+    00000000'70bd1000-00000000'70c13fff r-x      e000     43000  /system/framework/arm64/boot-core-libart.oat (BuildId: 5c2b2cca6c86baf33129cc256ea7b8fe07946532)
+    00000000'70c14000-00000000'70c14fff rw-         0      1000  [anon:.bss]
+    00000000'70c15000-00000000'70c17fff rw-         0      3000  /system/framework/arm64/boot-core-libart.vdex
+    00000000'70c18000-00000000'70c18fff r--     51000      1000  /system/framework/arm64/boot-core-libart.oat (BuildId: 5c2b2cca6c86baf33129cc256ea7b8fe07946532)
+    00000000'70c19000-00000000'70c19fff rw-     52000      1000  /system/framework/arm64/boot-core-libart.oat (BuildId: 5c2b2cca6c86baf33129cc256ea7b8fe07946532)
+    00000000'70c1a000-00000000'70c25fff r--         0      c000  /system/framework/arm64/boot-okhttp.oat (BuildId: 3abb76299ec111d42a095be98d2b0711e244a920)
+    00000000'70c26000-00000000'70c59fff r-x      c000     34000  /system/framework/arm64/boot-okhttp.oat (BuildId: 3abb76299ec111d42a095be98d2b0711e244a920)
+    00000000'70c5a000-00000000'70c5afff rw-         0      1000  [anon:.bss]
+    00000000'70c5b000-00000000'70c5cfff rw-         0      2000  /system/framework/arm64/boot-okhttp.vdex
+    00000000'70c5d000-00000000'70c5dfff r--     40000      1000  /system/framework/arm64/boot-okhttp.oat (BuildId: 3abb76299ec111d42a095be98d2b0711e244a920)
+    00000000'70c5e000-00000000'70c5efff rw-     41000      1000  /system/framework/arm64/boot-okhttp.oat (BuildId: 3abb76299ec111d42a095be98d2b0711e244a920)
+    00000000'70c5f000-00000000'70c66fff r--         0      8000  /system/framework/arm64/boot-bouncycastle.oat (BuildId: 5dd8ae5131b8df419690d5f53b7356dd10bb4f39)
+    00000000'70c67000-00000000'70c7bfff r-x      8000     15000  /system/framework/arm64/boot-bouncycastle.oat (BuildId: 5dd8ae5131b8df419690d5f53b7356dd10bb4f39)
+    00000000'70c7c000-00000000'70c7cfff rw-         0      1000  [anon:.bss]
+    00000000'70c7d000-00000000'70c85fff rw-         0      9000  /system/framework/arm64/boot-bouncycastle.vdex
+    00000000'70c86000-00000000'70c86fff r--     1d000      1000  /system/framework/arm64/boot-bouncycastle.oat (BuildId: 5dd8ae5131b8df419690d5f53b7356dd10bb4f39)
+    00000000'70c87000-00000000'70c87fff rw-     1e000      1000  /system/framework/arm64/boot-bouncycastle.oat (BuildId: 5dd8ae5131b8df419690d5f53b7356dd10bb4f39)
+    00000000'70c88000-00000000'70c8afff r--         0      3000  /system/framework/arm64/boot-apache-xml.oat (BuildId: 8b4ce68d2dfc0a8ce3bc2f894874b02aee459c50)
+    00000000'70c8b000-00000000'70c8ffff rw-         0      5000  /system/framework/arm64/boot-apache-xml.vdex
+    00000000'70c90000-00000000'70c90fff r--      3000      1000  /system/framework/arm64/boot-apache-xml.oat (BuildId: 8b4ce68d2dfc0a8ce3bc2f894874b02aee459c50)
+    00000000'70c91000-00000000'70c91fff rw-      4000      1000  /system/framework/arm64/boot-apache-xml.oat (BuildId: 8b4ce68d2dfc0a8ce3bc2f894874b02aee459c50)
+    00000000'70c92000-00000000'718a8fff rw-         0    c17000  [anon:dalvik-/system/framework/boot-framework.art]
+    00000000'718a9000-00000000'718a9fff rw-         0      1000  [anon:dalvik-/system/framework/boot-framework-graphics.art]
+    00000000'718aa000-00000000'718c7fff rw-         0     1e000  [anon:dalvik-/system/framework/boot-ext.art]
+    00000000'718c8000-00000000'71a23fff rw-         0    15c000  [anon:dalvik-/system/framework/boot-telephony-common.art]
+    00000000'71a24000-00000000'71ac3fff rw-         0     a0000  [anon:dalvik-/system/framework/boot-voip-common.art]
+    00000000'71ac4000-00000000'71b0bfff rw-         0     48000  [anon:dalvik-/system/framework/boot-ims-common.art]
+    00000000'71b0c000-00000000'71c7dfff rw-         0    172000  [anon:dalvik-/system/framework/boot-core-icu4j.art]
+    00000000'71c7e000-00000000'71e25fff r--         0    1a8000  /system/framework/arm64/boot-framework.oat (BuildId: edc04c8e9e37f7046cd15598d4f39ab279b488e2)
+    00000000'71e26000-00000000'72516fff r-x    1a8000    6f1000  /system/framework/arm64/boot-framework.oat (BuildId: edc04c8e9e37f7046cd15598d4f39ab279b488e2)
+    00000000'72517000-00000000'72518fff r--    899000      2000  /system/framework/arm64/boot-framework.oat (BuildId: edc04c8e9e37f7046cd15598d4f39ab279b488e2)
+    00000000'72519000-00000000'72519fff rw-         0      1000  [anon:.bss]
+    00000000'7251a000-00000000'72597fff rw-         0     7e000  /system/framework/boot-framework.vdex
+    00000000'72598000-00000000'72598fff r--    89b000      1000  /system/framework/arm64/boot-framework.oat (BuildId: edc04c8e9e37f7046cd15598d4f39ab279b488e2)
+    00000000'72599000-00000000'72599fff rw-    89c000      1000  /system/framework/arm64/boot-framework.oat (BuildId: edc04c8e9e37f7046cd15598d4f39ab279b488e2)
+    00000000'7259a000-00000000'7259bfff r--         0      2000  /system/framework/arm64/boot-framework-graphics.oat (BuildId: e10649812ad16bf0e31294092ae5dec6fc80192b)
+    00000000'7259c000-00000000'7259cfff r-x      2000      1000  /system/framework/arm64/boot-framework-graphics.oat (BuildId: e10649812ad16bf0e31294092ae5dec6fc80192b)
+    00000000'7259d000-00000000'7259dfff r--      3000      1000  /system/framework/arm64/boot-framework-graphics.oat (BuildId: e10649812ad16bf0e31294092ae5dec6fc80192b)
+    00000000'7259e000-00000000'7259efff rw-         0      1000  /system/framework/boot-framework-graphics.vdex
+    00000000'7259f000-00000000'7259ffff r--      4000      1000  /system/framework/arm64/boot-framework-graphics.oat (BuildId: e10649812ad16bf0e31294092ae5dec6fc80192b)
+    00000000'725a0000-00000000'725a0fff rw-      5000      1000  /system/framework/arm64/boot-framework-graphics.oat (BuildId: e10649812ad16bf0e31294092ae5dec6fc80192b)
+    00000000'725a1000-00000000'725a4fff r--         0      4000  /system/framework/arm64/boot-ext.oat (BuildId: 3f02eb88f7be4ec85b24e5aad6994a3cc82dc9a4)
+    00000000'725a5000-00000000'725b7fff r-x      4000     13000  /system/framework/arm64/boot-ext.oat (BuildId: 3f02eb88f7be4ec85b24e5aad6994a3cc82dc9a4)
+    00000000'725b8000-00000000'725b8fff r--     17000      1000  /system/framework/arm64/boot-ext.oat (BuildId: 3f02eb88f7be4ec85b24e5aad6994a3cc82dc9a4)
+    00000000'725b9000-00000000'725b9fff rw-         0      1000  /system/framework/boot-ext.vdex
+    00000000'725ba000-00000000'725bafff r--     18000      1000  /system/framework/arm64/boot-ext.oat (BuildId: 3f02eb88f7be4ec85b24e5aad6994a3cc82dc9a4)
+    00000000'725bb000-00000000'725bbfff rw-     19000      1000  /system/framework/arm64/boot-ext.oat (BuildId: 3f02eb88f7be4ec85b24e5aad6994a3cc82dc9a4)
+    00000000'725bc000-00000000'725c1fff r--         0      6000  /system/framework/arm64/boot-telephony-common.oat (BuildId: a0da815e622ea50ef1dddac27ae5547736c1a3dd)
+    00000000'725c2000-00000000'725cefff rw-         0      d000  /system/framework/boot-telephony-common.vdex
+    00000000'725cf000-00000000'725cffff r--      6000      1000  /system/framework/arm64/boot-telephony-common.oat (BuildId: a0da815e622ea50ef1dddac27ae5547736c1a3dd)
+    00000000'725d0000-00000000'725d0fff rw-      7000      1000  /system/framework/arm64/boot-telephony-common.oat (BuildId: a0da815e622ea50ef1dddac27ae5547736c1a3dd)
+    00000000'725d1000-00000000'725d3fff r--         0      3000  /system/framework/arm64/boot-voip-common.oat (BuildId: 47952ae44ac3769cafc89a6e6659d0445cab74f5)
+    00000000'725d4000-00000000'725d4fff r-x      3000      1000  /system/framework/arm64/boot-voip-common.oat (BuildId: 47952ae44ac3769cafc89a6e6659d0445cab74f5)
+    00000000'725d5000-00000000'725d9fff rw-         0      5000  /system/framework/boot-voip-common.vdex
+    00000000'725da000-00000000'725dafff r--      4000      1000  /system/framework/arm64/boot-voip-common.oat (BuildId: 47952ae44ac3769cafc89a6e6659d0445cab74f5)
+    00000000'725db000-00000000'725dbfff rw-      5000      1000  /system/framework/arm64/boot-voip-common.oat (BuildId: 47952ae44ac3769cafc89a6e6659d0445cab74f5)
+    00000000'725dc000-00000000'725ddfff r--         0      2000  /system/framework/arm64/boot-ims-common.oat (BuildId: f644e2c05976181f30fa794521118e4c3e7095b2)
+    00000000'725de000-00000000'725dffff rw-         0      2000  /system/framework/boot-ims-common.vdex
+    00000000'725e0000-00000000'725e0fff r--      2000      1000  /system/framework/arm64/boot-ims-common.oat (BuildId: f644e2c05976181f30fa794521118e4c3e7095b2)
+    00000000'725e1000-00000000'725e1fff rw-      3000      1000  /system/framework/arm64/boot-ims-common.oat (BuildId: f644e2c05976181f30fa794521118e4c3e7095b2)
+    00000000'725e2000-00000000'7260dfff r--         0     2c000  /system/framework/arm64/boot-core-icu4j.oat (BuildId: 6cbd80d0441ed3eccd256917b9eb88727ab47514)
+    00000000'7260e000-00000000'726e5fff r-x     2c000     d8000  /system/framework/arm64/boot-core-icu4j.oat (BuildId: 6cbd80d0441ed3eccd256917b9eb88727ab47514)
+    00000000'726e6000-00000000'726e6fff r--    104000      1000  /system/framework/arm64/boot-core-icu4j.oat (BuildId: 6cbd80d0441ed3eccd256917b9eb88727ab47514)
+    00000000'726e7000-00000000'726e7fff rw-         0      1000  [anon:.bss]
+    00000000'726e8000-00000000'726f0fff rw-         0      9000  /system/framework/boot-core-icu4j.vdex
+    00000000'726f1000-00000000'726f1fff r--    105000      1000  /system/framework/arm64/boot-core-icu4j.oat (BuildId: 6cbd80d0441ed3eccd256917b9eb88727ab47514)
+    00000000'726f2000-00000000'726f2fff rw-    106000      1000  /system/framework/arm64/boot-core-icu4j.oat (BuildId: 6cbd80d0441ed3eccd256917b9eb88727ab47514)
+    00000000'726f3000-00000000'72eb2fff rw-         0    7c0000  [anon:dalvik-zygote space]
+    00000000'72eb3000-00000000'72eb3fff rw-         0      1000  [anon:dalvik-non moving space]
+    00000000'72eb4000-00000000'72ec5fff rw-         0     12000  [anon:dalvik-non moving space]
+    00000000'72ec6000-00000000'756f3fff ---         0   282e000  [anon:dalvik-non moving space]
+    00000000'756f4000-00000000'766f2fff rw-         0    fff000  [anon:dalvik-non moving space]
+    00000000'766f3000-00000000'966f2fff rw-         0  20000000  [anon:dalvik-free list large object space]
+    00000000'966f3000-00000000'986f2fff r--         0   2000000  /memfd:jit-zygote-cache (deleted)
+    00000000'986f3000-00000000'9a6f2fff r-x   2000000   2000000  /memfd:jit-zygote-cache (deleted)
+    00000000'9a6f3000-00000000'9c6f2fff r--         0   2000000  /memfd:jit-cache (deleted)
+    00000000'9c6f3000-00000000'9e6f2fff r-x   2000000   2000000  /memfd:jit-cache (deleted)
+    00000000'ebad6000-00000000'ebad6fff ---         0      1000  [anon:dalvik-Sentinel fault page]
+    00000060'1d5be000-00000060'1d5bffff r--         0      2000  /system/bin/app_process64 (BuildId: 6f97a590777bd06f31784c7272763a35)
+    00000060'1d5c0000-00000060'1d5c0fff r-x      2000      1000  /system/bin/app_process64 (BuildId: 6f97a590777bd06f31784c7272763a35)
+    00000060'1d5c1000-00000060'1d5c1fff r--      3000      1000  /system/bin/app_process64 (BuildId: 6f97a590777bd06f31784c7272763a35)
+    0000006c'6704c000-0000006c'67b65fff ---         0    b1a000
+    0000006c'67b66000-0000006c'67b67fff rw-         0      2000
+    0000006c'67b68000-0000006c'68f01fff ---         0   139a000
+    0000006c'68f02000-0000006c'68f03fff rw-         0      2000
+    0000006c'68f04000-0000006c'6904bfff ---         0    148000
+    0000006c'6904c000-0000006c'6904cfff ---         0      1000
+    0000006c'6904d000-0000006c'6d953fff rw-         0   4907000  [anon:scudo:secondary]
+    0000006c'6d954000-0000006c'6d955fff ---         0      2000
+    0000006c'6d956000-0000006c'7277cfff rw-         0   4e27000  [anon:scudo:secondary]
+    0000006c'7277d000-0000006c'7277efff ---         0      2000
+    0000006c'7277f000-0000006c'72dcffff rw-         0    651000  [anon:scudo:secondary]
+    0000006c'72dd0000-0000006c'72dd0fff ---         0      1000
+    0000006c'73221000-0000006c'73221fff ---         0      1000
+    0000006c'73222000-0000006c'73322fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'73323000-0000006c'73324fff ---         0      2000
+    0000006c'73325000-0000006c'73425fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'73426000-0000006c'73427fff ---         0      2000
+    0000006c'73428000-0000006c'73528fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'73529000-0000006c'7352afff ---         0      2000
+    0000006c'7352b000-0000006c'7362bfff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'7362c000-0000006c'7362dfff ---         0      2000
+    0000006c'7362e000-0000006c'7372efff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'7372f000-0000006c'73730fff ---         0      2000
+    0000006c'73731000-0000006c'73831fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'73832000-0000006c'73833fff ---         0      2000
+    0000006c'73834000-0000006c'73934fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'73935000-0000006c'73936fff ---         0      2000
+    0000006c'73937000-0000006c'73a37fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'73a38000-0000006c'73a39fff ---         0      2000
+    0000006c'73a3a000-0000006c'73b3afff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'73b3b000-0000006c'73b3cfff ---         0      2000
+    0000006c'73b3d000-0000006c'73c3dfff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'73c3e000-0000006c'73c3ffff ---         0      2000
+    0000006c'73c40000-0000006c'73d40fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'73d41000-0000006c'73d42fff ---         0      2000
+    0000006c'73d43000-0000006c'73e43fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'73e44000-0000006c'73e45fff ---         0      2000
+    0000006c'73e46000-0000006c'73f46fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'73f47000-0000006c'73f48fff ---         0      2000
+    0000006c'73f49000-0000006c'74049fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'7404a000-0000006c'7404bfff ---         0      2000
+    0000006c'7404c000-0000006c'7414cfff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'7414d000-0000006c'7414efff ---         0      2000
+    0000006c'7414f000-0000006c'7424ffff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'74250000-0000006c'74251fff ---         0      2000
+    0000006c'74252000-0000006c'74352fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'74353000-0000006c'74354fff ---         0      2000
+    0000006c'74355000-0000006c'74455fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'74456000-0000006c'74457fff ---         0      2000
+    0000006c'74458000-0000006c'74558fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'74559000-0000006c'7455afff ---         0      2000
+    0000006c'7455b000-0000006c'7465bfff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'7465c000-0000006c'7465dfff ---         0      2000
+    0000006c'7465e000-0000006c'7475efff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'7475f000-0000006c'74760fff ---         0      2000
+    0000006c'74761000-0000006c'74861fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'74862000-0000006c'74863fff ---         0      2000
+    0000006c'74864000-0000006c'74964fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'74965000-0000006c'74966fff ---         0      2000
+    0000006c'74967000-0000006c'74a67fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'74a68000-0000006c'74a69fff ---         0      2000
+    0000006c'74a6a000-0000006c'74b6afff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'74b6b000-0000006c'74b6cfff ---         0      2000
+    0000006c'74b6d000-0000006c'74c6dfff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'74c6e000-0000006c'74c6ffff ---         0      2000
+    0000006c'74c70000-0000006c'74d70fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'74d71000-0000006c'74d72fff ---         0      2000
+    0000006c'74d73000-0000006c'74e73fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'74e74000-0000006c'74e75fff ---         0      2000
+    0000006c'74e76000-0000006c'74f76fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'74f77000-0000006c'74f78fff ---         0      2000
+    0000006c'74f79000-0000006c'75079fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'7507a000-0000006c'7507bfff ---         0      2000
+    0000006c'7507c000-0000006c'7517cfff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'7517d000-0000006c'7517efff ---         0      2000
+    0000006c'7517f000-0000006c'7527ffff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'75280000-0000006c'75281fff ---         0      2000
+    0000006c'75282000-0000006c'75382fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'75383000-0000006c'75383fff ---         0      1000
+    0000006c'75384000-0000006c'7faf6fff r--   5c9c000   a773000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'7faf7000-0000006c'7faf7fff ---         0      1000
+    0000006c'7faf8000-0000006c'89df8fff rw-         0   a301000  [anon:scudo:secondary]
+    0000006c'89df9000-0000006c'89df9fff ---         0      1000
+    0000006c'89dfa000-0000006c'8a360fff r--   5738000    567000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8a361000-0000006c'8a8c7fff r--   51d4000    567000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8a8c8000-0000006c'8ae2dfff r--   4c70000    566000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8ae2e000-0000006c'8b394fff r--   470b000    567000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8b395000-0000006c'8b8fafff r--   41a7000    566000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8b8fb000-0000006c'8be60fff r--   3c43000    566000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8be61000-0000006c'8c3c6fff r--   36df000    566000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8c3c7000-0000006c'8c92cfff r--   317a000    566000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8c92d000-0000006c'8ce92fff r--   2c16000    566000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8ce93000-0000006c'8d3f8fff r--   26b2000    566000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8d3f9000-0000006c'8d95dfff r--   214e000    565000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8d95e000-0000006c'8dec3fff r--   1be9000    566000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8dec4000-0000006c'8e429fff r--   1685000    566000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8e42a000-0000006c'8e98efff r--   1121000    565000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8e98f000-0000006c'8eef3fff r--    bbd000    565000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'8eef4000-0000006c'9fe00fff rw-      8000  10f0d000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm
+    0000006c'9fe01000-0000006c'a0ee4fff r-x         0   10e4000  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+    0000006c'a0ee5000-0000006c'a0f8efff r--   10e4000     aa000  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+    0000006c'a0f8f000-0000006c'a0f91fff ---         0      3000
+    0000006c'a0f92000-0000006c'a0f9dfff rw-   118d000      c000  /data/app/~~0DMhy5Vr6xGlUOQSTzdndg==/com.google.ai.edge.gallery-uOaT6Gwaoydte1udg9bT6g==/lib/arm64/liblitertlm_jni.so (BuildId: 03399ace29a8a90df045fa7d77fef9c8)
+    0000006c'a0f9e000-0000006c'a0ffefff rw-         0     61000  [anon:.bss]
+    0000006c'a1000000-0000006c'a1ffffff ---         0   1000000
+    0000006c'a20e9000-0000006c'a2d5ffff ---         0    c77000
+    0000006c'a2d60000-0000006c'a2d61fff rw-         0      2000
+    0000006c'a2d62000-0000006c'a30e8fff ---         0    387000
+    0000006c'a30e9000-0000006c'a30e9fff ---         0      1000
+    0000006c'a30ea000-0000006c'a30eafff ---         0      1000  [anon:stack_and_tls:30501]
+    0000006c'a30eb000-0000006c'a31e5fff rw-         0     fb000  [anon:stack_and_tls:30501]
+    0000006c'a31e6000-0000006c'a31e6fff ---         0      1000
+    0000006c'a31e7000-0000006c'a4135fff ---         0    f4f000
+    0000006c'a4136000-0000006c'a4137fff rw-         0      2000
+    0000006c'a4138000-0000006c'a41e6fff ---         0     af000
+    0000006c'a41e7000-0000006c'a41e7fff ---         0      1000
+    0000006c'a41e8000-0000006c'a42e3fff rw-         0     fc000  [anon:stack_and_tls:30500]
+    0000006c'a42e4000-0000006c'a42e4fff ---         0      1000
+    0000006c'a42f3000-0000006c'a42f3fff ---         0      1000
+    0000006c'a42f4000-0000006c'a43f4fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'a43f5000-0000006c'a43f6fff ---         0      2000
+    0000006c'a43f7000-0000006c'a44f7fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'a44f8000-0000006c'a44f8fff ---         0      1000
+    0000006c'a44f9000-0000006c'a4c1bfff ---         0    723000
+    0000006c'a4c1c000-0000006c'a4c1dfff rw-         0      2000
+    0000006c'a4c1e000-0000006c'a59e7fff ---         0    dca000
+    0000006c'a59e8000-0000006c'a59e9fff rw-         0      2000
+    0000006c'a59ea000-0000006c'a6acdfff ---         0   10e4000
+    0000006c'a6ace000-0000006c'a6acffff rw-         0      2000
+    0000006c'a6ad0000-0000006c'a74f8fff ---         0    a29000
+    0000006c'a74f9000-0000006c'a74f9fff ---         0      1000
+    0000006c'a74fa000-0000006c'a74fafff ---         0      1000  [anon:stack_and_tls:30396]
+    0000006c'a74fb000-0000006c'a7601fff rw-         0    107000  [anon:stack_and_tls:30396]
+    0000006c'a7602000-0000006c'a7602fff ---         0      1000
+    0000006c'a7603000-0000006c'a7c8dfff ---         0    68b000
+    0000006c'a7c8e000-0000006c'a7c8ffff rw-         0      2000
+    0000006c'a7c90000-0000006c'a889dfff ---         0    c0e000
+    0000006c'a889e000-0000006c'a889ffff rw-         0      2000
+    0000006c'a88a0000-0000006c'a9602fff ---         0    d63000
+    0000006c'a9603000-0000006c'a9603fff ---         0      1000
+    0000006c'a9604000-0000006c'a9604fff ---         0      1000  [anon:stack_and_tls:30387]
+    0000006c'a9605000-0000006c'a970bfff rw-         0    107000  [anon:stack_and_tls:30387]
+    0000006c'a970c000-0000006c'a970cfff ---         0      1000
+    0000006c'a9738000-0000006c'a9c9dfff r--    658000    566000  /storage/emulated/0/Android/data/com.google.ai.edge.gallery/files/MobileActions_270M/20260218/mobile_actions.litertlm.xnnpack_cache (deleted)
+    0000006c'a9c9e000-0000006c'aaadffff ---         0    e42000
+    0000006c'aaae0000-0000006c'aaae1fff rw-         0      2000
+    0000006c'aaae2000-0000006c'aac9dfff ---         0    1bc000
+    0000006c'aac9e000-0000006c'aac9efff ---         0      1000
+    0000006c'aac9f000-0000006c'ab91ffff rw-         0    c81000  [anon:scudo:secondary]
+    0000006c'ab920000-0000006c'ab920fff ---         0      1000
+    0000006c'ab921000-0000006c'abcaffff ---         0    38f000
+    0000006c'abcb0000-0000006c'abcb1fff rw-         0      2000
+    0000006c'abcb2000-0000006c'ac920fff ---         0    c6f000
+    0000006c'ac921000-0000006c'ac921fff ---         0      1000
+    0000006c'ac922000-0000006c'ac922fff ---         0      1000  [anon:stack_and_tls:30383]
+    0000006c'ac923000-0000006c'aca29fff rw-         0    107000  [anon:stack_and_tls:30383]
+    0000006c'aca2a000-0000006c'aca2afff ---         0      1000
+    0000006c'aca2b000-0000006c'ad297fff ---         0    86d000
+    0000006c'ad298000-0000006c'ad299fff rw-         0      2000
+    0000006c'ad29a000-0000006c'ada2afff ---         0    791000
+    0000006c'ada2b000-0000006c'ada2bfff ---         0      1000
+    0000006c'ada2c000-0000006c'ada2cfff ---         0      1000  [anon:stack_and_tls:30380]
+    0000006c'ada2d000-0000006c'adb33fff rw-         0    107000  [anon:stack_and_tls:30380]
+    0000006c'adb34000-0000006c'adb34fff ---         0      1000
+    0000006c'adb35000-0000006c'ae69bfff ---         0    b67000
+    0000006c'ae69c000-0000006c'ae69dfff rw-         0      2000
+    0000006c'ae69e000-0000006c'aeb34fff ---         0    497000
+    0000006c'aeb35000-0000006c'aeb35fff ---         0      1000
+    0000006c'aeb36000-0000006c'aeb36fff ---         0      1000  [anon:stack_and_tls:30377]
+    0000006c'aeb37000-0000006c'aec3dfff rw-         0    107000  [anon:stack_and_tls:30377]
+    0000006c'aec3e000-0000006c'aec3efff ---         0      1000
+    0000006c'aee42000-0000006c'aee42fff ---         0      1000
+    0000006c'aee43000-0000006c'aef43fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'aef44000-0000006c'aef44fff ---         0      1000
+    0000006c'aef45000-0000006c'afb29fff ---         0    be5000
+    0000006c'afb2a000-0000006c'afb2bfff rw-         0      2000
+    0000006c'afb2c000-0000006c'b0569fff ---         0    a3e000
+    0000006c'b056a000-0000006c'b056bfff rw-         0      2000
+    0000006c'b056c000-0000006c'b0f44fff ---         0    9d9000
+    0000006c'b0f45000-0000006c'b0f45fff ---         0      1000
+    0000006c'b0f46000-0000006c'b0f46fff ---         0      1000  [anon:stack_and_tls:30374]
+    0000006c'b0f47000-0000006c'b1041fff rw-         0     fb000  [anon:stack_and_tls:30374]
+    0000006c'b1042000-0000006c'b1043fff ---         0      2000
+    0000006c'b1044000-0000006c'b113ffff rw-         0     fc000  [anon:stack_and_tls:30391]
+    0000006c'b1140000-0000006c'b1140fff ---         0      1000
+    0000006c'b1141000-0000006c'b18e9fff ---         0    7a9000
+    0000006c'b18ea000-0000006c'b18ebfff rw-         0      2000
+    0000006c'b18ec000-0000006c'b2140fff ---         0    855000
+    0000006c'b223f000-0000006c'b2373fff ---         0    135000
+    0000006c'b2374000-0000006c'b2375fff rw-         0      2000
+    0000006c'b2376000-0000006c'b323efff ---         0    ec9000
+    0000006c'b323f000-0000006c'b323ffff ---         0      1000
+    0000006c'b3240000-0000006c'b3240fff ---         0      1000  [anon:stack_and_tls:30372]
+    0000006c'b3241000-0000006c'b3347fff rw-         0    107000  [anon:stack_and_tls:30372]
+    0000006c'b3348000-0000006c'b3348fff ---         0      1000
+    0000006c'b3349000-0000006c'b3c89fff ---         0    941000
+    0000006c'b3c8a000-0000006c'b3c8bfff rw-         0      2000
+    0000006c'b3c8c000-0000006c'b46c1fff ---         0    a36000
+    0000006c'b46c2000-0000006c'b46c3fff rw-         0      2000
+    0000006c'b46c4000-0000006c'b5348fff ---         0    c85000
+    0000006c'b5349000-0000006c'b5349fff ---         0      1000
+    0000006c'b534a000-0000006c'b534afff ---         0      1000  [anon:stack_and_tls:30371]
+    0000006c'b534b000-0000006c'b5445fff rw-         0     fb000  [anon:stack_and_tls:30371]
+    0000006c'b5446000-0000006c'b5447fff ---         0      2000
+    0000006c'b5448000-0000006c'b5448fff ---         0      1000  [anon:stack_and_tls:30370]
+    0000006c'b5449000-0000006c'b5543fff rw-         0     fb000  [anon:stack_and_tls:30370]
+    0000006c'b5544000-0000006c'b5544fff ---         0      1000
+    0000006c'b5545000-0000006c'b557dfff ---         0     39000
+    0000006c'b557e000-0000006c'b557ffff rw-         0      2000
+    0000006c'b5580000-0000006c'b6544fff ---         0    fc5000
+    0000006c'b6545000-0000006c'b6545fff ---         0      1000
+    0000006c'b6546000-0000006c'b6546fff ---         0      1000  [anon:stack_and_tls:30369]
+    0000006c'b6547000-0000006c'b664dfff rw-         0    107000  [anon:stack_and_tls:30369]
+    0000006c'b664e000-0000006c'b664efff ---         0      1000
+    0000006c'b664f000-0000006c'b748bfff ---         0    e3d000
+    0000006c'b748c000-0000006c'b748dfff rw-         0      2000
+    0000006c'b748e000-0000006c'b764efff ---         0    1c1000
+    0000006c'b764f000-0000006c'b764ffff ---         0      1000
+    0000006c'b7650000-0000006c'b7650fff ---         0      1000  [anon:stack_and_tls:30368]
+    0000006c'b7651000-0000006c'b7757fff rw-         0    107000  [anon:stack_and_tls:30368]
+    0000006c'b7758000-0000006c'b7758fff ---         0      1000
+    0000006c'b7759000-0000006c'b8675fff r--    fe7000    f1d000  /system/framework/framework-res.apk
+    0000006c'b8676000-0000006c'b87d9fff ---         0    164000
+    0000006c'b87da000-0000006c'b87dbfff rw-         0      2000
+    0000006c'b87dc000-0000006c'b9675fff ---         0    e9a000
+    0000006c'b9676000-0000006c'b9735fff r--   2068000     c0000  /system/framework/framework-res.apk
+    0000006c'b9736000-0000006c'b9736fff ---         0      1000
+    0000006c'b9737000-0000006c'b9737fff ---         0      1000  [anon:stack_and_tls:30367]
+    0000006c'b9738000-0000006c'b983efff rw-         0    107000  [anon:stack_and_tls:30367]
+    0000006c'b983f000-0000006c'b983ffff ---         0      1000
+    0000006c'b9840000-0000006c'ba3dffff ---         0    ba0000
+    0000006c'ba3e0000-0000006c'ba3e1fff rw-         0      2000
+    0000006c'ba3e2000-0000006c'ba83ffff ---         0    45e000
+    0000006c'ba840000-0000006c'ba840fff ---         0      1000
+    0000006c'ba841000-0000006c'ba841fff ---         0      1000  [anon:stack_and_tls:30366]
+    0000006c'ba842000-0000006c'ba948fff rw-         0    107000  [anon:stack_and_tls:30366]
+    0000006c'ba949000-0000006c'ba949fff ---         0      1000
+    0000006c'ba94a000-0000006c'bb8d7fff ---         0    f8e000
+    0000006c'bb8d8000-0000006c'bb8d9fff rw-         0      2000
+    0000006c'bb8da000-0000006c'bb949fff ---         0     70000
+    0000006c'bb94a000-0000006c'bb94afff ---         0      1000
+    0000006c'bb94b000-0000006c'bb94bfff ---         0      1000  [anon:stack_and_tls:30365]
+    0000006c'bb94c000-0000006c'bba52fff rw-         0    107000  [anon:stack_and_tls:30365]
+    0000006c'bba53000-0000006c'bba53fff ---         0      1000
+    0000006c'bba54000-0000006c'bbb2dfff r--         0     da000  /data/user_de/0/com.google.android.gms/app_chimera/m/00000012/MeasurementDynamite.uncompressed.apk
+    0000006c'bbb2e000-0000006c'bc4d7fff r--   ae96000    9aa000  /data/app/~~9oIXdV7WzM55iwzB47kO2g==/com.google.android.gms-AeIlrCx4Vx4tHMVf7HhyXw==/base.apk
+    0000006c'bc4d8000-0000006c'bc5fbfff r--   d223000    124000  /data/app/~~9oIXdV7WzM55iwzB47kO2g==/com.google.android.gms-AeIlrCx4Vx4tHMVf7HhyXw==/base.apk
+    0000006c'bc5fc000-0000006c'bc685fff r--         0     8a000  /data/user_de/0/com.google.android.gms/app_chimera/current_config.fb
+    0000006c'bc686000-0000006c'bcbc3fff ---         0    53e000
+    0000006c'bcbc4000-0000006c'bcbc5fff rw-         0      2000
+    0000006c'bcbc6000-0000006c'bde35fff ---         0   1270000
+    0000006c'bde36000-0000006c'bde37fff rw-         0      2000
+    0000006c'bde38000-0000006c'bf2d7fff ---         0   14a0000
+    0000006c'bf2d8000-0000006c'bf2d9fff rw-         0      2000
+    0000006c'bf2da000-0000006c'bf685fff ---         0    3ac000
+    0000006c'bf686000-0000006c'bf686fff ---         0      1000
+    0000006c'bf687000-0000006c'bf687fff ---         0      1000  [anon:stack_and_tls:30361]
+    0000006c'bf688000-0000006c'bf78efff rw-         0    107000  [anon:stack_and_tls:30361]
+    0000006c'bf78f000-0000006c'bf78ffff ---         0      1000
+    0000006c'bf790000-0000006c'c02fffff ---         0    b70000
+    0000006c'c0300000-0000006c'c0301fff rw-         0      2000
+    0000006c'c0302000-0000006c'c14d7fff ---         0   11d6000
+    0000006c'c14d8000-0000006c'c14d9fff rw-         0      2000
+    0000006c'c14da000-0000006c'c1a03fff ---         0    52a000
+    0000006c'c1a04000-0000006c'c1a05fff rw-         0      2000
+    0000006c'c1a06000-0000006c'c278ffff ---         0    d8a000
+    0000006c'c2790000-0000006c'c2790fff ---         0      1000
+    0000006c'c2791000-0000006c'c288cfff rw-         0     fc000  [anon:stack_and_tls:30359]
+    0000006c'c288d000-0000006c'c288efff ---         0      2000
+    0000006c'c288f000-0000006c'c298afff rw-         0     fc000  [anon:stack_and_tls:30358]
+    0000006c'c298b000-0000006c'c298cfff ---         0      2000
+    0000006c'c298d000-0000006c'c2a88fff rw-         0     fc000  [anon:stack_and_tls:30357]
+    0000006c'c2a89000-0000006c'c2a8afff ---         0      2000
+    0000006c'c2a8b000-0000006c'c2b86fff rw-         0     fc000  [anon:stack_and_tls:30356]
+    0000006c'c2b87000-0000006c'c2b87fff ---         0      1000
+    0000006c'c2b88000-0000006c'c3089fff ---         0    502000
+    0000006c'c308a000-0000006c'c308bfff rw-         0      2000
+    0000006c'c308c000-0000006c'c42f5fff ---         0   126a000
+    0000006c'c42f6000-0000006c'c42f7fff rw-         0      2000
+    0000006c'c42f8000-0000006c'c50fdfff ---         0    e06000
+    0000006c'c50fe000-0000006c'c50fffff rw-         0      2000
+    0000006c'c5100000-0000006c'c6539fff ---         0   143a000
+    0000006c'c653a000-0000006c'c653bfff rw-         0      2000
+    0000006c'c653c000-0000006c'c6b87fff ---         0    64c000
+    0000006c'c6b88000-0000006c'c6b88fff ---         0      1000
+    0000006c'c6b89000-0000006c'c6c84fff rw-         0     fc000  [anon:stack_and_tls:30355]
+    0000006c'c6c85000-0000006c'c6c86fff ---         0      2000
+    0000006c'c6c87000-0000006c'c6d82fff rw-         0     fc000  [anon:stack_and_tls:30354]
+    0000006c'c6d83000-0000006c'c6d84fff ---         0      2000
+    0000006c'c6d85000-0000006c'c6e80fff rw-         0     fc000  [anon:stack_and_tls:30353]
+    0000006c'c6e81000-0000006c'c6e82fff ---         0      2000
+    0000006c'c6e83000-0000006c'c6f7efff rw-         0     fc000  [anon:stack_and_tls:30352]
+    0000006c'c6f7f000-0000006c'c6f80fff ---         0      2000
+    0000006c'c6f81000-0000006c'c707cfff rw-         0     fc000  [anon:stack_and_tls:30351]
+    0000006c'c707d000-0000006c'c707dfff ---         0      1000
+    0000006c'c707e000-0000006c'c7d75fff ---         0    cf8000
+    0000006c'c7d76000-0000006c'c7d77fff rw-         0      2000
+    0000006c'c7d78000-0000006c'c807dfff ---         0    306000
+    0000006c'c807e000-0000006c'c807efff ---         0      1000
+    0000006c'c807f000-0000006c'c817afff rw-         0     fc000  [anon:stack_and_tls:30350]
+    0000006c'c817b000-0000006c'c817cfff ---         0      2000
+    0000006c'c817d000-0000006c'c8210fff rw-         0     94000  [anon:scudo:secondary]
+    0000006c'c8211000-0000006c'c8211fff ---         0      1000
+    0000006c'c8212000-0000006c'c82f7fff ---         0     e6000
+    0000006c'c82f8000-0000006c'c82f9fff rw-         0      2000
+    0000006c'c82fa000-0000006c'c9211fff ---         0    f18000
+    0000006c'c9212000-0000006c'c9212fff ---         0      1000
+    0000006c'c9213000-0000006c'c9213fff ---         0      1000  [anon:stack_and_tls:30346]
+    0000006c'c9214000-0000006c'c930efff rw-         0     fb000  [anon:stack_and_tls:30346]
+    0000006c'c930f000-0000006c'c930ffff ---         0      1000
+    0000006c'c9310000-0000006c'ca12ffff ---         0    e20000
+    0000006c'ca130000-0000006c'ca131fff rw-         0      2000
+    0000006c'ca132000-0000006c'ca30ffff ---         0    1de000
+    0000006c'ca310000-0000006c'ca310fff ---         0      1000
+    0000006c'ca311000-0000006c'ca311fff ---         0      1000  [anon:stack_and_tls:30345]
+    0000006c'ca312000-0000006c'ca418fff rw-         0    107000  [anon:stack_and_tls:30345]
+    0000006c'ca419000-0000006c'ca419fff ---         0      1000
+    0000006c'ca421000-0000006c'ca421fff ---         0      1000
+    0000006c'ca422000-0000006c'ca522fff rw-         0    101000  [anon:scudo:secondary]
+    0000006c'ca523000-0000006c'ca523fff ---         0      1000
+    0000006c'cb07e000-0000006c'cb07efff ---         0      1000
+    0000006c'cb07f000-0000006c'cb207fff rw-         0    189000  [anon:scudo:secondary]
+    0000006c'cb208000-0000006c'cb208fff ---         0      1000
+    0000006c'cb307000-0000006c'cb307fff ---         0      1000
+    0000006c'cb308000-0000006c'cb418fff rw-         0    111000  [anon:scudo:secondary]
+    0000006c'cb419000-0000006c'cb41afff ---         0      2000
+    0000006c'cb41b000-0000006c'cb41bfff ---         0      1000  [anon:stack_and_tls:2631]
+    0000006c'cb41c000-0000006c'cb522fff rw-         0    107000  [anon:stack_and_tls:2631]
+    0000006c'cb523000-0000006c'cb523fff ---         0      1000
+    0000006c'cb524000-0000006c'cb747fff ---         0    224000
+    0000006c'cb748000-0000006c'cb749fff rw-         0      2000
+    0000006c'cb74a000-0000006c'ccdaffff ---         0   1666000
+    0000006c'ccdb0000-0000006c'ccdb1fff rw-         0      2000
+    0000006c'ccdb2000-0000006c'cd523fff ---         0    772000
+    0000006c'cd524000-0000006c'cd524fff ---         0      1000
+    0000006c'cd525000-0000006c'cd525fff ---         0      1000  [anon:stack_and_tls:30342]
+    0000006c'cd526000-0000006c'cd62cfff rw-         0    107000  [anon:stack_and_tls:30342]
+    0000006c'cd62d000-0000006c'cd62efff ---         0      2000
+    0000006c'cd62f000-0000006c'cd62ffff ---         0      1000  [anon:stack_and_tls:30341]
+    0000006c'cd630000-0000006c'cd736fff rw-         0    107000  [anon:stack_and_tls:30341]
+    0000006c'cd737000-0000006c'cd737fff ---         0      1000
+    0000006c'cd738000-0000006c'cdecdfff ---         0    796000
+    0000006c'cdece000-0000006c'cdecffff rw-         0      2000
+    0000006c'cded0000-0000006c'ce737fff ---         0    868000
+    0000006c'ce738000-0000006c'ce738fff ---         0      1000
+    0000006c'ce739000-0000006c'ce739fff ---         0      1000  [anon:stack_and_tls:30340]
+    0000006c'ce73a000-0000006c'ce840fff rw-         0    107000  [anon:stack_and_tls:30340]
+    0000006c'ce841000-0000006c'ce841fff ---         0      1000
+    0000006c'ce842000-0000006c'ceff5fff ---         0    7b4000
+    0000006c'ceff6000-0000006c'ceff7fff rw-         0      2000
+    0000006c'ceff8000-0000006c'cf841fff ---         0    84a000
+    0000006c'cf842000-0000006c'cf842fff ---         0      1000
+    0000006c'cf843000-0000006c'cf843fff ---         0      1000  [anon:stack_and_tls:30329]
+    0000006c'cf844000-0000006c'cf94afff rw-         0    107000  [anon:stack_and_tls:30329]
+    0000006c'cf94b000-0000006c'cf94bfff ---         0      1000
+    0000006c'cf94c000-0000006c'cf94dfff r--         0      2000  [[TRUNCATED]]
