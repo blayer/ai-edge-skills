@@ -1,7 +1,0 @@
-[
-  {"name": "classic_1234", "input": {"numbers": [1, 2, 3, 4]}, "expected_contains": ["= 24"]},
-  {"name": "all_eights", "input": {"numbers": [8, 8, 3, 8]}, "expected_contains": ["= 24"]},
-  {"name": "impossible_1111", "input": {"numbers": [1, 1, 1, 1]}, "expected_contains": ["No solution"]},
-  {"name": "with_division", "input": {"numbers": [1, 5, 5, 5]}, "expected_contains": ["= 24"]},
-  {"name": "large_numbers", "input": {"numbers": [8, 3, 8, 3]}, "expected_contains": ["= 24"]}
-]

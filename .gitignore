@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Firebase test artifacts
+firebase/results/
+firebase/gallery.apk
+
+# Credentials (keep README template only)
+firebase/credentials/*.json
+
+# Local test artifacts
+local/screenshots/
+local/recording/
+
+# Claude local settings
+.claude/settings.local.json

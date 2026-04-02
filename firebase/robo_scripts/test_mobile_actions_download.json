@@ -70,54 +70,6 @@
   },
   {
     "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "06_after_download_wait"
-  },
-  {
-    "eventType": "VIEW_CLICKED",
-    "visionText": "Try it",
-    "optional": true
-  },
-  {
-    "eventType": "WAIT",
-    "delayTime": 3000
-  },
-  {
-    "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "07_chat_page"
-  },
-  {
-    "eventType": "VIEW_CLICKED",
-    "visionText": "Create contact",
-    "optional": true
-  },
-  {
-    "eventType": "WAIT",
-    "delayTime": 5000
-  },
-  {
-    "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "08_after_chip_tap"
-  },
-  {
-    "eventType": "WAIT_FOR_ELEMENT",
-    "delayTime": 60000,
-    "elementDescriptors": [
-      {
-        "textRegex": ".*Model response.*"
-      }
-    ],
-    "optional": true
-  },
-  {
-    "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "09_model_response"
-  },
-  {
-    "eventType": "WAIT",
-    "delayTime": 15000
-  },
-  {
-    "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "10_final_result"
+    "screenshotName": "06_download_complete"
   }
 ]

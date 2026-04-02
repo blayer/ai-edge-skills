@@ -52,7 +52,7 @@ async function runSkill(skillDir) {
     if (tc.rounds) {
       let roundPassed = true;
       let roundReason = '';
-      let gameState = null;
+      let carryOver = {};
       const dom = createDom();
       await new Promise(r => setTimeout(r, 50));
       const fn = dom.window['ai_edge_gallery_get_result'];
@@ -66,7 +66,7 @@ async function runSkill(skillDir) {
 
       for (let ri = 0; ri < tc.rounds.length; ri++) {
         const round = tc.rounds[ri];
-        const input = gameState ? { ...round.input, game_state: gameState } : round.input;
+        const input = { ...carryOver, ...round.input };
         try {
           const resultStr = await fn(JSON.stringify(input));
           const result = JSON.parse(resultStr);
@@ -81,10 +81,12 @@ async function runSkill(skillDir) {
             break;
           }
 
-          // Extract game_state for next round
-          if (result.game_state) {
-            gameState = result.game_state;
-          }
+          // Extract carry-over fields for next round
+          carryOver = {};
+          if (result.game_state) carryOver.game_state = result.game_state;
+          if (result.player_cards) carryOver.player_cards = result.player_cards;
+          if (result.dealer_visible) carryOver.dealer_visible = result.dealer_visible;
+          if (result.dealer_hidden) carryOver.dealer_hidden = result.dealer_hidden;
 
           // Determine value for assertions
           let value;

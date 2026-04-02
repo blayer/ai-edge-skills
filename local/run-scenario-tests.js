@@ -69,10 +69,10 @@ async function runSkill(browser, skillDir) {
     // Handle multi-round tests (games with state)
     if (tc.rounds) {
       let roundFail = null;
-      let gameState = null;
+      let carryOver = {};
       for (let ri = 0; ri < tc.rounds.length; ri++) {
         const round = tc.rounds[ri];
-        const input = gameState ? { ...round.input, game_state: gameState } : round.input;
+        const input = { ...carryOver, ...round.input };
         try {
           const result = await runTestInBrowser(page, htmlFile, input);
           if (result.error) {
@@ -80,7 +80,11 @@ async function runSkill(browser, skillDir) {
             roundFail = `round ${ri + 1}: error: ${result.error}`;
             break;
           }
-          if (result.game_state) gameState = result.game_state;
+          carryOver = {};
+          if (result.game_state) carryOver.game_state = result.game_state;
+          if (result.player_cards) carryOver.player_cards = result.player_cards;
+          if (result.dealer_visible) carryOver.dealer_visible = result.dealer_visible;
+          if (result.dealer_hidden) carryOver.dealer_hidden = result.dealer_hidden;
           const value = extractValue(result);
           if (round.expected_contains) {
             const str = typeof value === 'string' ? value : JSON.stringify(value);

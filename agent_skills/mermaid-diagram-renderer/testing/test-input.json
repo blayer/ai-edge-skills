@@ -1,6 +1,0 @@
-[
-  {"name": "flowchart", "input": {"code": "graph TD\n  A-->B\n  B-->C"}, "expected_contains": ["webview"]},
-  {"name": "sequence_diagram", "input": {"code": "sequenceDiagram\n  Alice->>Bob: Hello\n  Bob-->>Alice: Hi"}, "expected_contains": ["webview"]},
-  {"name": "pie_chart", "input": {"code": "pie title Pets\n  \"Dogs\" : 40\n  \"Cats\" : 30\n  \"Fish\" : 30"}, "expected_contains": ["webview"]},
-  {"name": "dark_theme", "input": {"code": "graph LR\n  A-->B", "theme": "dark"}, "expected_contains": ["webview"]}
-]

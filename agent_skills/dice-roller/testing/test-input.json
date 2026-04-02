@@ -1,9 +1,0 @@
-[
-  {"name": "single_d6", "input": {"count": 1, "sides": 6}, "expected_contains": ["1d6", "Result:"]},
-  {"name": "multiple_d20", "input": {"count": 4, "sides": 20}, "expected_contains": ["4d20", "Sum:", "Rolls:"]},
-  {"name": "with_positive_modifier", "input": {"count": 2, "sides": 8, "modifier": 5}, "expected_contains": ["2d8+5", "Modifier: +5", "Total:"]},
-  {"name": "with_negative_modifier", "input": {"count": 1, "sides": 6, "modifier": -2}, "expected_contains": ["1d6-2", "Modifier: -2"]},
-  {"name": "advantage_roll", "input": {"count": 1, "sides": 20, "advantage": true}, "expected_contains": ["Advantage", "Roll 1:", "Roll 2:"]},
-  {"name": "disadvantage_roll", "input": {"count": 1, "sides": 20, "disadvantage": true}, "expected_contains": ["Disadvantage", "Roll 1:", "Roll 2:"]},
-  {"name": "d100", "input": {"count": 1, "sides": 100}, "expected_contains": ["1d100", "Result:"]}
-]

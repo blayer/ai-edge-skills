@@ -220,27 +220,27 @@ navigate_to_chat() {
     dump_ui; tap_element "Type prompt" || tap_element "Prompt input"; sleep 1
     dump_ui; if ui_has "Type prompt" || ui_has "Prompt input"; then return 0; fi
   fi
-  if ui_has "Experimental"; then
-    tap_element "Experimental"; sleep 1
-    dump_ui; tap_element "Agent Chat" || tap_element_contains "Agent Chat"; sleep 2
+  if ui_has "Experimental" || ui_has "Agent Skills"; then
+    tap_element "Agent Skills" || tap_element "Experimental"; sleep 1
+    dump_ui; tap_element "Agent Chat" || { coords=$(find_element_contains "Agent"); [ -n "$coords" ] && tap $coords; }; sleep 2
     dump_ui; if ui_has "Try it"; then tap_element "Try it"; sleep 3; fi
     return 0
   fi
   # Unknown state — relaunch
-  $ADB shell am start --activity-clear-task -n com.google.ai.edge.gallery.dev/com.google.ai.edge.gallery.MainActivity >/dev/null 2>&1
+  $ADB shell am start --activity-clear-task -n com.google.ai.edge.gallery.internal/com.google.ai.edge.gallery.MainActivity >/dev/null 2>&1
   sleep 3
-  dump_ui; tap_element "Experimental"; sleep 1
-  dump_ui; tap_element "Agent Chat" || tap_element_contains "Agent Chat"; sleep 2
+  dump_ui; tap_element "Agent Skills" || tap_element "Experimental"; sleep 1
+  dump_ui; tap_element "Agent Chat" || { coords=$(find_element_contains "Agent"); [ -n "$coords" ] && tap $coords; }; sleep 2
   dump_ui; if ui_has "Try it"; then tap_element "Try it"; sleep 3; fi
 }
 
 fresh_app() {
-  $ADB shell am force-stop com.google.ai.edge.gallery.dev >/dev/null 2>&1
+  $ADB shell am force-stop com.google.ai.edge.gallery.internal >/dev/null 2>&1
   sleep 1
   $ADB shell input keyevent KEYCODE_WAKEUP >/dev/null 2>&1
   $ADB shell input keyevent KEYCODE_MENU >/dev/null 2>&1
   sleep 0.5
-  $ADB shell am start --activity-clear-task -n com.google.ai.edge.gallery.dev/com.google.ai.edge.gallery.MainActivity >/dev/null 2>&1
+  $ADB shell am start --activity-clear-task -n com.google.ai.edge.gallery.internal/com.google.ai.edge.gallery.MainActivity >/dev/null 2>&1
   sleep 3
   navigate_to_chat
 }

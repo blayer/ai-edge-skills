@@ -7,3 +7,4 @@
 | 3 | generation-dictionary | What does fire mean in Gen Z slang | | |
 | 4 | hangman | Start a hangman game with category animals | | |
 | 5 | smart-pantry | I have chicken rice eggs soy sauce garlic and butter in my pantry. Add them and find recipes I can make | | |
+| 6 | blackjack | Play blackjack | | |

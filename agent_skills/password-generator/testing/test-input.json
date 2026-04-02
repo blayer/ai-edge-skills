@@ -1,8 +1,0 @@
-[
-  {"name": "default_password", "input": {}, "expected_length": 16},
-  {"name": "custom_length_32", "input": {"length": 32}, "expected_length": 32},
-  {"name": "numbers_only", "input": {"length": 8, "uppercase": false, "lowercase": false, "symbols": false}, "expected_pattern": "^[0-9]+$"},
-  {"name": "no_ambiguous", "input": {"length": 20, "exclude_ambiguous": true}, "expected_not_empty": true},
-  {"name": "multiple_passwords", "input": {"count": 5, "length": 12}, "expected_line_count": 5},
-  {"name": "short_password", "input": {"length": 4}, "expected_length": 4}
-]

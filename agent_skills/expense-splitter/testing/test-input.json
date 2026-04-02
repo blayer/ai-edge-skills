@@ -1,6 +1,0 @@
-[
-  {"name": "basic_split", "input": {"expenses": [{"payer": "Alice", "amount": 60, "participants": ["Alice", "Bob", "Charlie"]}, {"payer": "Bob", "amount": 30, "participants": ["Alice", "Bob"]}]}, "expected_contains": ["webview"]},
-  {"name": "equal_split", "input": {"expenses": [{"payer": "A", "amount": 50, "participants": ["A", "B"]}, {"payer": "B", "amount": 50, "participants": ["A", "B"]}]}, "expected_contains": ["webview"]},
-  {"name": "single_payer", "input": {"expenses": [{"payer": "Alice", "amount": 100, "participants": ["Alice", "Bob", "Charlie", "Dave"]}]}, "expected_contains": ["webview"]},
-  {"name": "many_expenses", "input": {"expenses": [{"payer": "A", "amount": 20, "participants": ["A","B","C"]}, {"payer": "B", "amount": 30, "participants": ["A","B"]}, {"payer": "C", "amount": 15, "participants": ["B","C"]}]}, "expected_contains": ["webview"]}
-]

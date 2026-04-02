@@ -22,10 +22,6 @@
     "delayTime": 2000
   },
   {
-    "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "02_home_screen_after_scroll"
-  },
-  {
     "eventType": "VIEW_CLICKED",
     "visionText": "Mobile Actions"
   },
@@ -35,42 +31,7 @@
   },
   {
     "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "03_mobile_actions_page"
-  },
-  {
-    "eventType": "VIEW_CLICKED",
-    "visionText": "Download",
-    "optional": true
-  },
-  {
-    "eventType": "WAIT",
-    "delayTime": 3000
-  },
-  {
-    "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "04_terms_dialog"
-  },
-  {
-    "eventType": "POINT_TAP",
-    "pointTapXCoordinate": 670,
-    "pointTapYCoordinate": 1488,
-    "optional": true
-  },
-  {
-    "eventType": "WAIT",
-    "delayTime": 3000
-  },
-  {
-    "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "05_after_terms_accept"
-  },
-  {
-    "eventType": "WAIT",
-    "delayTime": 240000
-  },
-  {
-    "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "06_after_download_wait"
+    "screenshotName": "02_mobile_actions_page"
   },
   {
     "eventType": "VIEW_CLICKED",
@@ -83,7 +44,7 @@
   },
   {
     "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "07_chat_page"
+    "screenshotName": "03_chat_page"
   },
   {
     "eventType": "VIEW_CLICKED",
@@ -96,7 +57,7 @@
   },
   {
     "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "08_after_chip_tap"
+    "screenshotName": "04_after_chip_tap"
   },
   {
     "eventType": "WAIT_FOR_ELEMENT",
@@ -110,7 +71,7 @@
   },
   {
     "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "09_model_response"
+    "screenshotName": "05_model_response"
   },
   {
     "eventType": "WAIT",
@@ -118,6 +79,6 @@
   },
   {
     "eventType": "TAKE_SCREENSHOT",
-    "screenshotName": "10_final_result"
+    "screenshotName": "06_final_result"
   }
 ]

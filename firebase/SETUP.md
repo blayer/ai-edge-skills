@@ -146,6 +146,12 @@ gcloud firebase test android models list
 
 ## App Under Test
 
-- **APK:** `firebase/gallery.apk` — AI Edge Gallery v1.0.10
+- **APK:** `firebase/gallery.apk` (not committed — download first)
 - **Source:** https://github.com/google-ai-edge/gallery/releases
 - **Package:** `com.google.ai.edge.gallery`
+
+To download the latest APK:
+
+```bash
+./firebase/download-apk.sh
+```
