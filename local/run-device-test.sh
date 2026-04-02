@@ -277,6 +277,12 @@ import_skill() {
   # Tap Import local skill
   dump_ui; tap_element "Import local skill"; sleep 2
 
+  # Handle third-party skill agreement dialog
+  dump_ui
+  if ui_has "Agree" || ui_has "third-party"; then
+    tap_element "Agree"; sleep 1.5
+  fi
+
   # Tap Pick file
   dump_ui; tap_element "Pick file"; sleep 2
 
