@@ -63,19 +63,6 @@ window['ai_edge_gallery_get_result'] = async (data) => {
       return available[Math.floor(Math.random() * available.length)];
     }
 
-    function makeWebview(playerCards, dealerCards, status, outcome, message) {
-      const viewState = {
-        dealer: dealerCards.map(c => { const p = parseCard(c); return { rank: p.rank, suit: SUITS[p.suit] || p.suit }; }),
-        player: playerCards.map(c => { const p = parseCard(c); return { rank: p.rank, suit: SUITS[p.suit] || p.suit }; }),
-        status,
-        outcome,
-        message,
-        dealerValue: status === 'playing' ? null : handTotal(dealerCards),
-        playerValue: handTotal(playerCards)
-      };
-      return { url: 'webview.html?data=' + encodeURIComponent(JSON.stringify(viewState)) };
-    }
-
     // === DEAL ===
     if (action === 'deal') {
       const used = new Set();
@@ -94,14 +81,14 @@ window['ai_edge_gallery_get_result'] = async (data) => {
         const allDealer = [d1, d2];
         if (dv === 21) {
           const txt = `Your hand: ${prettyHand(playerCards)} (21). Dealer: ${prettyHand(allDealer)} (21). Push — both have Blackjack! Ask the player if they want to play again.\n\nIMPORTANT: If the player wants to play again, call run_js with data: {"action": "deal"}`;
-          return JSON.stringify({ result: txt, player_cards: playerCards, dealer_cards: allDealer, player_value: 21, dealer_value: 21, status: 'push', webview: makeWebview(playerCards, allDealer, 'done', 'Push! Both have Blackjack.', txt) });
+          return JSON.stringify({ result: txt, player_cards: playerCards, dealer_cards: allDealer, player_value: 21, dealer_value: 21, status: 'push' });
         }
         const txt = `Blackjack! Your hand: ${prettyHand(playerCards)} (21). Dealer: ${prettyHand(allDealer)} (${dv}). You win! Ask the player if they want to play again.\n\nIMPORTANT: If the player wants to play again, call run_js with data: {"action": "deal"}`;
-        return JSON.stringify({ result: txt, player_cards: playerCards, dealer_cards: allDealer, player_value: 21, dealer_value: dv, status: 'blackjack', webview: makeWebview(playerCards, allDealer, 'done', 'Blackjack! You win!', txt) });
+        return JSON.stringify({ result: txt, player_cards: playerCards, dealer_cards: allDealer, player_value: 21, dealer_value: dv, status: 'blackjack' });
       }
 
       const txt = `Your hand: ${prettyHand(playerCards)} (${pv}). Dealer shows: ${prettyCard(d1)} [?]. Ask the player: hit or stand?\n\nIMPORTANT: When the player says "hit" or "stand", you MUST call run_js with data: {"action": "hit_or_stand", "player_cards": ${JSON.stringify(playerCards)}, "dealer_visible": "${d1}", "dealer_hidden": "${hiddenCard}"}. Replace hit_or_stand with "hit" or "stand". Copy the exact card values above.`;
-      return JSON.stringify({ result: txt, player_cards: playerCards, dealer_visible: d1, dealer_hidden: hiddenCard, player_value: pv, status: 'playing', webview: makeWebview(playerCards, [d1], 'playing', null, txt) });
+      return JSON.stringify({ result: txt, player_cards: playerCards, dealer_visible: d1, dealer_hidden: hiddenCard, player_value: pv, status: 'playing' });
     }
 
     // === HIT ===
@@ -129,7 +116,7 @@ window['ai_edge_gallery_get_result'] = async (data) => {
         const dealerCards = [dealerVis, realHidden];
         const dv = handTotal(dealerCards);
         const txt = `You drew ${prettyCard(drawn)}. Your hand: ${prettyHand(playerCards)} (${pv}). Bust! Dealer wins. Ask the player if they want to play again.\n\nIMPORTANT: If the player wants to play again, call run_js with data: {"action": "deal"}`;
-        return JSON.stringify({ result: txt, player_cards: playerCards, dealer_cards: dealerCards, player_value: pv, dealer_value: dv, status: 'bust', webview: makeWebview(playerCards, dealerCards, 'done', 'Bust! Dealer wins.', txt) });
+        return JSON.stringify({ result: txt, player_cards: playerCards, dealer_cards: dealerCards, player_value: pv, dealer_value: dv, status: 'bust' });
       }
 
       if (pv === 21) {
@@ -138,7 +125,7 @@ window['ai_edge_gallery_get_result'] = async (data) => {
       }
 
       const txt = `You drew ${prettyCard(drawn)}. Your hand: ${prettyHand(playerCards)} (${pv}). Dealer shows: ${prettyCard(dealerVis)} [?]. Ask the player: hit or stand?\n\nIMPORTANT: When the player says "hit" or "stand", you MUST call run_js with data: {"action": "hit_or_stand", "player_cards": ${JSON.stringify(playerCards)}, "dealer_visible": "${dealerVis}", "dealer_hidden": "${dealerHid}"}. Replace hit_or_stand with "hit" or "stand". Copy the exact card values above.`;
-      return JSON.stringify({ result: txt, player_cards: playerCards, dealer_visible: dealerVis, dealer_hidden: dealerHid, player_value: pv, status: 'playing', webview: makeWebview(playerCards, [dealerVis], 'playing', null, txt) });
+      return JSON.stringify({ result: txt, player_cards: playerCards, dealer_visible: dealerVis, dealer_hidden: dealerHid, player_value: pv, status: 'playing' });
     }
 
     // === STAND ===
@@ -191,7 +178,7 @@ window['ai_edge_gallery_get_result'] = async (data) => {
       txt += ` ${outcome} Ask the player if they want to play again.\n\nIMPORTANT: If the player wants to play again, call run_js with data: {"action": "deal"}`;
 
       const status = dv > 21 || pv > dv ? 'win' : dv > pv ? 'lose' : 'push';
-      return JSON.stringify({ result: txt, player_cards: playerCards, dealer_cards: dealerCards, player_value: pv, dealer_value: dv, status, webview: makeWebview(playerCards, dealerCards, 'done', outcome, txt) });
+      return JSON.stringify({ result: txt, player_cards: playerCards, dealer_cards: dealerCards, player_value: pv, dealer_value: dv, status });
     }
 
     return JSON.stringify({ error: 'Unknown action: ' + action + '. Use "deal", "hit", or "stand".' });
