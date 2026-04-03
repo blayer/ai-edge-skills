@@ -4,115 +4,387 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blackjack</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #0d5e2e; color: #eee; font-family: -apple-system, sans-serif; padding: 16px; min-height: 100vh; }
-  .table { background: radial-gradient(ellipse at center, #1a8c4e 0%, #0d5e2e 100%); border-radius: 16px; padding: 20px 12px; border: 3px solid #2a6e3f; box-shadow: inset 0 0 40px rgba(0,0,0,0.3); }
-  .hand-area { margin: 12px 0; }
-  .label { font-size: 13px; color: #a8dbb8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-  .label .score { background: rgba(0,0,0,0.4); color: #ffd700; font-size: 14px; font-weight: bold; padding: 2px 10px; border-radius: 12px; }
-  .cards { display: flex; gap: 6px; flex-wrap: wrap; min-height: 100px; }
-  .card {
-    width: 64px; height: 92px; border-radius: 8px; position: relative;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,255,255,0.15);
-  }
-  .card.face {
-    background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
-  }
-  .card.face .rank { font-size: 20px; line-height: 1; }
-  .card.face .suit { font-size: 24px; line-height: 1; margin-top: 2px; }
-  .card.face .corner { position: absolute; font-size: 10px; line-height: 1; }
-  .card.face .corner-tl { top: 4px; left: 5px; }
-  .card.face .corner-br { bottom: 4px; right: 5px; transform: rotate(180deg); }
-  .card.red { color: #cc0000; }
-  .card.black { color: #1a1a1a; }
-  .card.hidden {
-    background: linear-gradient(135deg, #1a3a6e 0%, #0f2852 100%);
-    border: 2px solid #2a5a9e;
-  }
-  .card.hidden .back-pattern {
-    width: 48px; height: 72px; border-radius: 4px; border: 2px solid #3a7ade;
-    background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(58,122,222,0.15) 4px, rgba(58,122,222,0.15) 8px);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .card.hidden .back-pattern::after { content: "?"; color: #5a9aee; font-size: 28px; font-weight: bold; }
-  .divider { height: 1px; background: rgba(255,255,255,0.1); margin: 16px 0; }
-  .status-banner {
-    text-align: center; font-size: 18px; font-weight: bold; padding: 12px 16px;
-    border-radius: 10px; margin-top: 16px;
-  }
-  .status-banner.win { background: rgba(0,200,83,0.2); color: #4ade80; border: 2px solid #4ade80; }
-  .status-banner.lose { background: rgba(239,68,68,0.2); color: #f87171; border: 2px solid #f87171; }
-  .status-banner.push { background: rgba(250,204,21,0.2); color: #fbbf24; border: 2px solid #fbbf24; }
-  .status-banner.playing { background: rgba(255,255,255,0.08); color: #a8dbb8; border: 2px solid rgba(255,255,255,0.15); }
-  .hint { color: rgba(255,255,255,0.5); font-size: 12px; text-align: center; margin-top: 8px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0b4d25;
+  min-height: 100vh;
+  font-family: -apple-system, 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+.table {
+  background: radial-gradient(ellipse at 50% 50%, #1a8c4e 0%, #116b38 40%, #0b4d25 100%);
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 16px;
+}
+
+/* Felt texture overlay */
+.table::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='6' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='0.5' fill='rgba(0,0,0,0.03)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Semicircle arc on table */
+.table::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 60%;
+  border: 2px solid rgba(255,215,0,0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hand-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+}
+
+.hand-section.dealer { margin-top: 8px; }
+.hand-section.player { margin-bottom: 8px; }
+
+/* Label + score badge */
+.hand-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.hand-name {
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.score-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Card fan container */
+.card-fan {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 160px;
+  min-width: 120px;
+}
+
+.card-fan .card-wrapper {
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+/* Individual card */
+.card {
+  width: 100px;
+  height: 145px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.4),
+    0 1px 3px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+  overflow: hidden;
+}
+
+.card.face-up {
+  background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 50%, #e8e8e8 100%);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.card.face-down {
+  background: linear-gradient(145deg, #1a3d7c 0%, #14305e 50%, #0f2444 100%);
+  border: 2px solid #2a5a9e;
+}
+
+/* Card face layout */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+}
+
+.card .corner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.card .corner .corner-rank {
+  font-size: 14px;
+}
+
+.card .corner .corner-suit {
+  font-size: 12px;
+  margin-top: -1px;
+}
+
+.card .corner-tl { top: 5px; left: 7px; }
+.card .corner-br { bottom: 5px; right: 7px; transform: rotate(180deg); }
+
+.card .center-suit {
+  font-size: 56px;
+  line-height: 1;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+}
+
+.card .center-rank {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: -4px;
+}
+
+.card.red { color: #cc1111; }
+.card.black { color: #1a1a1a; }
+
+/* Face card (J, Q, K) special styling */
+.card.face-card .center-suit { font-size: 44px; }
+.card.face-card .center-rank { font-size: 24px; }
+
+/* Card back pattern */
+.card-back {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back-inner {
+  width: 80px;
+  height: 125px;
+  border-radius: 6px;
+  border: 2px solid rgba(100,160,255,0.3);
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 6px,
+      rgba(100,160,255,0.08) 6px,
+      rgba(100,160,255,0.08) 12px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 6px,
+      rgba(100,160,255,0.08) 6px,
+      rgba(100,160,255,0.08) 12px
+    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back-inner::after {
+  content: '♠';
+  font-size: 32px;
+  color: rgba(100,160,255,0.25);
+}
+
+/* Center outcome area */
+.center-area {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.outcome-banner {
+  padding: 10px 28px;
+  border-radius: 24px;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.outcome-banner.win {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+}
+
+.outcome-banner.lose {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+}
+
+.outcome-banner.push {
+  background: linear-gradient(135deg, #eab308, #ca8a04);
+  color: #fff;
+}
+
+.outcome-banner.playing {
+  background: rgba(0,0,0,0.4);
+  color: #a8dbb8;
+  border: 1px solid rgba(255,255,255,0.15);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.hint {
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
 </style>
 </head>
 <body>
-<div class="table">
-  <div id="content"></div>
-</div>
+<div class="table" id="table"></div>
 <script>
 const params = new URLSearchParams(window.location.search);
 const state = JSON.parse(decodeURIComponent(params.get('data')));
+
 const suitSymbols = { Hearts: '\u2665', Diamonds: '\u2666', Clubs: '\u2663', Spades: '\u2660' };
 
-function cardHtml(card) {
+function isRed(suit) {
+  return suit === 'Hearts' || suit === 'Diamonds';
+}
+
+function isFaceCard(rank) {
+  return ['J', 'Q', 'K'].includes(rank);
+}
+
+function buildCard(card) {
   const sym = suitSymbols[card.suit] || card.suit;
-  const isRed = card.suit === 'Hearts' || card.suit === 'Diamonds';
-  const colorClass = isRed ? 'red' : 'black';
-  return `<div class="card face ${colorClass}">
-    <span class="corner corner-tl">${card.rank}<br>${sym}</span>
-    <span class="rank">${card.rank}</span>
-    <span class="suit">${sym}</span>
-    <span class="corner corner-br">${card.rank}<br>${sym}</span>
-  </div>`;
+  const colorClass = isRed(card.suit) ? 'red' : 'black';
+  const faceClass = isFaceCard(card.rank) ? 'face-card' : '';
+  return `
+    <div class="card face-up ${colorClass} ${faceClass}">
+      <div class="corner corner-tl">
+        <span class="corner-rank">${card.rank}</span>
+        <span class="corner-suit">${sym}</span>
+      </div>
+      <div class="card-inner">
+        <span class="center-rank">${card.rank}</span>
+        <span class="center-suit">${sym}</span>
+      </div>
+      <div class="corner corner-br">
+        <span class="corner-rank">${card.rank}</span>
+        <span class="corner-suit">${sym}</span>
+      </div>
+    </div>`;
 }
 
-function hiddenCardHtml() {
-  return '<div class="card hidden"><div class="back-pattern"></div></div>';
+function buildHiddenCard() {
+  return `
+    <div class="card face-down">
+      <div class="card-back">
+        <div class="card-back-inner"></div>
+      </div>
+    </div>`;
 }
 
-const el = document.getElementById('content');
+function buildFan(cards, isDealer) {
+  const n = cards.length;
+  // Fan spread: offset and rotation per card
+  const spreadPx = Math.min(40, 160 / Math.max(n, 1));
+  const totalWidth = (n - 1) * spreadPx + 100;
+  const startX = -totalWidth / 2 + 50;
+  const maxRotation = Math.min(8, 24 / Math.max(n, 1));
+
+  let html = `<div class="card-fan" style="width:${totalWidth + 40}px">`;
+  cards.forEach((card, i) => {
+    const x = startX + i * spreadPx;
+    const rotFactor = n > 1 ? (i - (n - 1) / 2) / ((n - 1) / 2) : 0;
+    const rot = rotFactor * maxRotation;
+    const yShift = Math.abs(rotFactor) * 8;
+    html += `<div class="card-wrapper" style="left:50%; margin-left:${x}px; top:${yShift}px; transform:rotate(${rot}deg); z-index:${i}">`;
+    if (card === null) {
+      html += buildHiddenCard();
+    } else {
+      html += buildCard(card);
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+  return html;
+}
+
+// Build the table
+const table = document.getElementById('table');
 let html = '';
 
-// Dealer
-html += '<div class="hand-area">';
-html += '<div class="label">Dealer';
-if (state.dealerValue !== null) html += ` <span class="score">${state.dealerValue}</span>`;
-html += '</div>';
-html += '<div class="cards">';
-if (state.status === 'playing') {
-  html += cardHtml(state.dealer[0]);
-  html += hiddenCardHtml();
+// Dealer section
+const dealerCards = state.status === 'playing'
+  ? [state.dealer[0], null]
+  : state.dealer;
+
+html += '<div class="hand-section dealer">';
+html += '<div class="hand-label">';
+html += '<span class="hand-name">Dealer</span>';
+if (state.dealerValue !== null) {
+  html += `<span class="score-badge">${state.dealerValue}</span>`;
 } else {
-  state.dealer.forEach(c => html += cardHtml(c));
+  html += '<span class="score-badge">?</span>';
 }
-html += '</div></div>';
+html += '</div>';
+html += buildFan(dealerCards, true);
+html += '</div>';
 
-html += '<div class="divider"></div>';
-
-// Player
-html += '<div class="hand-area">';
-html += `<div class="label">You <span class="score">${state.playerValue}</span></div>`;
-html += '<div class="cards">';
-state.player.forEach(c => html += cardHtml(c));
-html += '</div></div>';
-
-// Status
+// Center outcome
+html += '<div class="center-area">';
 if (state.status === 'done') {
   const outcome = state.outcome || '';
-  const cls = outcome.includes('win') || outcome.includes('Win') || outcome.includes('Blackjack') ? 'win' :
-    outcome.includes('Push') ? 'push' : 'lose';
-  html += `<div class="status-banner ${cls}">${outcome}</div>`;
+  const cls = outcome.includes('win') || outcome.includes('Win') || outcome.includes('Blackjack') ? 'win'
+    : outcome.includes('Push') ? 'push' : 'lose';
+  html += `<div class="outcome-banner ${cls}">${outcome}</div>`;
   html += '<div class="hint">Say "deal" to play again</div>';
 } else {
-  html += '<div class="status-banner playing">Your turn</div>';
+  html += '<div class="outcome-banner playing">Your Turn</div>';
   html += '<div class="hint">Say "hit" or "stand"</div>';
 }
+html += '</div>';
 
-el.innerHTML = html;
+// Player section
+html += '<div class="hand-section player">';
+html += buildFan(state.player, false);
+html += '<div class="hand-label">';
+html += '<span class="hand-name">You</span>';
+html += `<span class="score-badge">${state.playerValue}</span>`;
+html += '</div>';
+html += '</div>';
+
+table.innerHTML = html;
 </script>
 </body>
 </html>
