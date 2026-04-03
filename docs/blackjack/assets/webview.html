@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blackjack</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d5e2e; color: #eee; font-family: -apple-system, sans-serif; padding: 16px; min-height: 100vh; }
+  .table { background: radial-gradient(ellipse at center, #1a8c4e 0%, #0d5e2e 100%); border-radius: 16px; padding: 20px 12px; border: 3px solid #2a6e3f; box-shadow: inset 0 0 40px rgba(0,0,0,0.3); }
+  .hand-area { margin: 12px 0; }
+  .label { font-size: 13px; color: #a8dbb8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .label .score { background: rgba(0,0,0,0.4); color: #ffd700; font-size: 14px; font-weight: bold; padding: 2px 10px; border-radius: 12px; }
+  .cards { display: flex; gap: 6px; flex-wrap: wrap; min-height: 100px; }
+  .card {
+    width: 64px; height: 92px; border-radius: 8px; position: relative;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .card.face {
+    background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  }
+  .card.face .rank { font-size: 20px; line-height: 1; }
+  .card.face .suit { font-size: 24px; line-height: 1; margin-top: 2px; }
+  .card.face .corner { position: absolute; font-size: 10px; line-height: 1; }
+  .card.face .corner-tl { top: 4px; left: 5px; }
+  .card.face .corner-br { bottom: 4px; right: 5px; transform: rotate(180deg); }
+  .card.red { color: #cc0000; }
+  .card.black { color: #1a1a1a; }
+  .card.hidden {
+    background: linear-gradient(135deg, #1a3a6e 0%, #0f2852 100%);
+    border: 2px solid #2a5a9e;
+  }
+  .card.hidden .back-pattern {
+    width: 48px; height: 72px; border-radius: 4px; border: 2px solid #3a7ade;
+    background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(58,122,222,0.15) 4px, rgba(58,122,222,0.15) 8px);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card.hidden .back-pattern::after { content: "?"; color: #5a9aee; font-size: 28px; font-weight: bold; }
+  .divider { height: 1px; background: rgba(255,255,255,0.1); margin: 16px 0; }
+  .status-banner {
+    text-align: center; font-size: 18px; font-weight: bold; padding: 12px 16px;
+    border-radius: 10px; margin-top: 16px;
+  }
+  .status-banner.win { background: rgba(0,200,83,0.2); color: #4ade80; border: 2px solid #4ade80; }
+  .status-banner.lose { background: rgba(239,68,68,0.2); color: #f87171; border: 2px solid #f87171; }
+  .status-banner.push { background: rgba(250,204,21,0.2); color: #fbbf24; border: 2px solid #fbbf24; }
+  .status-banner.playing { background: rgba(255,255,255,0.08); color: #a8dbb8; border: 2px solid rgba(255,255,255,0.15); }
+  .hint { color: rgba(255,255,255,0.5); font-size: 12px; text-align: center; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="table">
+  <div id="content"></div>
+</div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const state = JSON.parse(decodeURIComponent(params.get('data')));
+const suitSymbols = { Hearts: '\u2665', Diamonds: '\u2666', Clubs: '\u2663', Spades: '\u2660' };
+
+function cardHtml(card) {
+  const sym = suitSymbols[card.suit] || card.suit;
+  const isRed = card.suit === 'Hearts' || card.suit === 'Diamonds';
+  const colorClass = isRed ? 'red' : 'black';
+  return `<div class="card face ${colorClass}">
+    <span class="corner corner-tl">${card.rank}<br>${sym}</span>
+    <span class="rank">${card.rank}</span>
+    <span class="suit">${sym}</span>
+    <span class="corner corner-br">${card.rank}<br>${sym}</span>
+  </div>`;
+}
+
+function hiddenCardHtml() {
+  return '<div class="card hidden"><div class="back-pattern"></div></div>';
+}
+
+const el = document.getElementById('content');
+let html = '';
+
+// Dealer
+html += '<div class="hand-area">';
+html += '<div class="label">Dealer';
+if (state.dealerValue !== null) html += ` <span class="score">${state.dealerValue}</span>`;
+html += '</div>';
+html += '<div class="cards">';
+if (state.status === 'playing') {
+  html += cardHtml(state.dealer[0]);
+  html += hiddenCardHtml();
+} else {
+  state.dealer.forEach(c => html += cardHtml(c));
+}
+html += '</div></div>';
+
+html += '<div class="divider"></div>';
+
+// Player
+html += '<div class="hand-area">';
+html += `<div class="label">You <span class="score">${state.playerValue}</span></div>`;
+html += '<div class="cards">';
+state.player.forEach(c => html += cardHtml(c));
+html += '</div></div>';
+
+// Status
+if (state.status === 'done') {
+  const outcome = state.outcome || '';
+  const cls = outcome.includes('win') || outcome.includes('Win') || outcome.includes('Blackjack') ? 'win' :
+    outcome.includes('Push') ? 'push' : 'lose';
+  html += `<div class="status-banner ${cls}">${outcome}</div>`;
+  html += '<div class="hint">Say "deal" to play again</div>';
+} else {
+  html += '<div class="status-banner playing">Your turn</div>';
+  html += '<div class="hint">Say "hit" or "stand"</div>';
+}
+
+el.innerHTML = html;
+</script>
+</body>
+</html>
